@@ -34,10 +34,6 @@
 6. Use the user's configured `sans` font-variation-settings by default.
 */
 
-/* CUSTOM */
-* {
-  --background-color: rgb(242, 230, 204);
-}
 
 html {
   line-height: 1.5;
@@ -55,7 +51,7 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
-  background-color: var(--background-color);
+  
 }
 
 /*
