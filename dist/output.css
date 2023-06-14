@@ -55,6 +55,7 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  background-color: var(--background-color);
 }
 
 /*
