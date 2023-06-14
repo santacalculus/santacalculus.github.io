@@ -25,6 +25,11 @@
   --tw-content: '';
 }
 
+/* CUSTOM CSS */
+* {
+  --background-color: rgb(252, 247, 235);
+}
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -51,7 +56,7 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
-  
+  background-color: var(--background-color);
 }
 
 /*
