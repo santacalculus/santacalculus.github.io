@@ -1,6 +1,7 @@
 /* CUSTOM CSS */
 * {
     --background-color: rgb(252, 247, 235);
+    --text-color: rgb(31, 23, 31);
 }
 
 html {
@@ -10,7 +11,12 @@ html {
     padding: 1rem;
 }
 
-section {
+p {
+    color: var(--text-color);
+}
+
+#id_about {
     margin-top: 10vh;
+    /* font-family: "sans-mono"; */
 }
 
