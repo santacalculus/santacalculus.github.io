@@ -13,6 +13,8 @@ html {
 
 p {
     color: var(--text-color);
+    line-height: 150%;
+    /* margin-top: 3rem; */
     /* font-size: 0.90rem; */
 }
 
@@ -24,8 +26,8 @@ p {
 @media (min-width: 700px) {
     .col-span-1 {
         width: 60%;
-        margin-left: 8vw; 
-        margin-right: 2vw; 
+        margin-left: 12vw; 
+        /* margin-right: 2vw;  */
     }
 }
 
