@@ -13,11 +13,19 @@ html {
 
 p {
     color: var(--text-color);
-    font-size: 20px;
+    /* font-size: 0.90rem; */
 }
 
 #id_about {
-    margin-top: 10vh;
+    margin-top: 20vh;
     /* font-family: "sans-mono"; */
+}
+
+@media (min-width: 700px) {
+    .col-span-1 {
+        width: 60%;
+        margin-left: 8vw; 
+        margin-right: 2vw; 
+    }
 }
 
