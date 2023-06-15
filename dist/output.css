@@ -538,6 +538,16 @@ video {
   gap: 0.5rem;
 }
 
+.font-clarendon {
+  font-family: CLARENDON;
+}
+
 .font-serif {
   font-family: Georgia, Cambria, Times New Roman, Times, serif;
+}
+
+@font-face {
+  font-family: "CLARENDON";
+
+  src: url("./CLARENDON.ttf");
 }
