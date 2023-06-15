@@ -551,3 +551,9 @@ video {
 
   src: url("./CLARENDON.ttf");
 }
+
+@font-face {
+  font-family: "notosans-telugu";
+
+  src: url("./NotoSansTelugu-VariableFont_wdth\,wght.ttf")
+}
