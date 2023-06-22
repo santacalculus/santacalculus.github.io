@@ -522,6 +522,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -539,21 +543,33 @@ video {
 }
 
 .font-clarendon {
-  font-family: CLARENDON;
+  font-family: clarendon;
+}
+
+.font-domine {
+  font-family: Playfair Display, serif;
+}
+
+.font-notosanstelugu {
+  font-family: notosans-telugu;
 }
 
 .font-serif {
   font-family: Georgia, Cambria, Times New Roman, Times, serif;
 }
 
-@font-face {
-  font-family: "CLARENDON";
-
-  src: url("./CLARENDON.ttf");
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @font-face {
   font-family: "notosans-telugu";
 
   src: url("./NotoSansTelugu-VariableFont_wdth\,wght.ttf")
+}
+
+@font-face {
+  font-family: "Bodoni";
+
+  src: url('https://fonts.cdnfonts.com/css/bodoni');
 }

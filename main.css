@@ -1,28 +1,42 @@
 /* CUSTOM CSS */
+/* if you're looking at this i'm so sorry that it's so messy >.<
+    i promise i usually write better code than this <3 */
+
 * {
-    --background-color: rgb(252, 247, 235);
+    /* --background-color: rgb(252, 247, 235); */
+    --background-color: rgb(255,255,255);
     --text-color: rgb(31, 23, 31);
     --hover-color: rgb(38, 29, 6);
 }
 
+::selection {
+    background-color: #decade;
+}
+
 html {
     background-color: var(--background-color);
-    margin: 1.5rem 2rem 3rem;
+    /* margin-top: 2rem; */
+    margin-right: 2rem;
     margin-left: 2.5rem;
-    padding: 1rem;
+    scroll-behavior: smooth;
+    /* padding: 1rem; */
 }
 
 
 p {
     color: var(--text-color);
     line-height: 150%;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* overflow-wrap: break-word; */
     /* margin-top: 3rem; */
-    /* font-size: 0.90rem; */
+    font-size: 0.90rem;
 }
 
 section:hover .highlight {
-    background-color: rgb(179, 255, 77);
-    /* background-color: rgb(255, 217, 255) */
+    /* background-color: #decade; */
+    /* background-color: rgb(179, 255, 77); */
+    background-color: rgb(255, 217, 255)
 }
 
 p:hover {
@@ -30,15 +44,52 @@ p:hover {
 }
 
 #id_about {
-    margin-top: 20vh;
+    margin-top: 40vh;
     /* font-family: "sans-mono"; */
 }
 
-@media (min-width: 700px) {
-    .col-span-1 {
-        width: 60%;
-        margin-left: 12vw; 
-        /* margin-right: 2vw;  */
+#id_leftcol {
+    width: 80%;
+    height: 99vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-left: 5vw;
+    /* overflow-y: auto; */
+    /* margin-top: 4vh; */
+}
+
+#id_rightcol {
+    /* position: fixed;
+    top: 0;
+    right: 0; */
+
+    
+     /* Adjust the width as needed */
+    height: 100vh; /* Adjust the height as needed */
+    /* overflow-y: auto; */
+    padding-left: 10px; /* Add padding to the left */
+}
+
+@media (min-width: 800px) {
+    p {
+        font-size: 1vw;
     }
 }
+
+@media screen and (max-width: 600px) {
+    #id_leftcol {
+        width: 70vw;
+        /* padding-right: 20vw; */
+        margin-right: 10vw;
+        padding-right: 5vw;
+    }
+    #id_rightcol {
+        display: none;
+    }
+}
+
+
+
+
+
 
