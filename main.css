@@ -77,7 +77,9 @@ p:hover {
 #id_image_container {
     margin-right: 5vw;
     /* margin-left: 5vw; */
-    margin-top: 15vh;
+    margin-top: 25vh;
+    height: 100vh;
+    align-items: center;
 }
 
 #id_profile {
@@ -89,6 +91,14 @@ p:hover {
     color: inherit;
 }
 
+#id_name {
+    font-size: 1.5rem; 
+}
+
+#id_job {
+    font-size: 1rem;
+}
+
 @media (min-width: 800px) {
     p {
         font-size: 1vw;
@@ -96,6 +106,12 @@ p:hover {
     /* #id_intro {
         display: none;
     } */
+    #id_name {
+        font-size: 2vw;
+    }
+    #id_job {
+        font-size: 1.2vw; 
+    }
 }
 
 @media screen and (max-width: 600px) {
