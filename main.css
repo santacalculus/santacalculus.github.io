@@ -8,6 +8,7 @@
     --text-color: rgb(31, 23, 31);
     --hover-color: rgb(38, 29, 6);
 }
+@import url('font/sentinel/stylesheet.css');
 
 ::selection {
     background-color: #decade;
@@ -24,7 +25,7 @@ html {
 
 
 p {
-    color: var(--text-color);
+    color: inherit;
     line-height: 150%;
     /* white-space: nowrap; */
     /* overflow: hidden; */
@@ -45,15 +46,17 @@ p:hover {
 
 #id_about {
     margin-top: 40vh;
+    color: var(--text-color);
+    /* font-size: 1.2vw; */
     /* font-family: "sans-mono"; */
 }
 
 #id_leftcol {
     width: 80%;
     height: 99vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 8vw;
     padding-left: 5vw;
+    padding-right: 2vw;
     /* overflow-y: auto; */
     /* margin-top: 4vh; */
 }
@@ -67,13 +70,32 @@ p:hover {
      /* Adjust the width as needed */
     height: 100vh; /* Adjust the height as needed */
     /* overflow-y: auto; */
-    padding-left: 10px; /* Add padding to the left */
+    /* padding-left: 10px; Add padding to the left */
+}
+
+
+#id_image_container {
+    margin-right: 5vw;
+    /* margin-left: 5vw; */
+    margin-top: 15vh;
+}
+
+#id_profile {
+    height: 50vh;
+    /* width: 90%; */
+}
+
+.content {
+    color: inherit;
 }
 
 @media (min-width: 800px) {
     p {
         font-size: 1vw;
     }
+    /* #id_intro {
+        display: none;
+    } */
 }
 
 @media screen and (max-width: 600px) {

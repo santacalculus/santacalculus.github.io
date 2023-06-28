@@ -11,6 +11,7 @@ module.exports = {
         notosanstelugu: ["notosans-telugu"],
         bodoni: ["Bodoni"],
         domine: ["Playfair Display", "serif"],
+        neuehaas: ['Neue Haas Grotesk Display Pro', "sans-serif"],
       },
     },
   },

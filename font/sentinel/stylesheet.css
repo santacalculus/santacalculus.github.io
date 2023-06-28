@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-BoldItalic.eot');
+    src: local('Sentinel Pro BoldItalic'), local('SentinelPro-BoldItalic'),
+        url('SentinelPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-BoldItalic.woff2') format('woff2'),
+        url('SentinelPro-BoldItalic.woff') format('woff'),
+        url('SentinelPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-BlackItalic.eot');
+    src: local('Sentinel Pro BlackItalic'), local('SentinelPro-BlackItalic'),
+        url('SentinelPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-BlackItalic.woff2') format('woff2'),
+        url('SentinelPro-BlackItalic.woff') format('woff'),
+        url('SentinelPro-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Bold.eot');
+    src: local('Sentinel Pro Bold'), local('SentinelPro-Bold'),
+        url('SentinelPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Bold.woff2') format('woff2'),
+        url('SentinelPro-Bold.woff') format('woff'),
+        url('SentinelPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Black.eot');
+    src: local('Sentinel Pro Black'), local('SentinelPro-Black'),
+        url('SentinelPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Black.woff2') format('woff2'),
+        url('SentinelPro-Black.woff') format('woff'),
+        url('SentinelPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-BookItalic.eot');
+    src: local('Sentinel Pro BookItalic'), local('SentinelPro-BookItalic'),
+        url('SentinelPro-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-BookItalic.woff2') format('woff2'),
+        url('SentinelPro-BookItalic.woff') format('woff'),
+        url('SentinelPro-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-SemiboldItalic.eot');
+    src: local('Sentinel Pro SemiboldItalic'), local('SentinelPro-SemiboldItalic'),
+        url('SentinelPro-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-SemiboldItalic.woff2') format('woff2'),
+        url('SentinelPro-SemiboldItalic.woff') format('woff'),
+        url('SentinelPro-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Light.eot');
+    src: local('Sentinel Pro Light'), local('SentinelPro-Light'),
+        url('SentinelPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Light.woff2') format('woff2'),
+        url('SentinelPro-Light.woff') format('woff'),
+        url('SentinelPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Medium.eot');
+    src: local('Sentinel Pro Medium'), local('SentinelPro-Medium'),
+        url('SentinelPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Medium.woff2') format('woff2'),
+        url('SentinelPro-Medium.woff') format('woff'),
+        url('SentinelPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Book.eot');
+    src: local('Sentinel Pro Book'), local('SentinelPro-Book'),
+        url('SentinelPro-Book.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Book.woff2') format('woff2'),
+        url('SentinelPro-Book.woff') format('woff'),
+        url('SentinelPro-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-LightItalic.eot');
+    src: local('Sentinel Pro LightItalic'), local('SentinelPro-LightItalic'),
+        url('SentinelPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-LightItalic.woff2') format('woff2'),
+        url('SentinelPro-LightItalic.woff') format('woff'),
+        url('SentinelPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-Semibold.eot');
+    src: local('Sentinel Pro Semibold'), local('SentinelPro-Semibold'),
+        url('SentinelPro-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-Semibold.woff2') format('woff2'),
+        url('SentinelPro-Semibold.woff') format('woff'),
+        url('SentinelPro-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sentinel Pro';
+    src: url('SentinelPro-MediumItalic.eot');
+    src: local('Sentinel Pro MediumItalic'), local('SentinelPro-MediumItalic'),
+        url('SentinelPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('SentinelPro-MediumItalic.woff2') format('woff2'),
+        url('SentinelPro-MediumItalic.woff') format('woff'),
+        url('SentinelPro-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+

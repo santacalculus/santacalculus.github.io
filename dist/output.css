@@ -526,8 +526,16 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
+}
+
+.inline {
+  display: inline;
 }
 
 .grid {
@@ -550,6 +558,10 @@ video {
   font-family: Playfair Display, serif;
 }
 
+.font-neuehaas {
+  font-family: Neue Haas Grotesk Display Pro, sans-serif;
+}
+
 .font-notosanstelugu {
   font-family: notosans-telugu;
 }
@@ -562,6 +574,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 @font-face {
   font-family: "notosans-telugu";
 
@@ -572,4 +588,18 @@ video {
   font-family: "Bodoni";
 
   src: url('https://fonts.cdnfonts.com/css/bodoni');
+}
+
+@media (min-width: 768px) {
+  .md\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:object-scale-down {
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+  }
 }
