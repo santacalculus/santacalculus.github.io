@@ -4,6 +4,7 @@ import {animate, scroll, inView, stagger } from 'https://cdn.skypack.dev/motion'
 
 document.querySelectorAll("section").forEach((item, index) => {
   // some really cute code that adds fade-in and fade-out effect for every section
+  console.log(item);
   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
     target: item,
     offset: ["start end", "center end", "center start", "end start"]
@@ -13,7 +14,7 @@ document.querySelectorAll("section").forEach((item, index) => {
 
   // more cute and simple code to change the color of the text in section when it comes into view <3
   if (index !== 0 && text) {
-    console.log(text);
+    // console.log(text);
     scroll(animate(text, { color: ["rgb(33,23,31)", "rgb(51, 51, 0)", "rgb(51, 51, 0)", "rgb(33,23,31)"] }), {
       target: text,
       offset: ["center end", "end end", "start start", "center start"],
@@ -48,7 +49,10 @@ document.querySelectorAll("section").forEach((item, index) => {
   
 });
 
+// animate("#id_intro", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+animate("#id_profile", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
 
-animate("#id_major", {y: -10}, {delay: stagger(0.1),
-  duration: 0.5,
-  easing: "ease-in"})
+// animate("#id_intro", {y: -10}, {delay: stagger(0.1),
+//   duration: 0.5,
+//   easing: "ease-in"})
+
