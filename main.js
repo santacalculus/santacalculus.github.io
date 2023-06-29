@@ -48,7 +48,8 @@ document.querySelectorAll("section").forEach((item, index) => {
   
 });
 
+animate("#id_profile", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
 
-animate("#id_major", {y: -10}, {delay: stagger(0.1),
-  duration: 0.5,
-  easing: "ease-in"})
+// animate("#id_major", {y: -10}, {delay: stagger(0.1),
+//   duration: 0.5,
+//   easing: "ease-in"})

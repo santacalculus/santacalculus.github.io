@@ -66,7 +66,7 @@ p:hover {
     top: 0;
     right: 0; */
 
-    
+    /* margin-right: 8vw; */
      /* Adjust the width as needed */
     height: 100vh; /* Adjust the height as needed */
     /* overflow-y: auto; */
@@ -75,9 +75,12 @@ p:hover {
 
 
 #id_image_container {
-    margin-right: 5vw;
+    margin-right: 8vw;
+    padding-right: 3vw;
     /* margin-left: 5vw; */
-    margin-top: 15vh;
+    margin-top: 25vh;
+    height: 100vh;
+    align-items: center;
 }
 
 #id_profile {
@@ -91,19 +94,26 @@ p:hover {
 
 @media (min-width: 800px) {
     p {
-        font-size: 1vw;
+        font-size: 1rem;
     }
     /* #id_intro {
         display: none;
     } */
 }
 
+@media (max-width: 800px) {
+    p {
+        font-size: 2vw;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #id_leftcol {
         width: 70vw;
         /* padding-right: 20vw; */
-        margin-right: 10vw;
-        padding-right: 5vw;
+        /* margin-right: 10vw;
+        padding-right: 5vw; */
+        /* margin-left: 15vw; */
     }
     #id_rightcol {
         display: none;
@@ -113,5 +123,14 @@ p:hover {
 
 
 
+@media (max-width: 768px) {
+    #id_profile {
+        max-width: 100%;
+        height: auto;
+    }
+    #id_image_container {
+        margin-top: 35vh;
+    }
+}
 
 
