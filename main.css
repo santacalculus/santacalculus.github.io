@@ -92,6 +92,14 @@ p:hover {
     color: inherit;
 }
 
+#id_name {
+    font-size: 1.8rem;
+}
+
+#id_job {
+    font-size: 1.2rem;
+}
+
 @media (min-width: 800px) {
     p {
         font-size: 1rem;
@@ -108,6 +116,15 @@ p:hover {
 }
 
 @media screen and (max-width: 600px) {
+    #id_name {
+        font-size: 1.5rem;
+    }
+    #id_job {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
     #id_leftcol {
         width: 70vw;
         /* padding-right: 20vw; */
