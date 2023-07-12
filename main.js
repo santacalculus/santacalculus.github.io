@@ -1,5 +1,5 @@
 
-import {animate, scroll, inView, stagger } from 'https://cdn.skypack.dev/motion';
+import {animate, scroll} from 'https://cdn.skypack.dev/motion';
 
 
 document.querySelectorAll("section").forEach((item, index) => {
