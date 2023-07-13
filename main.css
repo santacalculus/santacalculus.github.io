@@ -62,10 +62,10 @@ p:hover {
 }
 
 #id_rightcol {
-    /* position: fixed; */
+    position: fixed;
     top: 0; 
     right: 0; 
-    width: 80%; 
+    width: 50%; 
     height: 100vh;
     align-items: center; 
     justify-content: center;
@@ -117,7 +117,7 @@ p:hover {
 
 @media (min-width: 800px) {
     p {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
     /* #id_intro {
         display: none;

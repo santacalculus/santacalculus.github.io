@@ -1,5 +1,5 @@
 
-import {animate, scroll} from 'https://cdn.skypack.dev/motion';
+import {animate, scroll, inView} from 'https://cdn.skypack.dev/motion';
 
 
 document.querySelectorAll("section").forEach((item, index) => {
@@ -9,16 +9,41 @@ document.querySelectorAll("section").forEach((item, index) => {
     offset: ["start end", "center end", "center start", "end start"]
   });
 
+  scroll(() => {
+    const image = document.getElementById("#id_profile");
+    // if (item.id == "id_filterfaceoff") {
+    //   console.log("ok");
+    // }
+    inView(item, () => {
+      if (index == 0) {
+        const image = document.getElementById("id_profile");
+        if (image) {
+            image.src = "profile.jpeg";
+        }
+      }
+      if (index == 1) {
+        console.log("hmm");
+        const image = document.getElementById("id_profile");
+        if (image) {
+            console.log("here");
+            image.src = "test.png";
+        }
+      }
+    }, {amount: 1})
+  });
+
+
+
   const text = item.querySelector(".content");
 
   // more cute and simple code to change the color of the text in section when it comes into view <3
   if (index !== 0 && text) {
-    console.log(text);
+    // console.log(text);
     scroll(animate(text, { color: ["rgb(33,23,31)", "rgb(51, 51, 0)", "rgb(51, 51, 0)", "rgb(33,23,31)"] }), {
       target: text,
       offset: ["center end", "end end", "start start", "center start"],
     });
-}
+  }
 
   
 
