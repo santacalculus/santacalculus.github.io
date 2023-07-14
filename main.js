@@ -9,16 +9,18 @@ document.querySelectorAll("section").forEach((item, index) => {
     offset: ["start end", "center end", "center start", "end start"]
   });
 
+  // more fun code to check when the section comes into view and change the image accordingly
   scroll(() => {
-    const image = document.getElementById("#id_profile");
-    // if (item.id == "id_filterfaceoff") {
-    //   console.log("ok");
-    // }
     inView(item, () => {
       if (index == 0) {
         const image = document.getElementById("id_profile");
         if (image) {
-            image.src = "profile.jpeg";
+          image.src = "profile.jpeg";
+          if (window.innerWidth > 768) { 
+            image.style.height = "50vh"; //responsive stuff for md screens
+          } else {
+            image.style.height = "auto";
+          }
         }
       }
       if (index == 1) {
@@ -26,7 +28,8 @@ document.querySelectorAll("section").forEach((item, index) => {
         const image = document.getElementById("id_profile");
         if (image) {
             console.log("here");
-            image.src = "test.png";
+            image.src = "filter.gif";
+            image.style.height = "auto";
         }
       }
     }, {amount: 1})
