@@ -1,6 +1,57 @@
 
 import {animate, scroll, inView} from 'https://cdn.skypack.dev/motion';
 
+animate("#id_name", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+animate("#id_job", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+animate("#id_intro", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+
+const selflink = document.getElementById("id_selflink");
+const selfdesc = document.getElementById("id_selfdesc");
+const proofdesc = document.getElementById("id_proofdesc");
+const prooflink = document.getElementById("id_prooflink");
+const interlink = document.getElementById("id_interlink");
+const interdesc = document.getElementById("id_interdesc");
+const obfudesc = document.getElementById("id_obfudesc");
+const obfulink = document.getElementById("id_obfulink");
+
+selflink.addEventListener("mouseenter", () => {
+  animate("#id_selfdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  selfdesc.style.display = "block";
+});
+
+selflink.addEventListener("mouseleave", () => {
+  selfdesc.style.display = "none";
+});
+
+prooflink.addEventListener("mouseenter", () => {
+  animate("#id_proofdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  proofdesc.style.display = "block";
+});
+
+prooflink.addEventListener("mouseleave", () => {
+  proofdesc.style.display = "none";
+});
+
+interlink.addEventListener("mouseenter", () => {
+  console.log("huh");
+  animate("#id_interdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  interdesc.style.display = "block";
+});
+
+interlink.addEventListener("mouseleave", () => {
+  interdesc.style.display = "none";
+});
+
+obfulink.addEventListener("mouseenter", () => {
+  console.log("huh");
+  animate("#id_obfudesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  obfudesc.style.display = "block";
+});
+
+obfulink.addEventListener("mouseleave", () => {
+  obfudesc.style.display = "none";
+});
+
 
 document.querySelectorAll("section").forEach((item, index) => {
   // some really cute code that adds fade-in and fade-out effect for every section
@@ -12,22 +63,27 @@ document.querySelectorAll("section").forEach((item, index) => {
   // more fun code to check when the section comes into view and change the image accordingly
   scroll(() => {
     inView(item, () => {
-      if (index == 0) {
-        const image = document.getElementById("id_profile");
-        if (image) {
-          image.src = "profile.jpeg";
-          if (window.innerWidth > 768) { 
-            image.style.height = "50vh"; //responsive stuff for md screens
-          } else {
-            image.style.height = "auto";
+      
+        // console.log("ok");
+        if (index == 0) { 
+          const image = document.getElementById("id_profile");
+          if (image) {
+            // animate("#id_profile", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+            image.src = "profile.jpeg";
+            if (window.innerWidth > 1023) {
+              image.style.height = "45vh";
+            }
+            // } else {
+            //   image.style.height = "auto";
+            // }
           }
         }
-      }
+      
       if (index == 1) {
-        console.log("hmm");
+        // console.log("hmm");
         const image = document.getElementById("id_profile");
         if (image) {
-            console.log("here");
+            // console.log("here");
             image.src = "filter.gif";
             image.style.height = "auto";
         }
@@ -76,7 +132,6 @@ document.querySelectorAll("section").forEach((item, index) => {
   
 });
 
-animate("#id_profile", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
 
 // animate("#id_major", {y: -10}, {delay: stagger(0.1),
 //   duration: 0.5,

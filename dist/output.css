@@ -522,14 +522,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -550,16 +542,17 @@ video {
   gap: 0.5rem;
 }
 
+.object-scale-down {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
 .font-clarendon {
   font-family: clarendon;
 }
 
-.font-domine {
-  font-family: Playfair Display, serif;
-}
-
-.font-neuehaas {
-  font-family: Neue Haas Grotesk Display Pro, sans-serif;
+.font-mono {
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
 .font-notosanstelugu {
@@ -568,6 +561,10 @@ video {
 
 .font-serif {
   font-family: Georgia, Cambria, Times New Roman, Times, serif;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .filter {
@@ -590,16 +587,9 @@ video {
   src: url('https://fonts.cdnfonts.com/css/bodoni');
 }
 
-@media (min-width: 768px) {
-  .md\:object-cover {
+@media (min-width: 1280px) {
+  .xl\:object-cover {
     -o-object-fit: cover;
        object-fit: cover;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:object-scale-down {
-    -o-object-fit: scale-down;
-       object-fit: scale-down;
   }
 }
