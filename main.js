@@ -1,9 +1,22 @@
 
 import {animate, scroll, inView} from 'https://cdn.skypack.dev/motion';
 
-animate("#id_name", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
-animate("#id_job", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
-animate("#id_intro", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+window.onload = () => {
+  // prevent FOUC (flash of unstyled content)
+  const name = document.getElementById("id_name");
+  name.style.visibility = "visible";
+  // animate("#id_name", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+
+  const job = document.getElementById("id_job");
+  job.style.visibility = "visible";
+  // animate("#id_job", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+
+  const profile = document.getElementById("id_profile");
+  profile.style.visibility = "visible";
+  animate("#id_profile", {opacity: [0, 1]}, {duration: 0.8, easing: "ease-in"});
+};
+
+
 
 const selflink = document.getElementById("id_selflink");
 const selfdesc = document.getElementById("id_selfdesc");

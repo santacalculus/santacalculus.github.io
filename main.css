@@ -102,6 +102,7 @@ p:hover {
 
 #id_profile {
     height: 45vh;
+    visibility: hidden;
 }
 
 .content {
@@ -110,10 +111,20 @@ p:hover {
 
 #id_name {
     font-size: 2rem;
+    color: rgb(100, 0, 0); 
+    margin-bottom: -5px; 
+    font-family: "Sentinel Pro"; 
+    font-weight: bold;
+    visibility: hidden;
 }
 
 #id_job {
     font-size: 1.5rem;
+    color: rgb(84, 0, 0); 
+    font-family: "Sentinel Pro"; 
+    font-style: normal; 
+    font-weight: 500;
+    visibility: hidden;
 }
 
 #id_motion {
