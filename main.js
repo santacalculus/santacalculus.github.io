@@ -14,7 +14,7 @@ window.onload = () => {
 
   const profile = document.getElementById("id_profile");
   profile.style.visibility = "visible";
-  animate("#id_profile", {opacity: [0, 1]}, {duration: 0.4, easing: "ease-in"});
+  // animate("#id_profile", {opacity: [0, 1], transform: "translateX(-10px)",}, {duration: 0.4, easing: "ease-in"});
 
   const filter = document.getElementById("id_filterfaceoff");
   filter.style.visibility = "visible";

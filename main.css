@@ -31,7 +31,7 @@ p {
     /* overflow: hidden; */
     /* overflow-wrap: break-word; */
     /* margin-top: 3rem; */
-    font-size: 0.90rem;
+    font-size: 1.12rem;
 }
 
 /* section:hover .highlight { */
@@ -45,7 +45,7 @@ p:hover {
 }
 
 #id_about {
-    margin-top: 38vh;
+    margin-top: 30vh;
     color: var(--text-color);
     display: block;
     visibility: hidden;
@@ -98,15 +98,17 @@ p:hover {
 
 
 #id_image_container {
-    margin-right: 10vw;
-    padding-left: 5px;
+    /* margin-right: 5vw; */
+    padding-left: 50px;
     margin-top: 25vh;
+    max-width: 30vw;
     height: 45vh;
     align-items: center;
 }
 
 #id_profile {
     height: 45vh;
+    
     visibility: hidden;
 }
 
@@ -209,9 +211,15 @@ p:hover {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     p {
         font-size: 1.15rem;
+    }
+    #id_name {
+        font-size: 1.9rem;
+    }
+    #id_job {
+        font-size: 1.2rem;
     }
 }
 
@@ -226,16 +234,16 @@ p:hover {
         width: 420px;
     }
 }
-
+/* 
 @media (max-width: 800px) {
     p {
         font-size: 2vw;
     }
-}
+} */
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     #id_name {
         font-size: 2rem;
     }
@@ -254,6 +262,9 @@ p:hover {
     /* } */
     #id_rightcol {
         display: none;
+    }
+    #id_leftcol {
+        width: 65vw;
     }
 }
 
