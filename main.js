@@ -142,6 +142,6 @@ document.querySelectorAll("section").forEach((item, index) => {
 });
 
 
-// animate("#id_major", {y: -10}, {delay: stagger(0.1),
+// animate("#id_name", {y: 10}, {delay: stagger(0.1),
 //   duration: 0.5,
 //   easing: "ease-in"})

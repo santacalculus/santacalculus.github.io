@@ -47,6 +47,7 @@ p:hover {
 #id_about {
     margin-top: 35vh;
     color: var(--text-color);
+    display: block;
     /* font-size: 1.2vw; */
     /* font-family: "sans-mono"; */
 }
@@ -137,6 +138,18 @@ p:hover {
 #id_motion:hover {
     color: black;
     background-color: yellow;
+}
+
+#id_spark {
+    font-family: "Sentinel Pro";
+    text-decoration: underline;
+    color: #1877f2;
+    font-weight: 600;
+}
+
+#id_spark:hover {
+    color: white;
+    background-color: #1877f2;
 }
 
 #id_yolo {

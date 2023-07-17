@@ -38,9 +38,9 @@
           <section id="id_filterfaceoff" style="margin-top: 1rem;">
             <h5 style="font-family: Sentinel Pro; font-size: 1.2rem;"><span style="font-weight: 600; color:rgb(84, 0, 0);">Filter FaceOff</span> | <i style="color: rgb(84, 0, 0);">Carnegie Mellon Human Computer Interaction Institute</i></h5>
             <div class="content">
-              <p class="font-serif" style="margin-top: 0.5rem;">An embedded Instagram multiplayer game where users are given humorous prompts for which they take selfies using filters available on Instagram. The prototype was developed using Figma and SparkAR.</p>
+              <p class="font-serif" style="margin-top: 0.5rem;">An <b>embedded Instagram multiplayer game</b> where users are given humorous prompts for which they take selfies using filters available on Instagram. The prototype was developed using <b>Figma</b> and <a href="https://sparkar.facebook.com/ar-studio/" target="_blank" rel="noreferrer noopener" id="id_spark">&#8599; SparkAR</a>.</p>
               <br>
-              <p class="font-serif">The primary persuasive goal was to apply the psychological idea of <a id="id_selflink" style="color: rgb(179, 0, 255);">self-discrepancy theory<sup>1</sup></a> and shift the motivation behind filter and selfie use from negative reasons like adherence to a beauty standard to more positive reasons like creativity and open self-expression. </p>
+              <p class="font-serif">The primary persuasive goal was to apply the psychological idea of <a id="id_selflink" style="color: rgb(179, 0, 255);">self-discrepancy theory<sup>1</sup></a> and <b>shift the motivation behind filter and selfie use</b> from negative reasons like adherence to a beauty standard to more positive reasons like creativity and open self-expression. </p>
               <br>
               <p class="font-serif">The embedded design techniques used to inform the overall persuasive strategy were <a id="id_interlink" style="color: rgb(0,179,179);">Intermixing<sup>2</sup></a> and <a id="id_obfulink" style="color: rgb(128,204,0);">Obfuscation through Misdirection<sup>3</sup></a>. The nature of the multiplayer game employs <a id="id_prooflink" style="color: rgb(255,38,0);">Social Proof<sup>4</sup></a> as a strategy to encourage creativity and openness among the players.</p>
             </div>
@@ -55,19 +55,23 @@
                   <p class="font-serif" style="margin-top: 0.5rem;">This senior Engineering Design capstone project is a system which <b>predicts live wait-time information of lines in campus dining halls using a combination of software and embedded hardware components.</b></p>
                   <br>
                   <p class="font-serif">
-                      A camera installed at the dining location captures live feed of the line, and a video from this feed gets sampled every few seconds and run through a custom-trained 
+                      A camera installed at the dining location captures live feed of the line, which is sampled every few seconds and run through a custom-trained 
                       <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_YOLOv7_Trainable_Bag-of-Freebies_Sets_New_State-of-the-Art_for_Real-Time_Object_Detectors_CVPR_2023_paper.pdf" target="_blank" rel="noreferrer noopener" id="id_yolo">&#8599;YOLOv7 Computer Vision algorithm</a> on a Jetson Nano, which also hosts the SQL server with the database, to track and count the humans in line. 
-                      This gets sent to the wait-time calculation algorithm, and once computed, the information sent to update the web application.
+                      The wait-time calculation algorithm uses this information to compute the wait time which is updated on the web application.
                   </p>
                   <br>
                   <p class="font-serif">
-                    The web application is built on the <b>Django</b> web framework using <b>Bootstrap CSS</b> for styling and layout, and <a href="https://d3js.org/" target="_blank" rel="noreferrer noopener" id="id_d3">&#8599;D3 Javascript library</a> for data visualization animations, with <b>AJAX implementation</b> for continous wait-time information updates. As the <b style="color: rgb(84, 0, 0);">frontend lead</b>, this project for her was a fun introduction to using SVG vectors and D3 for animations.
+
+                    The web application is built on the <b>Django</b> web framework using <b>Bootstrap CSS</b> for styling and layout, and <a href="https://d3js.org/" target="_blank" rel="noreferrer noopener" id="id_d3">&#8599;D3 Javascript library</a> for data visualization animations, with <b>AJAX implementation</b> for continous updates. 
+                    The design features both pictorial and infographic representations of the number of people in line and the predicted wait time, with elements like the receipt-style layout appealing to the user demographic of young college students.
+
+                    As the <b style="color: rgb(84, 0, 0);">frontend lead</b>, this project for her was a fun introduction to using SVG vectors and D3 for animations.
                   </p>
                   <br>
-                  <p class="font-serif">
-                    The web page design features both pictorial and infographic representations of the number of people in line and the predicted wait time, with elements like the receipt-style layout appealing to the target demographic of young college students.
-                    In creating this, she was inspired by a <a href="https://www.medrxiv.org/content/10.1101/2022.03.30.22273211v1" target="_blank" rel="noreferrer noopener" id="id_study">&#8599;study</a> on visualizing wait times in Emergency departments at hospitals, and by the design language of the <a href="https://www.nytimes.com/2022/11/08/us/politics/nyt-election-needle.html" target="_blank" ref="noreferrer noopener" id="id_needle">&#8599;New York Times Needle</a>, an elections forecasting tool.
-                  </p>
+                  <!-- <p class="font-serif"> -->
+                    <!-- The design features both pictorial and infographic representations of the number of people in line and the predicted wait time, with elements like the receipt-style layout appealing to the target demographic of young college students. -->
+                    <!-- She was inspired by a <a href="https://www.medrxiv.org/content/10.1101/2022.03.30.22273211v1" target="_blank" rel="noreferrer noopener" id="id_study">&#8599;study</a> on visualizing wait times in Emergency departments at hospitals, and by the design language of the <a href="https://www.nytimes.com/2022/11/08/us/politics/nyt-election-needle.html" target="_blank" ref="noreferrer noopener" id="id_needle">&#8599;New York Times Needle</a>, an elections forecasting tool. -->
+                  <!-- </p> -->
                 </div>
             </section>
             
