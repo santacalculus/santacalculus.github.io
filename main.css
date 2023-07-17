@@ -34,11 +34,11 @@ p {
     font-size: 0.90rem;
 }
 
-section:hover .highlight {
+/* section:hover .highlight { */
     /* background-color: #decade; */
     /* background-color: rgb(179, 255, 77); */
-    background-color: rgb(255, 217, 255)
-}
+    /* background-color: rgb(255, 217, 255) */
+/* } */
 
 p:hover {
     color: var(--hover-color);
@@ -115,7 +115,7 @@ p:hover {
     margin-bottom: -5px; 
     font-family: "Sentinel Pro"; 
     font-weight: bold;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #id_job {
@@ -124,7 +124,7 @@ p:hover {
     font-family: "Sentinel Pro"; 
     font-style: normal; 
     font-weight: 500;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #id_motion {
@@ -137,6 +137,48 @@ p:hover {
 #id_motion:hover {
     color: black;
     background-color: yellow;
+}
+
+#id_yolo {
+    font-family: "Sentinel Pro";
+    text-decoration: underline;
+    /* color:  rgb(255,217,255); */
+}
+
+#id_yolo:hover {
+    background-color: rgb(255,217,255);
+    /* color: white; */
+}
+
+#id_d3 {
+    color: hsl(20 85% 57%);
+    font-family: "Sentinel Pro";
+    font-weight: 600;
+}
+
+#id_d3:hover {
+    color: black;
+    background-color: hsl(20 85% 57%);
+}
+
+#id_study {
+    font-family: "Sentinel Pro";
+    text-decoration: underline;
+    color: rgb(0,77,255);
+}
+
+#id_study:hover {
+    color: black;
+    background-color: rgb(255,217,255);
+}
+
+#id_needle {
+    font-family: "Sentinel Pro";
+    text-decoration: underline;
+}
+
+#id_needle:hover {
+    background-color: rgb(255,217,255);
 }
 
 .definitions {

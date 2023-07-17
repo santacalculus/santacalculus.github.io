@@ -52,15 +52,28 @@
               
                 <h5 style="font-family: Sentinel Pro; font-size: 1.18rem;"><span style="font-weight: 600; color:rgb(84, 0, 0);">No Time to Dine</span> | <i style="color: rgb(84, 0, 0);">Carnegie Mellon Electrical and Computer Engineering Department</i></h5>
                 <div class="content">
-                  <p class="font-serif" style="margin-top: 0.5rem;">This senior Engineering Design capstone project is a system which provides live wait-time information of lines in campus dining halls using a combination of software and embedded hardware components.</p>
+                  <p class="font-serif" style="margin-top: 0.5rem;">This senior Engineering Design capstone project is a system which <b>predicts live wait-time information of lines in campus dining halls using a combination of software and embedded hardware components.</b></p>
                   <br>
-                  <p class="font-mono">{This site is still under construction as of Jul 14, 2023. Come back soon for updates.}</p>
+                  <p class="font-serif">
+                      A camera installed at the dining location captures live feed of the line, and a video from this feed gets sampled every few seconds and run through a custom-trained 
+                      <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_YOLOv7_Trainable_Bag-of-Freebies_Sets_New_State-of-the-Art_for_Real-Time_Object_Detectors_CVPR_2023_paper.pdf" target="_blank" rel="noreferrer noopener" id="id_yolo">&#8599;YOLOv7 Computer Vision algorithm</a> on a Jetson Nano, which also hosts the SQL server with the database, to track and count the humans in line. 
+                      This gets sent to the wait-time calculation algorithm, and once computed, the information sent to update the web application.
+                  </p>
                   <br>
-                
+                  <p class="font-serif">
+                    The web application is built on the <b>Django</b> web framework using <b>Bootstrap CSS</b> for styling and layout, and <a href="https://d3js.org/" target="_blank" rel="noreferrer noopener" id="id_d3">&#8599;D3 Javascript library</a> for data visualization animations, with <b>AJAX implementation</b> for continous wait-time information updates. As the <b style="color: rgb(84, 0, 0);">frontend lead</b>, this project for her was a fun introduction to using SVG vectors and D3 for animations.
+                  </p>
+                  <br>
+                  <p class="font-serif">
+                    The web page design features both pictorial and infographic representations of the number of people in line and the predicted wait time, with elements like the receipt-style layout appealing to the target demographic of young college students.
+                    In creating this, she was inspired by a <a href="https://www.medrxiv.org/content/10.1101/2022.03.30.22273211v1" target="_blank" rel="noreferrer noopener" id="id_study">&#8599;study</a> on visualizing wait times in Emergency departments at hospitals, and by the design language of the <a href="https://www.nytimes.com/2022/11/08/us/politics/nyt-election-needle.html" target="_blank" ref="noreferrer noopener" id="id_needle">&#8599;New York Times Needle</a>, an elections forecasting tool.
+                  </p>
                 </div>
             </section>
             
             <hr style="margin-top: 50px; margin-bottom: 50px;">
+            <p class="font-mono">{This site is still under construction as of Jul 14, 2023. Come back soon for updates.}</p>
+
             
             
           
@@ -74,12 +87,12 @@
               they actually present and the self they ought or wish to be.</p>
           </div>
           <div class="definitions" id="id_proofdesc">
-            <p style="font-family: Sentinel Pro; width: 300px; color: rgb(255,38,0); background-color: rgb(255,230,0); margin-top: -50px; margin-left: -45px;">Occurs whenever we change our
+            <p style="font-family: Sentinel Pro; width: 300px; color: rgb(255,38,0); background-color: rgb(77,255,255); margin-top: -50px; margin-left: -45px;">Occurs whenever we change our
                 perceptions, opinions, or behaviors to
                 be consistent with social norms.</p>
           </div>
           <div class="definitions" id="id_interdesc">
-            <p style = "font-family: Sentinel Pro; width: 300px; color: rgb(0,179,179); background-color: rgb(217,255,0); margin-top: 10px; margin-left: -45px;">combining “on-topic” and “off-topic” game content in order 
+            <p style = "font-family: Sentinel Pro; width: 300px; color: rgb(0,179,179); background-color: rgb(255,230,0); margin-top: 10px; margin-left: -45px;">combining “on-topic” and “off-topic” game content in order 
               to make the focal message or theme less obvious and more accessible.</p>
           </div>
           <div class="definitions" id="id_obfudesc">

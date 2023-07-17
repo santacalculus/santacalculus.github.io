@@ -81,27 +81,23 @@ document.querySelectorAll("section").forEach((item, index) => {
         if (index == 0) { 
           const image = document.getElementById("id_profile");
           if (image) {
-            // animate("#id_profile", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
             image.src = "profile.jpeg";
             if (window.innerWidth > 1023) {
               image.style.height = "45vh";
             }
-            // } else {
-            //   image.style.height = "auto";
-            // }
           }
         }
       
       if (index == 1) {
-        // console.log("hmm");
+ 
         const image = document.getElementById("id_profile");
         if (image) {
-            // console.log("here");
+
             image.src = "filter.gif";
             image.style.height = "auto";
         }
       }
-    }, {amount: 1})
+    }, {amount: 0.95})
   });
 
 
