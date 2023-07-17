@@ -45,9 +45,10 @@ p:hover {
 }
 
 #id_about {
-    margin-top: 35vh;
+    margin-top: 38vh;
     color: var(--text-color);
     display: block;
+    visibility: hidden;
     /* font-size: 1.2vw; */
     /* font-family: "sans-mono"; */
 }
@@ -126,6 +127,10 @@ p:hover {
     font-style: normal; 
     font-weight: 500;
     /* visibility: hidden; */
+}
+
+#id_selected {
+    visibility: hidden;
 }
 
 #id_motion {

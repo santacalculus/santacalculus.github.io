@@ -3,17 +3,18 @@ import {animate, scroll, inView} from 'https://cdn.skypack.dev/motion';
 
 window.onload = () => {
   // prevent FOUC (flash of unstyled content)
-  const name = document.getElementById("id_name");
-  name.style.visibility = "visible";
-  // animate("#id_name", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+  console.log("what")
+  const about = document.getElementById("id_about");
+  about.style.visibility = "visible";
+  animate("#id_about", {opacity: [0.5, 1], transform: "translateY(10px)",}, {duration: 0.3, easing: "ease-in"});
 
-  const job = document.getElementById("id_job");
-  job.style.visibility = "visible";
-  // animate("#id_job", {opacity: [0, 1]}, {duration: 1, easing: "ease-in"});
+  const selected = document.getElementById("id_selected");
+  selected.style.visibility = "visible";
+  animate("#id_selected", {opacity: [0.5, 1], transform: "translateY(-10px)",}, {duration: 0.3, easing: "ease-in"});
 
   const profile = document.getElementById("id_profile");
   profile.style.visibility = "visible";
-  animate("#id_profile", {opacity: [0, 1]}, {duration: 0.8, easing: "ease-in"});
+  animate("#id_profile", {opacity: [0, 1]}, {duration: 0.4, easing: "ease-in"});
 };
 
 
@@ -142,6 +143,6 @@ document.querySelectorAll("section").forEach((item, index) => {
 });
 
 
-// animate("#id_name", {y: 10}, {delay: stagger(0.1),
+// animate("#id_profile", {y: 10}, {delay: stagger(0.1),
 //   duration: 0.5,
 //   easing: "ease-in"})
