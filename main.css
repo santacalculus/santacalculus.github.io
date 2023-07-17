@@ -94,8 +94,6 @@ p:hover {
 
 #id_image_container {
     margin-right: 10vw;
-    /* padding-right: 3vw; */
-    /* margin-left: 5vw; */
     padding-left: 5px;
     margin-top: 25vh;
     height: 45vh;
@@ -117,7 +115,7 @@ p:hover {
     margin-bottom: -5px; 
     font-family: "Sentinel Pro"; 
     font-weight: bold;
-    /* visibility: hidden; */
+    
 }
 
 #id_job {
@@ -126,7 +124,7 @@ p:hover {
     font-family: "Sentinel Pro"; 
     font-style: normal; 
     font-weight: 500;
-    /* visibility: hidden; */
+    
 }
 
 #id_selected {
@@ -137,7 +135,6 @@ p:hover {
     color: rgb(255,218,0);
     font-family: "Sentinel Pro";
     text-decoration: underline;
-    /* font-weight: 700; */
 }
 
 #id_motion:hover {
