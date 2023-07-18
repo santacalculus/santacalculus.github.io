@@ -158,7 +158,7 @@ p:hover {
     font-family: "Sentinel Pro";
     text-decoration: underline;
     color: #1877f2;
-    font-weight: 600;
+    /* font-weight: 600; */
     background-image: linear-gradient(180deg,transparent 0%, #1877f2 0);
     background-repeat: no-repeat;
     background-size: 0 100%;
@@ -184,7 +184,7 @@ p:hover {
 #id_d3 {
     color: hsl(20 85% 57%);
     font-family: "Sentinel Pro";
-    font-weight: 600;
+    /* font-weight: 600; */
     background-image: linear-gradient(180deg,transparent 0%, hsl(20 85% 57%) 0);
     background-repeat: no-repeat;
     background-size: 0 100%;

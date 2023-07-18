@@ -60,7 +60,6 @@ interlink.addEventListener("mouseleave", () => {
 });
 
 obfulink.addEventListener("mouseenter", () => {
-  console.log("huh");
   animate("#id_obfudesc", {opacity: [0, 1]}, {duration: 0.2, easing: "ease-in"});
   obfudesc.style.display = "block";
 });
@@ -69,6 +68,9 @@ obfulink.addEventListener("mouseleave", () => {
   obfudesc.style.display = "none";
 });
 
+ // some flags to make sure the gif won't load repeatedly when there is a scroll
+ let filterSet = false; 
+ let imageChanged = true;
 
 document.querySelectorAll("section").forEach((item, index) => {
   // some really cute code that adds fade-in and fade-out effect for every section
@@ -76,7 +78,7 @@ document.querySelectorAll("section").forEach((item, index) => {
     target: item,
     offset: ["start end", "center end", "center start", "end start"]
   });
-
+ 
   // more fun code to check when the section comes into view and change the image accordingly
   scroll(() => {
     inView(item, () => {
@@ -87,16 +89,24 @@ document.querySelectorAll("section").forEach((item, index) => {
             if (window.innerWidth > 1023) {
               image.style.height = "45vh";
             }
+            filterSet = false;
+            imageChanged = true;
           }
         }
       
-      if (index == 1) {
- 
+      else if (index == 1) {
         const image = document.getElementById("id_profile");
         if (image) {
-
+          if (filterSet && !imageChanged) {
             image.src = "filter.gif";
             image.style.height = "auto";
+            filterSet = false;
+          }
+          else if (!filterSet && imageChanged) {
+            image.src = "filter.gif";
+            image.style.height = "auto";
+            filterSet = true;
+          }
         }
       }
     }, {amount: 0.95})
