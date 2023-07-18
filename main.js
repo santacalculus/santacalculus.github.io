@@ -6,11 +6,11 @@ window.onload = () => {
   // prevent FOUC (flash of unstyled content)
   const about = document.getElementById("id_about");
   about.style.visibility = "visible";
-  animate("#id_about", {transform: "translateY(20px)",}, {duration: 0.3, easing: "ease-in"});
+  animate("#id_about", {transform: "translateY(20px)",}, {duration: 0.5, easing: "ease-in"});
 
   const selected = document.getElementById("id_selected");
   selected.style.visibility = "visible";
-  animate("#id_selected", {transform: "translateY(-20px)",}, {duration: 0.3, easing: "ease-in"});
+  animate("#id_selected", {transform: "translateY(-20px)",}, {duration: 0.5, easing: "ease-in"});
 
   const profile = document.getElementById("id_profile");
   profile.style.visibility = "visible";
@@ -18,7 +18,7 @@ window.onload = () => {
 
   const filter = document.getElementById("id_filterfaceoff");
   filter.style.visibility = "visible";
-  animate("#id_filterfaceoff", {transform: "translateY(-10px)"}, {duration: 0.3, easing: "ease-in"});
+  animate("#id_filterfaceoff", {transform: "translateY(-15px)"}, {duration: 0.5, easing: "ease-in"});
 };
 
 
