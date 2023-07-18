@@ -33,7 +33,7 @@ const obfudesc = document.getElementById("id_obfudesc");
 const obfulink = document.getElementById("id_obfulink");
 
 selflink.addEventListener("mouseenter", () => {
-  animate("#id_selfdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  animate("#id_selfdesc", {opacity: [0, 1]}, {duration: 0.2, easing: "ease-in"});
   selfdesc.style.display = "block";
 });
 
@@ -42,7 +42,7 @@ selflink.addEventListener("mouseleave", () => {
 });
 
 prooflink.addEventListener("mouseenter", () => {
-  animate("#id_proofdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  animate("#id_proofdesc", {opacity: [0, 1]}, {duration: 0.2, easing: "ease-in"});
   proofdesc.style.display = "block";
 });
 
@@ -51,7 +51,7 @@ prooflink.addEventListener("mouseleave", () => {
 });
 
 interlink.addEventListener("mouseenter", () => {
-  animate("#id_interdesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  animate("#id_interdesc", {opacity: [0, 1]}, {duration: 0.2, easing: "ease-in"});
   interdesc.style.display = "block";
 });
 
@@ -61,7 +61,7 @@ interlink.addEventListener("mouseleave", () => {
 
 obfulink.addEventListener("mouseenter", () => {
   console.log("huh");
-  animate("#id_obfudesc", {opacity: [0, 1]}, {duration: 0.5, easing: "ease-in"});
+  animate("#id_obfudesc", {opacity: [0, 1]}, {duration: 0.2, easing: "ease-in"});
   obfudesc.style.display = "block";
 });
 
