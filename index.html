@@ -1,77 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
-<style>
-  * {
-    --background-color: #FAF9F6;
-    --menu-select-color: #028940;
-    --menu-hover-color: #636363;
-  }
+  <title>Likhitha Chintareddy</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200&display=swap');
 
-  html{
-    background-color: var(--background-color);
-  }
-  .curves-svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-  .curve-path {
-    fill: none;
-    stroke: #000;
-    stroke-width: 2px;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    transform-origin: 80% center;
-    animation: drawCurve 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-  }
-  .text-wrapper {
-    transform-box: fill-box;
-    transform-origin: center;
-  }
-  .path-text {
-    fill: #000;
-    font-family: "Archivo", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings: "wdth" 90;
-    letter-spacing: -0.05px;
-    dominant-baseline: middle;
-    text-anchor: middle;
-    white-space: pre;
-  }
-  @keyframes drawCurve {
-    to {
-      stroke-dashoffset: 0;
+    * {
+        --background-color: #FAF9F6;
+        --menu-select-color: #028940;
+        --menu-hover-color: #636363;
     }
-  }
-  #id_aboutpath {
-    stroke: var(--menu-select-color);
-  }
+    html{
+        background-color: var(--background-color);
+    }
+    .curves-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+    .curve-path {
+        fill: none;
+        stroke: #0C0404;
+        stroke-width: 2px;
+        stroke-dasharray: 2000;
+        stroke-dashoffset: -2000; /* Changed to negative to animate from left */
+        transform-origin: 20% center; /* Changed origin to left side */
+        animation: drawCurve 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        will-change: transform;
+        transition: transform 0.1s ease-out;
+    }
+    .text-wrapper {
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+    .path-text {
+        fill: #000;
+        font-family: "Archivo", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-variation-settings: "wdth" 90;
+        letter-spacing: -0.05px;
+        dominant-baseline: middle;
+        text-anchor: middle;
+        white-space: pre;
+    }
+    @keyframes drawCurve {
+        to {
+        stroke-dashoffset: 0;
+        }
+    }
+    #id_aboutpath {
+        stroke: var(--menu-select-color);
+    }
 
 
-  #id_intro {
-    font-family: "neue-haas-grotesk-display", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.2rem;
-    margin-left: 5vw;
-    margin-top: 10vh;
-    width: 45vw;
-  }
+    #id_intro {
+        font-family: "neue-haas-grotesk-display", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1.2rem;
+        margin-left: 5vw;
+        margin-top: 10vh;
+        width: 48vw;
+        padding-right: 3vw;
+    }
 
-  .curve2 .curve-path {
-    stroke: #000; /* Explicitly set default color */
-}
-  .curve2:hover, .curve2-path:hover{
-    stroke: var(--menu-hover-color);
-  }
-</style>
+    .curve2 .curve-path {
+        stroke: #0C0404; /* Explicitly set default color */
+    }
+    .curve2:hover, .curve2-path:hover{
+        stroke: var(--menu-hover-color);
+    }
+
+    @media only screen and (max-width: 600px) {
+      #id_intro {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+      #id_intro {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      #id_intro {
+        /* font-size: 1.3vw; */
+        padding-right: 6vw;
+        font-size: 1.4rem;
+      }
+    }
+    @media only screen and (min-width: 1200px) {
+      #id_intro {
+        font-size: 1.45rem;
+      }
+    }
+    </style>
 </head>
 <body>
 <div class="header">
@@ -80,7 +110,7 @@
           <!-- <path class="curve-path" d="M101 9 L 65 9 C 55 9, 45 1, 35 1 L 8 1 C 6 1, 2 1, -1 1" />  -->
           <!-- Split top curve with gap for text, maintaining parallel pattern -->
           <path class="curve-path" id="id_aboutpath" d="M101 12 L 85 12 L 77.5 12" />
-          <path class="curve-path" id="id_aboutpath" d="M66.8 12 L 65 12 C 55 12, 45 4, 35 4 L 27 4" />
+          <path class="curve-path" id="id_aboutpath" d="M66.5 12 L 65 12 C 55 12, 45 4, 35 4 L 27 4" />
           <path class="curve-path" id="id_aboutpath" d="M5 4 L -1 4" />
           
           <!-- Text position -->
@@ -96,9 +126,9 @@
           <!-- <path class="curve-path" d="M101 15 L 65 15 C 55 15, 45 7, 35 7 L 8 7 C 6 7, 2 7, -1 7" /> -->
           <!-- curve 2 -->
           <g class="curve2">
-              <path class="curve-path curve2-path" d="M70 15 L 65 15 C 55 15, 45 7, 35 7 L -1 7" />
+              <path class="curve-path curve2-path" d="M69.2 15 L 65 15 C 55 15, 45 7, 35 7 L -1 7" />
               
-              <path class="curve-path curve2-path" d="M101 15 L 91 15" />
+              <path class="curve-path curve2-path" d="M101 15 L 91.9 15" />
           </g>
           <g class="text-wrapper">
               <text class="path-text" x="80.5" y="15.1" font-size="2">PROJECTS/RESEARCH</text>
@@ -106,11 +136,11 @@
           
 
           <!-- curve 3 -->
-          <path class="curve-path" d="M101 18 L 90 18" />
+          <path class="curve-path" d="M101 18 L 90.5 18" />
           <g class="text-wrapper">
               <text class="path-text" x="82.5" y="18.1" font-size="2">PHOTOGRAPHY</text>
           </g>
-          <path class="curve-path" d="M75 18 L 65 18 C 55 18, 45 10, 35 10 L -1 10" />
+          <path class="curve-path" d="M74.5 18 L 65 18 C 55 18, 45 10, 35 10 L -1 10" />
 
           <!-- <path class="curve-path" d="M101 18 L 65 18 C 55 18, 45 10, 35 10 L 8 10 C 6 10, 2 10, -1 10" /> -->
           <!-- <path class="curve-path" d="M101 21 L 65 21 C 55 21, 45 13, 35 13 L 8 13 C 6 13, 2 13, -1 13" /> -->
@@ -124,6 +154,12 @@
   <p>I am passionate about clean code, design systems, student journalism, and film photography. 
     I also love books and am currently reading Psychopolitics by Byung-chul Han.</p>
   <p>I studied Electrical and Computer Engineering at Carnegie Mellon University.</p>
+  <p>I am always reachable at <span style="font-family: Inconsolata, monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+      wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on the app formerly known as Twitter.</p>
 </div>
 <script>
   function updateTextScaling() {
