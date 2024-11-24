@@ -4,8 +4,9 @@
   <title>Likhitha Chintareddy</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200&display=swap');
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200&display=swap');
 
     * {
         --background-color: #FAF9F6;
@@ -29,7 +30,9 @@
         transform-origin: 20% center; /* Changed origin to left side */
         animation: drawCurve 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
         will-change: transform;
-        transition: transform 0.1s ease-out;
+        /* transition: transform 0.1s ease-out; */
+        transition: transform 0.1s ease-out, stroke 0.2s ease; /* Added transition for smooth color change */
+
     }
     .text-wrapper {
         transform-box: fill-box;
@@ -39,13 +42,14 @@
         fill: #000;
         font-family: "Archivo", sans-serif;
         font-optical-sizing: auto;
-        font-weight: 200;
+        font-weight: 100;
         font-style: normal;
         font-variation-settings: "wdth" 90;
         letter-spacing: -0.05px;
         dominant-baseline: middle;
         text-anchor: middle;
         white-space: pre;
+        pointer-events: auto; 
     }
     @keyframes drawCurve {
         to {
@@ -68,12 +72,12 @@
         padding-right: 3vw;
     }
 
-    .curve2 .curve-path {
+    /* .curve2 .curve-path {
         stroke: #0C0404; /* Explicitly set default color */
-    }
+    /* }
     .curve2:hover, .curve2-path:hover{
         stroke: var(--menu-hover-color);
-    }
+    } */ 
 
     @media only screen and (max-width: 600px) {
       #id_intro {
@@ -101,7 +105,7 @@
         font-size: 1.45rem;
       }
     }
-    </style>
+  </style>
 </head>
 <body>
 <div class="header">
@@ -125,14 +129,15 @@
           <!-- Bottom curves with consistent parallel spacing -->
           <!-- <path class="curve-path" d="M101 15 L 65 15 C 55 15, 45 7, 35 7 L 8 7 C 6 7, 2 7, -1 7" /> -->
           <!-- curve 2 -->
-          <g class="curve2">
+          <g class="curve2" data-curve-group="projects">
               <path class="curve-path curve2-path" d="M69.2 15 L 65 15 C 55 15, 45 7, 35 7 L -1 7" />
               
               <path class="curve-path curve2-path" d="M101 15 L 91.9 15" />
+              <g class="text-wrapper">
+                <text class="path-text" x="80.5" y="15.1" font-size="2">PROJECTS/RESEARCH</text>
+              </g>
           </g>
-          <g class="text-wrapper">
-              <text class="path-text" x="80.5" y="15.1" font-size="2">PROJECTS/RESEARCH</text>
-          </g>
+          
           
 
           <!-- curve 3 -->
@@ -185,6 +190,8 @@
   // Initial update and add resize listener
   window.addEventListener('load', updateTextScaling);
   window.addEventListener('resize', updateTextScaling);
+  
 </script>
+<script src="main.js"></script>
 </body>
 </html>
