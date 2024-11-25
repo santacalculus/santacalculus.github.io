@@ -26,13 +26,26 @@
         stroke: #0C0404;
         stroke-width: 1.8px;
         stroke-dasharray: 2000;
-        stroke-dashoffset: -2000; /* Changed to negative to animate from left */
+        stroke-dashoffset: -2000; 
         transform-origin: 20% center; /* Changed origin to left side */
-        animation: drawCurve 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        /* animation: drawCurve 2s cubic-bezier(0.76, 0, 0.24, 1) forwards; */
+        opacity: 0;
         will-change: transform;
         /* transition: transform 0.1s ease-out; */
         transition: transform 0.1s ease-out, stroke 0.2s ease; /* Added transition for smooth color change */
 
+    }
+    .animate-curve {
+        opacity: 1;
+        animation: drawCurve 3s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    }
+    @keyframes drawCurve {
+        from {
+            stroke-dashoffset: -2000;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
     }
     .text-wrapper {
         transform-box: fill-box;
@@ -50,11 +63,6 @@
         text-anchor: middle;
         white-space: pre;
         pointer-events: auto; 
-    }
-    @keyframes drawCurve {
-        to {
-        stroke-dashoffset: 0;
-        }
     }
     #id_aboutpath {
         stroke: var(--menu-select-color);
@@ -173,6 +181,19 @@
       wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on the app formerly known as Twitter.</p>
 </article>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Use requestAnimationFrame to ensure browser is ready to paint
+      requestAnimationFrame(() => {
+        // Get all curve paths
+        const curves = document.querySelectorAll('.curve-path');
+        
+        // Add animation class to all curves simultaneously
+        curves.forEach(curve => {
+          curve.classList.add('animate-curve');
+        });
+      });
+  });
+
   function updateTextScaling() {
     const svg = document.querySelector('.curves-svg');
     const textWrapper = document.querySelector('.text-wrapper');
