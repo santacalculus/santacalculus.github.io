@@ -1,4 +1,40 @@
 // main.js
+
+$(document).ready(function() {
+    const curves = document.querySelectorAll('.curve-path');
+    
+    // Initialize curves
+    curves.forEach(curve => {
+        const length = curve.getTotalLength();
+        $(curve).css({
+            'stroke-dasharray': length,
+            'stroke-dashoffset': length,
+            'opacity': 1
+        });
+    });
+
+    // Animate all curves
+    curves.forEach(curve => {
+        const length = curve.getTotalLength();
+        $(curve).animate({
+            'stroke-dashoffset': 0
+        }, {
+            duration: 2000,
+            easing: 'easeInOutQuart',
+            queue: false // Makes all animations start simultaneously
+        });
+    });
+});
+
+// Add jQuery easing function
+$.easing.easeInOutQuart = function (x) {
+    return x < 0.5 ?
+        8 * x * x * x * x :
+        1 - Math.pow(-2 * x + 2, 4) / 2;
+};
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Setup for About Me curve (curve 1)
     const aboutGroup = document.querySelector('.curve1[data-curve-group="about"]');

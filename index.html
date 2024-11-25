@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Likhitha Chintareddy</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
   
@@ -12,9 +13,18 @@
         --background-color: #FAF9F6;
         --menu-select-color: #028940;
         --menu-hover-color: #636363;
+        --curve-default-color: #0C0404;
     }
     html{
         background-color: var(--background-color);
+    }
+    ::selection {
+      background-color: var(--curve-default-color);
+      color: var(--background-color);
+    }
+    ::-moz-selection {
+      background-color: var(--curve-default-color);
+      color: var(--background-color);
     }
     sup {
       font-size: 0.9rem;
@@ -26,19 +36,19 @@
     }
     .curve-path {
         fill: none;
-        stroke: #0C0404;
+        stroke: var(--curve-default-color);
         stroke-width: 1.8px;
         stroke-dasharray: 2000;
-        stroke-dashoffset: -2000; 
+        stroke-dashoffset: 2000; 
         transform-origin: 20% center; /* Changed origin to left side */
         opacity: 0;
-        visibility: hidden;
+        /* visibility: hidden; */
         will-change: transform;
-        /* transition: transform 0.1s ease-out; */
-        transition: transform 0.1s ease-out, opacity 0.1s ease-out; /* Added transition for smooth color change */
+        transition: transform 0.1s ease-out;
+        /* transition: transform 0.1s ease-out, opacity 0.1s ease-out; Added transition for smooth color change */
 
     }
-    .animate-curve {
+    /* .animate-curve {
         visibility: visible;
         opacity: 1;
         animation: drawCurve 3s cubic-bezier(0.76, 0, 0.24, 1) forwards;
@@ -52,7 +62,7 @@
             stroke-dashoffset: 0;
             opacity: 1;
         }
-    }
+    } */
     .text-wrapper {
         transform-box: fill-box;
         transform-origin: center;
@@ -133,9 +143,9 @@
           <!-- <path class="curve-path" d="M101 9 L 65 9 C 55 9, 45 1, 35 1 L 8 1 C 6 1, 2 1, -1 1" />  -->
           <!-- Split top curve with gap for text, maintaining parallel pattern -->
           <g class="curve1" data-curve-group="about">
-            <path class="curve-path curve1-path" id="id_aboutpath" d="M101 12 L 85 12 L 77.5 12" />
-            <path class="curve-path curve1-path" id="id_aboutpath" d="M66.5 12 L 65 12 C 55 12, 45 4, 35 4 L 27 4" />
-            <path class="curve-path curve1-path" id="id_aboutpath" d="M5 4 L -1 4" />
+              <path class="curve-path curve1-path" id="id_aboutpath" d="M-1 4 L 5 4" />
+              <path class="curve-path curve1-path" id="id_aboutpath" d="M27 4 L 35 4 C 45 4, 55 12, 65 12 L 66.5 12" />
+              <path class="curve-path curve1-path" id="id_aboutpath" d="M77.5 12 L 85 12 L 101 12" />
             
             <!-- Text position -->
             
@@ -178,7 +188,7 @@
   </div>
 </div>
 
-<article id="id_intro">
+<section id="id_intro">
   <p>I am a User Experience Researcher and Software Engineer.</p>
   <p>I leverage persuasive design and human-interaction methods to study technologies that are designed to change human behaviors on a societal scale.</p>
   <p>I am passionate about clean-ish <a href="https://github.com/santacalculus" target="_blank" class="embed-link" id="id_embedlink">code<sup>1</sup></a>, design systems, <a href="https://web.archive.org/web/20241125013704/https://thetartan.org/staff/lchintar" target="_blank" class="embed-link">student journalism<sup>2</sup></a>, and film photography. 
@@ -190,17 +200,74 @@
     font-style: normal;
     font-variation-settings:
       wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on <a href="https://x.com/santacalculus?lang=en" target="_blank" id="id_embedlink" class="embed-link">the app formerly known as Twitter<sup>4</sup>.</a></p>
-</article>
+</section>
+
+<section id="id_projects">
+
+</section>
+
+<section id="id_photography">
+
+</section>
+
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Small delay to ensure DOM is ready
-    setTimeout(() => {
-        const curves = document.querySelectorAll('.curve-path');
-        curves.forEach(curve => {
-            curve.classList.add('animate-curve');
-        });
-    }, 100);
-});
+//   window.addEventListener('load', function() {
+//     const curves = document.querySelectorAll('.curve-path');
+    
+//     // Create a timeline for better control
+//     const tl = gsap.timeline({
+//         defaults: {
+//             ease: "power3.inOut",
+//         }
+//     });
+
+//     // Group curves by their data-curve-group attribute
+//     const curveGroups = {};
+//     curves.forEach(curve => {
+//         const group = curve.closest('[data-curve-group]')?.dataset.curveGroup;
+//         if (group) {
+//             if (!curveGroups[group]) curveGroups[group] = [];
+//             curveGroups[group].push(curve);
+//         }
+//     });
+
+//     // Initialize all curves
+//     curves.forEach(curve => {
+//         const length = curve.getTotalLength();
+//         gsap.set(curve, {
+//             opacity: 1,
+//             strokeDasharray: length,
+//             strokeDashoffset: -length
+//         });
+//     });
+
+//     // Animate each group with slight delays
+//     Object.entries(curveGroups).forEach(([groupName, groupCurves], groupIndex) => {
+//         const groupDelay = groupIndex * 0.15; // Delay between groups
+        
+//         groupCurves.forEach((curve, curveIndex) => {
+//             const length = curve.getTotalLength();
+//             const duration = Math.max(2, length / 300); // Adjusted timing
+            
+//             tl.to(curve, {
+//                 strokeDashoffset: 0,
+//                 duration: duration,
+//                 ease: "power2.inOut",
+//             }, `group${groupIndex}+=${curveIndex * 0.08}`); // Better timeline control
+//         });
+//     });
+
+//     // Text animation
+//     gsap.set('.text-wrapper', { opacity: 0 });
+//     gsap.to('.text-wrapper', {
+//         opacity: 1,
+//         duration: 1,
+//         delay: 0.5,
+//         stagger: 0.1,
+//         ease: "power2.out"
+//     });
+// });
 
   function updateTextScaling() {
     const svg = document.querySelector('.curves-svg');
