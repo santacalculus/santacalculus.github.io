@@ -1,5 +1,10 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function() {
+    // Setup for About Me curve (curve 1)
+    const aboutGroup = document.querySelector('.curve1[data-curve-group="about"]');
+    const aboutPaths = aboutGroup.querySelectorAll('.curve1-path');
+    const aboutText = aboutGroup.querySelector('text');
+
     // Setup for Projects/Research curve (curve 2)
     const projectsGroup = document.querySelector('.curve2[data-curve-group="projects"]');
     const projectsPaths = projectsGroup.querySelectorAll('.curve2-path');
@@ -12,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const hoverColor = getComputedStyle(document.documentElement).getPropertyValue('--menu-hover-color') || '#636363';
     const defaultColor = '#0C0404';
+    const greenColor = getComputedStyle(document.documentElement).getPropertyValue('--menu-select-color') || '#028940';
   
     // Function to handle color change for any set of paths
     function updatePathColors(paths, color) {
@@ -21,8 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to setup hover effects for a group
-    function setupHoverEffects(group, paths, text) {
-        if (!group) return;
+    function setupHoverEffects(group, paths, text, isAboutSection = false) {
+        if (!group) {
+            console.log('Group not found:', group);
+            return;
+        }
+
+        const restingColor = isAboutSection ? greenColor : defaultColor;
 
         // Group hover
         group.addEventListener('mouseenter', () => {
@@ -30,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         group.addEventListener('mouseleave', () => {
-            updatePathColors(paths, defaultColor);
+            updatePathColors(paths, restingColor);
         });
 
         // Individual path hover
@@ -41,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             path.addEventListener('mouseleave', (e) => {
                 if (!group.matches(':hover')) {
-                    updatePathColors(paths, defaultColor);
+                    updatePathColors(paths, restingColor);
                 }
             });
         });
@@ -57,13 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             text.addEventListener('mouseleave', () => {
                 if (!group.matches(':hover')) {
-                    updatePathColors(paths, defaultColor);
+                    updatePathColors(paths, restingColor);
                 }
             });
         }
     }
 
-    // Setup hover effects for both curves
+    // Setup hover effects for all curves
+    setupHoverEffects(aboutGroup, aboutPaths, aboutText, true);  // Only call once for About section
     setupHoverEffects(projectsGroup, projectsPaths, projectsText);
     setupHoverEffects(photoGroup, photoPaths, photoText);
 });

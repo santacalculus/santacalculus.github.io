@@ -113,18 +113,21 @@
       <svg class="curves-svg" viewBox="0 -2 100 20" preserveAspectRatio="none">
           <!-- <path class="curve-path" d="M101 9 L 65 9 C 55 9, 45 1, 35 1 L 8 1 C 6 1, 2 1, -1 1" />  -->
           <!-- Split top curve with gap for text, maintaining parallel pattern -->
-          <path class="curve-path" id="id_aboutpath" d="M101 12 L 85 12 L 77.5 12" />
-          <path class="curve-path" id="id_aboutpath" d="M66.5 12 L 65 12 C 55 12, 45 4, 35 4 L 27 4" />
-          <path class="curve-path" id="id_aboutpath" d="M5 4 L -1 4" />
-          
-          <!-- Text position -->
-          
-          <g class="text-wrapper">
-              <text class="path-text" x="16" y="4.1" font-size="2.2">LIKHITHA CHINTAREDDY</text>
+          <g class="curve1" data-curve-group="about">
+            <path class="curve-path curve1-path" id="id_aboutpath" d="M101 12 L 85 12 L 77.5 12" />
+            <path class="curve-path curve1-path" id="id_aboutpath" d="M66.5 12 L 65 12 C 55 12, 45 4, 35 4 L 27 4" />
+            <path class="curve-path curve1-path" id="id_aboutpath" d="M5 4 L -1 4" />
+            
+            <!-- Text position -->
+            
+            <g class="text-wrapper">
+                <text class="path-text" x="16" y="4.1" font-size="2.2">LIKHITHA CHINTAREDDY</text>
+              </g>
+            <g class="text-wrapper">
+                <text class="path-text" x="72" y="12.1" font-size="2">ABOUT ME</text>
             </g>
-          <g class="text-wrapper">
-              <text class="path-text" x="72" y="12.1" font-size="2">ABOUT ME</text>
-            </g>
+          </g>
+          
           
           <!-- Bottom curves with consistent parallel spacing -->
           <!-- <path class="curve-path" d="M101 15 L 65 15 C 55 15, 45 7, 35 7 L 8 7 C 6 7, 2 7, -1 7" /> -->
@@ -156,7 +159,7 @@
   </div>
 </div>
 
-<div id="id_intro">
+<article id="id_intro">
   <p>I am a User Experience Researcher and Software Engineer.</p>
   <p>I leverage persuasive design and human-interaction methods to study technologies that are designed to change human behaviors on a societal scale.</p>
   <p>I am passionate about clean code, design systems, student journalism, and film photography. 
@@ -168,7 +171,7 @@
     font-style: normal;
     font-variation-settings:
       wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on the app formerly known as Twitter.</p>
-</div>
+</article>
 <script>
   function updateTextScaling() {
     const svg = document.querySelector('.curves-svg');
