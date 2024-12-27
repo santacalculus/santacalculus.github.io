@@ -249,6 +249,54 @@
 
 
   /* Phone screens */
+
+  @media only screen and (max-width: 600px) and (min-height: 500px) {
+    #id_projects {
+      margin-top: 0rem;
+    }
+
+    .project-panel {
+      width: 40rem;
+      max-height: 32vh;
+      padding: 1rem;
+    }
+
+    .content-left{
+      width: 30rem;
+    }
+    .content-right {
+      width: 10rem;
+    }
+
+    .project-row {
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      margin-top:0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-details p {
+      margin: 0.5rem 0 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    .project-details .skills {
+      margin-bottom:0;
+    }
+
+    .project-details .skill-label {
+      font-size: 0.8rem;
+    }
+  }
+
+ 
   @media only screen and (max-width: 600px) and (min-height: 800px) {
 
     #id_projects {

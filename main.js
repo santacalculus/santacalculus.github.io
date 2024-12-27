@@ -1,143 +1,76 @@
 // Handle horizontal scrolling for all pages
 $(document).ready(function() {
     const container = $('.main-container');
-    const SWIPE_MULTIPLIER = 1.5;
+    const SWIPE_MULTIPLIER = 1.2;
     
-    // Enhanced touch state tracking
     let touchState = {
         isTouching: false,
         startX: 0,
         startY: 0,
         lastX: 0,
         lastY: 0,
-        startScrollLeft: 0,
-        isScrolling: false,
-        touchStartTime: 0
+        startScrollLeft: 0
     };
 
-    // Ensure clean state between interactions
-    function resetTouchState() {
-        touchState = {
-            isTouching: false,
-            startX: 0,
-            startY: 0,
-            lastX: 0,
-            lastY: 0,
-            startScrollLeft: 0,
-            isScrolling: false,
-            touchStartTime: 0
-        };
-    }
-
-    // Wheel handler
+    // Convert any wheel direction to horizontal scroll
     container.on('wheel', function(event) {
         event.preventDefault();
-        const delta = event.originalEvent.deltaY * SWIPE_MULTIPLIER;
+        // Use whichever delta is larger (vertical or horizontal)
+        const delta = Math.abs(event.originalEvent.deltaY) > Math.abs(event.originalEvent.deltaX) 
+            ? event.originalEvent.deltaY 
+            : event.originalEvent.deltaX;
         container.scrollLeft(container.scrollLeft() + delta);
     });
 
-    // Enhanced touch start handler
+    // Capture touch start
     container.on('touchstart', function(e) {
-        if (e.touches.length !== 1) return; // Only handle single touch
+        if (e.touches.length !== 1) return;
         
         const touch = e.touches[0];
-        const now = Date.now();
-        
-        // Ensure minimum time between touch starts
-        if (now - touchState.touchStartTime < 50) {
-            e.preventDefault();
-            return;
-        }
-
         touchState = {
             isTouching: true,
             startX: touch.pageX,
             startY: touch.pageY,
             lastX: touch.pageX,
             lastY: touch.pageY,
-            startScrollLeft: container.scrollLeft(),
-            isScrolling: false,
-            touchStartTime: now
+            startScrollLeft: container.scrollLeft()
         };
-
-        // Remove any existing scroll behavior
-        container.css({
-            'scroll-behavior': 'auto',
-            'pointer-events': 'none' // Prevent other events during scroll
-        });
     });
 
-    // Enhanced touch move handler
+    // Convert any touch movement to horizontal scroll
     container.on('touchmove', function(e) {
         if (!touchState.isTouching) return;
+        e.preventDefault();
 
         const touch = e.touches[0];
         
-        // Calculate deltas from both start and last position
-        const deltaFromStart = {
-            x: touchState.startX - touch.pageX,
-            y: touchState.startY - touch.pageY
-        };
-
-        const deltaFromLast = {
-            x: touchState.lastX - touch.pageX,
-            y: touchState.lastY - touch.pageY
-        };
-
-        // Update last position
+        // Calculate deltas for both directions
+        const deltaX = touchState.lastX - touch.pageX;
+        const deltaY = touchState.lastY - touch.pageY;
+        
+        // Use the larger delta to determine scroll amount
+        const primaryDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
+        
+        // Update last positions
         touchState.lastX = touch.pageX;
         touchState.lastY = touch.pageY;
 
-        // Determine scroll amount based on primary movement direction
-        const absX = Math.abs(deltaFromStart.x);
-        const absY = Math.abs(deltaFromStart.y);
-        
-        // Only start scrolling if we have a clear direction
-        if (!touchState.isScrolling && (absX > 5 || absY > 5)) {
-            touchState.isScrolling = true;
-        }
-
-        if (touchState.isScrolling) {
-            let scrollDelta;
-            if (absX > absY) {
-                scrollDelta = deltaFromLast.x * SWIPE_MULTIPLIER;
-            } else {
-                scrollDelta = deltaFromLast.y * SWIPE_MULTIPLIER;
-            }
-
-            const currentScroll = container.scrollLeft();
-            const newScrollLeft = currentScroll + scrollDelta;
-            
-            // Apply scroll with smooth interpolation
-            requestAnimationFrame(() => {
-                container.scrollLeft(newScrollLeft);
-            });
-
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    });
-
-    // Enhanced touch end handler
-    container.on('touchend touchcancel', function(e) {
-        if (!touchState.isTouching) return;
-
-        // Re-enable pointer events and smooth scrolling
-        container.css({
-            'scroll-behavior': 'smooth',
-            'pointer-events': 'auto'
+        // Apply the scroll
+        requestAnimationFrame(() => {
+            container.scrollLeft(container.scrollLeft() + (primaryDelta * SWIPE_MULTIPLIER));
         });
-
-        // Reset touch state with small delay
-        setTimeout(resetTouchState, 50);
     });
 
-    // Prevent unwanted document scrolling
+    container.on('touchend touchcancel', function() {
+        touchState.isTouching = false;
+    });
+
+    // Prevent default scrolling behavior on the container
     $(document).on('touchmove', function(e) {
-        if (!$(e.target).closest('.main-container').length) {
+        if ($(e.target).closest('.main-container').length) {
             e.preventDefault();
         }
-    });
+    }, { passive: false });
 });
 
 
@@ -348,3 +281,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+

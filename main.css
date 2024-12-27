@@ -73,6 +73,10 @@ h2 {
     /* visibility: hidden; */
     will-change: transform;
     transition: transform 0.1s ease-out;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     /* transition: transform 0.1s ease-out, opacity 0.1s ease-out; Added transition for smooth color change */
 
 }
@@ -130,7 +134,7 @@ cursor: pointer;
   /* padding-right: 3vw; */
   
   padding: 10vh 3vw;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 #id_intro p {
@@ -150,6 +154,8 @@ cursor: pointer;
   padding-top: 10vh;
   align-items: center; /* Centers horizontally */
   margin-right: 15vw;
+  transform: translateZ(0);  /* Force GPU acceleration */
+    -webkit-transform: translateZ(0);
 }
 
 #id_portrait img {
@@ -158,6 +164,8 @@ cursor: pointer;
   object-fit: contain;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+  transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 #id_portrait p {
@@ -173,16 +181,26 @@ cursor: pointer;
 }
 
 
-    #id_embedlink {
-      color: #000000;
-      text-decoration: none;
-    }
-    .embed-link {
-      transition: color 0.3s ease;
-      cursor: pointer;
-      color: #000000;
-      text-decoration: none;
-    }
+#id_embedlink {
+  color: #000000;
+  text-decoration: none;
+}
+.embed-link {
+  transition: color 0.3s ease;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  align-items: baseline;
+line-height: inherit;
+}
+
+.embed-link sup {
+  font-size: 75%;
+  position: relative;
+  /* top: -0.4em; */
+  margin-left: 0.1em;
+  line-height: 0;
+}
     
     /* ------------- xs (phones) ------------- */
     @media only screen and (max-width: 600px) {
@@ -229,4 +247,22 @@ cursor: pointer;
 
     @media only screen and (min-width: 1280px) {
       
+    }
+
+
+
+
+    /* ------phones------- */
+    @media only screen and (max-width: 600px) and (min-height: 500px) {
+      #id_intro {
+        padding-top: 2vh;
+      }
+      
+      #id_intro p {
+        width: 75vw;
+      }
+
+      #id_portrait {
+        width: 70vw;
+      }
     }
