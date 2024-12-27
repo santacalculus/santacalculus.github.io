@@ -1,0 +1,283 @@
+#id_projects {
+  width: 180rem;
+  margin-right: 5rem;
+  min-width: 100vw;
+  padding: 3vh 5vw;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-shrink: 0; /* Add this to prevent shrinking */
+  will-change: transform;
+
+  will-change: transform;  /* Hardware acceleration */
+    
+}
+
+#id_notice {
+    margin: 0 auto; /* Centers the div horizontally */
+    padding: 1rem; /* Adds spacing inside the div */
+    max-width: 100%; /* Optional: Limits the width for better readability */
+    text-align: center;
+}
+
+#id_notice div {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  
+
+.project-panel {
+    background-color: #FAF9F6;
+    border: 0.1rem solid #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    min-width: 800px;
+    height: 17rem;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-row {
+    width: 75rem;
+    display: flex;
+    gap: 2rem;
+    height: fit-content; /* Contain the height to its content */
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+  
+  .project-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .project-panel:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+  .panel-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.content-left {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.content-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    margin-right: -2rem;
+}
+
+.project-image {
+    width: 100%;
+    height: calc(100% + 4rem); /* Adding 4rem to account for panel padding (2rem top + 2rem bottom) */
+    object-fit: cover;
+    border-radius: 4px;
+    margin: -2rem -2rem -2rem 0; /* Negative margins to counteract panel padding */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+  
+  .project-title {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--curve-default-color);
+  }
+  
+  .project-description {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .project-details {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-family: 400;
+    font-size: 0.8rem;
+    /* font-weight: 500; */
+    color: #222222;
+  }
+  
+  .project-details p {
+    margin: 1rem 0 2rem 0;
+  }
+  
+  .project-details a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    /* font-weight: 500; */
+    transition: color 0.2s ease;
+  }
+  
+  .project-details a:hover {
+    color: var(--menu-hover-color);
+  }
+
+  
+
+
+  .skill-label {
+    display: inline;
+    margin-right: 1rem;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: default;
+    position: relative;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#F8Fa5B, #F8FA5B);
+    background-size: 100% 100%, 0 100%;
+    background-position: 100% 100%, 0 100%;
+    color: black;
+    background-repeat: no-repeat;
+    transition: background-size 1s ease;
+}
+
+
+.skill-label.highlight {
+    background-size: 0 100%, 100% 100%;
+}
+
+
+
+
+
+
+  
+  /* Responsive adjustments */
+  @media only screen and (max-width: 768px) {
+    .project-panel {
+      margin: 1vh 3vw;
+      padding: 1.3rem;
+      width: 48rem;
+    }
+
+    .content-left {
+      width: 36rem;
+    }
+    
+    .project-title {
+      font-size: 1.5rem;
+    }
+    
+    .project-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+
+    #id_projects {
+      margin-top: 1rem;
+    }
+    .project-panel {
+      margin: 1vh 3vw;
+      padding: 1.3rem;
+      padding-right: 0;
+
+      width: 48rem;
+      gap: 1rem;
+    }
+
+    .panel-content {
+      gap: 1rem;
+    }
+
+    .content-left {
+      width: 36rem;
+      height: 100%;
+    }
+
+    .content-right {
+      max-width: 10rem;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 830px) {
+    #id_projects {
+        width: 75rem;
+        padding: 3vh 3vw;
+    }
+
+    /* .project-row {
+        width: 70rem;
+    } */
+}
+
+
+
+  /* --- Vertical --- */
+
+  @media only screen and (min-height: 800px) {
+    .project-panel {
+      height: 17rem;
+    }
+  }
+
+
+  /* Phone screens */
+  @media only screen and (max-width: 600px) and (min-height: 800px) {
+
+    #id_projects {
+      margin-top: 0;
+    }
+
+    .panel-content {
+      gap: 1rem;
+    }
+    .content-left,
+    .content-left p,
+    .content-left h3 {
+      width: 21.4375rem;
+    }
+
+    .content-right {
+      max-width: 18rem;
+    }
+
+    .project-description {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+    }
+
+    .project-details p {
+      margin-bottom: 0.5rem;
+    }
+  }

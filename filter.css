@@ -1,0 +1,2801 @@
+.projects-path {
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease; /* Smooth transition when becoming visible */
+}
+
+.projects-path.initialized {
+    opacity: 1;
+}
+
+
+#id_projintro {
+    width: 200vw;
+    height: 100%;
+    /* margin-top: 3.5vh; */
+    display: flex;
+    flex-direction: row;
+    /* background-color: black; */
+    /* color: white; */
+    
+}
+
+.introduction {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#id_projintro, #id_problemspace, #id_challenge, #id_demo, #id_research, #id_designopp, #id_designstrat, #id_ideation, #id_prototyping, #id_finale {
+    flex-shrink: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* cursor: grab; */
+}
+
+.main-container:active {
+    cursor: grabbing;
+}
+
+.proj-intro {
+    width: 40vw;
+    padding-right: 10vw;
+    padding-left: 8vw;
+    flex-shrink: 0;
+    padding-top: 28vh;
+    /* margin-left: 5vw; */
+}
+
+.proj-title {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 600; 
+    font-size: 1.4rem;
+}
+
+.proj-intro p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.proj-media {
+    width: 45vw;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: black;
+    /* border-bottom-right-radius: 25px; */
+}
+
+.proj-media img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+h3 {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: var(--curve-default-color);
+}
+
+.myrole {
+    margin-left: 10vw;
+    width: 60vw;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 1.5rem;
+    padding: 0 5vw;
+    margin-top: 30vh;
+    letter-spacing: 0.02rem;
+    word-spacing: 3px;
+}
+
+#id_problemspace {
+    width: 116vw;
+    display: block;
+    flex-direction: column;
+    padding: 5vh 3vw 0 3vw;
+    background-color: black;
+    color: white;
+    
+}
+
+#id_problemspace h3 {
+    color: white;
+    height: auto;
+}
+
+#id_problemspace .background-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.problem-intro {
+    width: 59vw;
+    height: 100%;
+    
+    flex-shrink: 0;
+    /* padding-top: 5vh;
+    padding-left: 1vw; */
+}
+
+
+.problem-intro p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+#id_theory{
+    width: 56vw;
+    /* padding-top: calc(5vh + 2.6rem); */
+    /* padding-right: 6vw; */
+    max-height: 100vh;
+    
+}
+
+#id_theory p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+#id_selfimgdiv {
+    margin-top: 5vh; display: flex; flex-direction: column; align-items: center;
+}
+
+#id_challenge {
+    width: 50vw;
+    margin-top: 30vh;
+    padding: 0 3vw;
+}
+
+#id_challenge h3 {
+    width: 50vw;    
+    margin-bottom: 1rem;
+}
+
+#id_challengetext, #id_designopp p {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: 0.035rem;
+    word-spacing: 3px;
+}
+
+#id_demo {
+    width:85vw;
+    background-color: black;
+    color: white;
+    padding: 5vh 3vw 0 3vw;
+}
+
+#id_demo h3 {
+    width: 50vw;    
+    margin-bottom: 1rem;
+    color: white;
+}
+
+
+
+#id_demovid iframe {
+    display: block;
+    margin: 2rem auto;
+    width: 560px; /* Keep original width */
+    height: 315px; /* Keep original height */
+    max-width: 90%; /* Ensure it doesn't overflow on mobile */
+}
+
+#id_demovid p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    width: 79vw;
+}
+
+.highlight {
+    transition: color 2s ease;
+}
+
+#id_research {
+    width: 385vw;
+    padding: 5vh 3vw 0 3vw;
+    display: block;
+    flex-direction: column;
+}
+
+#id_research h3 {
+   
+    height: auto;
+}
+
+#id_research .research-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#id_litreview, #id_questions {
+    width: 47vw;
+    margin-right: 3vw;
+    flex-shrink: 0;
+}
+
+#id_research p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    width: 47vw;
+}
+
+#id_research ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    width: 47vw;
+}
+
+#id_research ul li {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+#id_research ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 5px;
+    height: 5px;
+    background-color: var(--curve-default-color);
+    border-radius: 50%;
+}
+
+#id_research ul li span {
+    display: inline;
+}
+
+#id_research .embed-link {
+    color: black;
+}
+
+#id_focusgroup, #id_userinterview, #id_affinity {
+    width: 47vw;
+}
+
+#id_focuscontainer {
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem; 
+    width: 50vw; 
+    margin-left: 1vw; 
+    margin-top: 2.8rem;
+}
+
+#id_intcontainer {
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 2rem; 
+    width: 47vw;
+}
+
+#id_affinity {
+    margin-right: 3vw;
+}
+
+.affinity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 46vw;
+    margin-left: 1vw;
+}
+
+.affinity-row {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.affinity-image-half {
+    width: 50%;
+    height: auto;
+    max-height: 35vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.affinity-image-full {
+    width: 100%;
+    height: auto;
+    max-height: 35vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.affinity-caption {
+    font-family: "neue-haas-unica", sans-serif;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #222222;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+#id_userfindings {
+    width: 85vw;
+    padding-right: 3vw;
+}
+
+#id_userfindings p {
+    width: 82vw;
+}
+
+.ques p {
+    font-family: "neue-haas-grotesk-display, sans-serif"; 
+    font-weight: 600; 
+    font-size: 1.25rem;
+}
+
+#id_designopp {
+    width:50vw;
+    padding: 0 3vw;
+    background-color:black;
+    color: white;
+}
+
+#id_designopp h3 {
+    margin-top: 30vh;
+    width:44vw;
+    color:white;
+    margin-bottom: 1rem;
+}
+
+#id_designstrat {
+    width:81vw;
+    padding: 5vh 3vw 0 3vw;
+}
+
+#id_designstrath3 {
+    width: 75vw;
+}
+
+#id_designstrat p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    width: 75vw;
+}
+
+#id_designstrat ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+#id_designstrat ul li {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+#id_designstrat ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 5px;
+    height: 5px;
+    background-color: var(--curve-default-color);
+    border-radius: 50%;
+}
+
+#id_designstrat .social-proof-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+#id_designstrat .social-proof-text {
+    flex: 1;
+    margin: 0;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+
+
+#id_designstrat .social-proof-image {
+    width: 25vw;  /* Keeping original width */
+    max-height: 35vh;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#id_ideation {
+    width:81vw;
+    padding: 5vh 3vw 0 3vw;
+    background-color: black;
+    color: white;
+}
+
+#id_ideation h3 {
+    width: 75vw;
+    color:white;
+}
+
+#id_ideation p {
+    width: 75vw;
+    color:white;
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+#id_ideationdiv {
+    display: flex; flex-direction: column; margin-top: 2rem; width: 75vw;
+}
+
+#id_ideation .social-proof-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#id_ideation .social-proof-text {
+    flex: 1;
+    margin: 0;
+    /* margin-top: 3rem; */
+    font-size: 1rem;
+    color: white;  /* Since this section has black background */
+    width: 47vw;
+}
+
+#id_ideation .social-proof-image {
+    width: 25vw;
+    max-height: 35vh;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#id_prototyping {
+    width: 306vw;
+    padding: 5vh 3vw 0 3vw;
+    display: block;
+    flex-direction: column;
+}
+
+#id_prototyping h3 {
+   
+    height: auto;
+}
+
+#id_prototyping .prototype-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#id_prototyping p {
+    margin-top: 1rem;
+}
+
+#id_lofi {
+    width: 75vw;
+    margin-right: 3vw;
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+#id_lowimg {
+    display: flex; flex-direction: column; margin-top: 1rem; width: 75vw;
+}
+
+.proto-point {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+#id_lofi ul, #id_midfi ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+#id_lofi ul li, #id_midfi ul li {
+    font-family: "neue-haas-unica", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+#id_lofi ul li::before, #id_midfi ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 5px;
+    height: 5px;
+    background-color: var(--curve-default-color);
+    border-radius: 50%;
+}
+
+.subhead {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+    
+}
+
+#id_midfi {
+    width: 133vw;
+    margin-right: 3vw;
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#id_mid1{
+    width: 65vw; 
+    margin-right: 3vw;
+}
+
+#id_mid1container {
+    display: flex; 
+    flex-direction: row; 
+    gap: 1rem; 
+    margin-top: 2rem; 
+    width: 65vw; 
+    overflow: hidden;
+}
+
+#id_mid2{
+    margin-right: 3vw;
+}
+
+#id_mid2container {
+    margin-top: 2rem; width: 65vw;
+}
+
+#id_hifi {
+    width: 86vw;
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+#id_hicontainer {
+    display: flex; flex-direction: column; align-items: center; margin-top: 1rem; width: 86vw;
+}
+
+
+
+
+.embed-link {
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    /* display: inline-flex; */
+    align-items: baseline;
+    line-height: inherit;
+}
+
+/* Default white for non-research sections */
+.embed-link {
+    color: #FFFFFF;
+}
+
+/* Black for research section only */
+#id_research .embed-link, #id_prototyping .embed-link {
+    color: #000000;
+}
+
+.embed-link sup {
+    font-size: 75%;
+    position: relative;
+    /* top: -0.4em; */
+    margin-left: 0.1em;
+    line-height: 0;
+}
+
+.emphasis {
+    /* font-weight: 500; */
+    text-decoration: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+                      linear-gradient(#ff0, #ff0);
+    background-size: 100% 100%, 0 100%;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.8s ease-out;
+}
+
+.emphasis.animate {
+    background-size: 100% 100%, 100% 100%;
+}
+
+.research-intro .highlight {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+}
+
+
+/* Only add these if they're not already in main.css */
+/* @media (max-width: 768px) {
+    #id_projintro {
+        flex-direction: column;
+        padding: 0 3vw;
+    }
+    
+    .proj-intro {
+        width: 94vw;
+        padding-right: 0;
+    }
+    
+    .proj-media {
+        width: 94vw;
+        margin-top: 2rem;
+    }
+} */
+
+
+
+
+/* xs screen (phones) */
+@media only screen and (max-width: 600px) {
+    /* --- Intro Section --- */
+    
+
+    #id_projintro {
+        width: calc(100vw+27.4375rem);
+        margin-right: 2rem;
+    }
+
+    .introduction {
+        flex-direction: column;
+        margin-right: 2rem;
+    }
+
+    .proj-media {
+        background-color: var(--background-color);
+        width: 100vw;
+        margin-top: 2rem;
+        padding: 0 2rem;
+        max-height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .proj-intro {
+        width: 100vw;
+        padding: 0 3rem;
+        
+    }
+
+    .proj-title {
+        font-size: 1.4rem;
+    }
+
+    .myrole {
+        width: 23.4375rem;
+        margin-top: 25vh;
+        padding: 0 2rem;
+        margin-left: 0;
+    }
+
+    .myrole p {
+        width: 19.4375rem;
+    }
+
+    /* --- Background Section --- */
+    #id_problemspace {
+        padding: 5vh 3rem 5vh 3rem;
+        width: 53rem;
+    }
+
+    .background-content {
+        gap: 2rem;
+    }
+    .problem-intro {
+        width: 22.5rem;
+        padding: 0 1rem 0 0;
+    }
+
+    .problem-intro p,
+    #id_theory p {
+        width: 21.5rem;
+    }
+    #id_theory {
+        width: 22.5rem;
+        padding-right: 1rem;
+    }
+
+    /* --- Challenge section --- */
+
+    #id_challenge {
+        width: 23rem;
+        margin: 0;
+        padding: 25vh 2rem;
+
+    }
+
+    #id_challenge h3 {
+        width: 23rem;
+        
+    }
+
+    /* --- Demo section --- */
+    #id_demo {
+        width: 23.4375rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    #id_demo h3 {
+        width: 23.4375rem;
+    }
+
+    /* --- Research section --- */
+
+    #id_research {
+        padding: 5vh 4rem;
+        width: 184rem;
+    }
+
+    #id_research h3{
+        width: 161rem;
+    }
+
+    #id_questions,
+    #id_research p,
+    #id_focusgroup,
+    #id_focusimg,
+    #id_focuscontainer,
+    #id_litreview,
+    
+    #id_userinterview,
+    #id_research ul,
+    #id_affinity,
+    .affinity-row,
+    #id_userfindings {
+        width: 21.4375rem;
+    }
+
+    #id_questions,
+    #id_focusgroup,
+    #id_focusimg,
+    #id_litreview,
+    #id_affinity {
+        margin-right: 5rem;
+    }
+
+    #id_userinterview {
+        margin-right: 1rem;
+    }
+
+    /* --- Design Opportunity --- */
+    #id_designopp{
+        width: 23.4375rem;
+        padding: 25vh 2rem;
+    }
+
+    #id_designopp h3 {
+        width: 19.4375rem;
+        margin: 1rem 0;
+    }
+
+    /* --- Persuasive Design --- */
+
+    #id_designstrat,
+    #id_ideation {
+        width: 23.4375rem;
+        padding: 5vh 2rem;
+    }
+
+    #id_designstrat p,
+    #id_ideation p,
+    #id_ideation h3,
+    #id_ideationdiv  {
+        width: 19.4375rem;
+    }
+
+    
+
+
+     /* --- Prototyping section --- */
+     #id_prototyping {
+         width: 95.75rem;
+         padding: 5vh 2rem;
+     }
+
+     #id_lofi,
+     #id_lowimg,
+     #id_mid1,
+     #id_mid2,
+     #id_mid1container,
+     #id_mid2container,
+     #id_hifi,
+     #id_hicontainer {
+         width: 21.4375rem;
+     }
+
+     #id_lofi,
+     #id_mid1,
+     #id_midfi {
+         margin-right: 2rem;
+     }
+
+     #id_midfi {
+         width: 44.875rem;
+     }
+
+     /* --- Feedback section --- */
+    #id_feedback {
+        padding: 5vh 2rem;
+        width: 23.4375rem;
+        /* margin-right: 3rem; */
+        background-color: black;
+        color: white;
+    }
+
+    #id_feedback h3 {
+        width: 21.4375rem;
+        color: white;
+    }
+
+    #id_feedback p {
+        font-family: "neue-haas-unica", sans-serif;
+        font-weight: 300;
+    }
+
+    #id_feedback .proto-point {
+        font-family: "neue-haas-grotesk-text", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+}
+
+
+/* s screen (portrait tablets and large phones */
+@media only screen and (min-width: 600px) {}
+
+/* m screen (tablets) */ 
+@media only screen and (min-width: 768px) {
+    /* --- Intro Section --- */
+    #id_projintro {
+        width: 108rem; /* 200vw */
+    }
+
+    .proj-media {
+        width: 21rem; /* 45vw */
+    }
+
+    .proj-intro {
+        width: 27rem;
+    }
+
+    .introduction {
+        width: 60rem;
+    }
+
+    .myrole {
+        width: 50rem;
+        margin-left:0;
+        /* margin-left: 3rem; */
+        padding:0 5rem 0 3rem;
+    }
+
+
+    /* Background Section */
+    #id_problemspace {
+        width: 48rem;
+        padding: 5vh 2rem 5vh 2rem;
+    }
+
+    .background-content {
+        gap: 2rem;
+    }
+    .problem-intro,
+    .problem-intro p {
+        width: 21rem;
+    }
+
+    .problem-intro p{
+        margin-bottom: 1.5rem;
+    }
+    #id_theory {
+        width: 21rem;
+    }
+
+    /* --- Challenge Section */
+
+    #id_challenge {
+        width: 35rem;
+        padding: 0 5vw;
+    }
+
+    /* Solution Section */
+    #id_demo {
+        width: 42rem;
+        padding: 5vh 3rem 5vh 3rem;
+    }
+
+    #id_demovid p {
+        width: 36rem;
+    }
+
+    /* --- Research Section --- */
+    #id_research {
+        width: 187rem;
+        padding: 5vh 0 5vh 3rem;
+        margin-right: 3rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #id_research h3 {
+        width: 187rem;
+    }
+
+    #id_research ul {
+        width: 22rem;
+    }
+
+    #id_questions, 
+    #id_focusgroup,
+    #id_litreview,
+    #id_affinity {
+        width: 22rem;
+        margin-right: 3rem;
+    }
+
+    #id_research p, 
+    #id_questions p,
+    #id_focusgroup p,
+    #id_litreview p,
+    #id_userinterview
+     {
+        width: 22rem;
+    }
+
+    #id_focusimg {
+        width: 22rem;
+        margin-right: 3rem;
+    }
+
+    #id_focuscontainer {
+        width: 21rem;
+        margin-left: 1rem;
+    }
+
+    #id_intcontainer {
+        width: 22rem;
+    }
+
+    #id_affinity {
+        width: 22rem;  /* Fixed width instead of vw */
+        padding-top: 5rem;
+        margin-right: 3rem;  /* Updated to 3rem */
+    }
+
+    .affinity-container {
+        width: 21rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
+    }
+
+    .affinity-row {
+        gap: 0.5rem;
+        height: auto;
+    }
+
+    .affinity-image-half {
+        max-height: 28rem;  /* Fixed height instead of vh */
+        width: calc(50% - 0.25rem);  /* Account for gap */
+    }
+
+    .affinity-image-full {
+        max-height: 28rem;
+        width: 100%;
+    }
+
+    .affinity-caption {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #id_userfindings {
+        width:40rem;
+    }
+    #id_userfindings p {
+        width: 37rem;
+        margin-right: 3rem;
+    }
+
+
+    /* --- Design Opportunity --- */
+
+    #id_designopp{
+        width: 35rem;
+        padding: 0 5vw;
+    }
+
+    #id_designopp h3 {
+        width: calc(35rem - 10vw);
+    }
+
+
+
+    /* Persuasive Strategies Section */
+
+    #id_designstrat, #id_ideation {
+        width: 40rem;
+        padding: 5vh 3rem;
+    }
+
+    #id_designstrat p, 
+    #id_ideation h3,
+    #id_ideation p,
+    #id_ideationdiv {
+        width: 34rem;
+    }
+
+
+    /* --- Prototyping Section --- */
+    #id_prototyping {
+        padding: 5vh 0 5vh 3rem;
+        width: 147rem;
+    }
+
+    #id_lofi h3 {
+        width: 145rem;
+    }
+
+    #id_lofi,
+    #id_mid1 {
+        width: 33rem;
+        margin-right: 3rem;
+    }
+
+    #id_lowimg {
+        width: 33rem;
+    }
+
+    #id_midfi {
+        width: 69rem;
+        margin-right: 3rem;
+    }
+
+    #id_mid1container, 
+    #id_mid2container,
+    #id_mid2, 
+    #id_hifi, 
+    #id_hicontainer {
+        width: 33rem;
+    }
+
+    /* --- Feedback section --- */
+    #id_feedback {
+        padding: 5vh 3rem;
+        width: 48rem;
+        /* margin-right: 3rem; */
+        background-color: black;
+        color: white;
+    }
+
+    #id_feedback h3 {
+        width: 42rem;
+        color: white;
+    }
+
+    #id_feedback p {
+        font-family: "neue-haas-unica", sans-serif;
+        font-weight: 300;
+    }
+
+    #id_feedback .proto-point {
+        font-family: "neue-haas-grotesk-text", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+     
+}
+
+@media only screen and (min-width: 870px) {
+    #id_problemintro {
+        width: 106rem; /* 200vw */
+    }
+    .proj-intro {
+        width: 35rem;
+    }
+}
+
+
+/* xl screen (laptops) */
+@media only screen and (min-width: 992px) {
+    /* --- Intro Section --- */
+    #id_projintro {
+        width: 130rem; /* 200vw */
+    }
+
+    .proj-media {
+        width: 33rem; /* 45vw */
+    }
+
+    .proj-intro {
+        width: 38rem;
+    }
+
+    .introduction {
+        width:80rem;
+    }
+
+    .myrole {
+        width: 75rem;
+        margin-left:0;
+    }
+
+    /* Background Section */
+    #id_problemspace {
+        width: 62rem;
+        padding: 5vh 3rem 5vh 3rem;
+    }
+
+    .background-content {
+        gap: 3rem;
+    }
+    .problem-intro,
+    .problem-intro p {
+        width: 26.5rem;        
+    }
+    #id_theory {
+        width: 26.5rem;
+        
+    }
+
+
+    /* --- Challenge Section */
+
+    #id_challenge {
+        width: 35rem;
+        padding: 0 5vw;
+    }
+
+    /* Solution Section */
+    #id_demo {
+        width: 56rem;
+        padding: 5vh 3rem 5vh 3rem;
+    }
+
+    #id_demovid p {
+        width: 50rem;
+    }
+
+
+    /* --- Research Section --- */
+    #id_research {
+        width: 242rem;
+        padding: 5vh 0 5vh 3rem;
+        margin-right: 3rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #id_research h3 {
+        width: 236rem;
+    }
+
+    #id_research ul {
+        width: 27rem;
+    }
+
+    #id_questions, 
+    #id_focusgroup,
+    #id_litreview,
+    #id_affinity {
+        width: 27rem;
+        margin-right: 3rem;
+    }
+
+    #id_research p, 
+    #id_questions p,
+    #id_focusgroup p,
+    #id_litreview p,
+    #id_userinterview
+     {
+        width: 27rem;
+    }
+
+    #id_focusimg {
+        width: 27rem;
+        margin-right: 3rem;
+    }
+
+    #id_focuscontainer {
+        width: 26rem;
+        margin-left: 1rem;
+    }
+
+    #id_intcontainer {
+        width: 27rem;
+    }
+
+    #id_affinity {
+        width: 27rem;  /* Fixed width instead of vw */
+        padding-top: 5rem;
+        margin-right: 3rem;  /* Updated to 3rem */
+    }
+
+    .affinity-container {
+        width: 26rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
+    }
+
+    .affinity-row {
+        gap: 0.5rem;
+        height: auto;
+    }
+
+    .affinity-image-half {
+        max-height: 28rem;  /* Fixed height instead of vh */
+        width: calc(50% - 0.25rem);  /* Account for gap */
+    }
+
+    .affinity-image-full {
+        max-height: 28rem;
+        width: 100%;
+    }
+
+    .affinity-caption {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #id_userfindings {
+        width:53rem;
+    }
+    #id_userfindings p {
+        width: 50rem;
+        margin-right: 3rem;
+    }
+
+
+    /* --- Design Opportunity --- */
+
+    #id_designopp{
+        width: 35rem;
+        padding: 0 5vw;
+    }
+
+    #id_designopp h3 {
+        width: calc(35rem - 10vw);
+    }
+
+
+    /* Persuasive Strategies Section */
+
+    #id_designstrat, #id_ideation {
+        width: 50rem;
+        padding: 5vh 3rem;
+    }
+
+    #id_designstrat p, 
+    #id_ideation h3,
+    #id_ideation p,
+    #id_ideationdiv {
+        width: 44rem;
+    }
+
+    /* --- Prototyping Section --- */
+    #id_prototyping {
+        padding: 5vh 0 5vh 3rem;
+        width: 183rem;
+    }
+
+    #id_lofi h3 {
+        width: 184rem;
+    }
+
+    #id_lofi {
+        width: 42rem;
+        margin-right: 3rem;
+    }
+
+    #id_lowimg {
+        width: 42rem;
+    }
+
+    #id_midfi {
+        width: 87rem;
+        margin-right: 3rem;
+    }
+
+    #id_mid1 {
+        width: 42rem;
+        margin-right: 3rem;
+    }
+
+    #id_mid1container, #id_mid2container {
+        width: 42rem;
+    }
+
+    #id_mid2, #id_hifi, #id_hicontainer {
+        width: 42rem;
+    }
+
+    #id_hifi {
+        margin-right: 3rem;
+    }
+
+    #id_feedback {
+        padding: 5vh 3rem;
+        width: 62rem;
+        /* margin-right: 3rem; */
+        background-color: black;
+        color: white;
+    }
+
+    #id_feedback h3 {
+        width: 58rem;
+        color: white;
+    }
+}
+
+/* xxl screen */
+@media only screen and (min-width: 1280px) {
+    #id_selfdiscrepancy {
+        max-height: 25vh;
+    }
+
+    /* --- Intro Section --- */
+    #id_problemintro {
+        width: 160rem; /* 200vw */
+    }
+
+    .proj-media {
+        width: 36rem; /* 45vw */
+    }
+
+    .proj-intro {
+        width: 44rem;
+    }
+
+    .myrole {
+        width: 50rem;
+    }
+
+    /* --- Background Section --- */
+    #id_problemspace {
+        width: 80rem;
+        padding: 5vh 3rem 5vh 3rem;
+    }
+
+    .background-content {
+        gap: 3rem;
+    }
+    .problem-intro,
+    .problem-intro p {
+        width: 35.5rem;
+    }
+    #id_theory {
+        width: 35.5rem;
+    }
+
+    /* --- Challenge Section */
+
+    #id_challenge {
+        width: 50rem;
+        padding: 0 5vw;
+    }
+
+    /* Solution Section */
+    #id_demo {
+        width: 70rem;
+        padding: 5vh 3rem 5vh 3rem;
+    }
+
+    #id_demovid p {
+        width: 64rem;
+    }
+
+    /* --- Research Section --- */
+    #id_research {
+        width: 310rem;
+        padding: 5vh 0 5vh 3rem;
+        margin-right: 3rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #id_research h3 {
+        width: 310rem;
+    }
+
+    #id_research ul {
+        width: 37rem;
+    }
+
+    #id_questions, 
+    #id_focusgroup,
+    #id_litreview {
+        width: 37rem;
+        margin-right: 3rem;
+    }
+
+    #id_research p, 
+    #id_questions p,
+    #id_focusgroup p,
+    #id_litreview p,
+    #id_userinterview
+     {
+        width: 37rem;
+    }
+
+    #id_focusimg {
+        width: 37rem;
+        margin-right: 3rem;
+    }
+
+    #id_focuscontainer {
+        width: 36rem;
+        margin-left: 1rem;
+    }
+
+    #id_userfindings {
+        width:67rem;
+    }
+    #id_userfindings p {
+        width: 64rem;
+        margin-right: 3rem;
+    }
+
+    #id_affinity {
+        width: 37rem;  /* Fixed width instead of vw */
+        padding-top: 5rem;
+        margin-right: 3rem;  /* Updated to 3rem */
+    }
+
+    .affinity-container {
+        width: 36rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
+    }
+
+    .affinity-row {
+        gap: 0.5rem;
+        height: auto;
+    }
+
+    .affinity-image-half {
+        max-height: 28rem;  /* Fixed height instead of vh */
+        width: calc(50% - 0.25rem);  /* Account for gap */
+    }
+
+    .affinity-image-full {
+        max-height: 28rem;
+        width: 100%;
+    }
+
+    .affinity-caption {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Design Opportunity --- */
+
+    #id_designopp{
+        width: 50rem;
+        padding: 0 5vw;
+    }
+
+    #id_designopp h3 {
+        width: calc(50rem - 10vw);
+    }
+
+    /* Persuasive Strategies Section */
+
+    #id_designstrat, #id_ideation {
+        width: 72rem;
+        padding: 5vh 3rem;
+    }
+
+    #id_designstrat p, 
+    #id_ideation h3,
+    #id_ideation p,
+    #id_ideationdiv {
+        width: 66rem;
+    }
+
+
+    /* --- Prototyping Section --- */
+    #id_prototyping {
+        padding: 5vh 0 5vh 3rem;
+        width: 240rem;
+    }
+
+    #id_lofi h3 {
+        width: 239rem;
+    }
+
+    #id_lofi {
+        width: 57rem;
+        margin-right: 3rem;
+    }
+
+    #id_lowimg {
+        width: 57rem;
+    }
+
+    #id_midfi {
+        width: 117rem;
+        margin-right: 3rem;
+    }
+
+    #id_mid1 {
+        width: 57rem;
+        margin-right: 3rem;
+    }
+
+    #id_mid1container, #id_mid2container {
+        width: 57rem;
+    }
+
+    #id_mid2, #id_hifi, #id_hicontainer {
+        width: 57rem;
+    }
+
+    #id_hifi {
+        margin-right: 3rem;
+    }
+
+    
+
+
+
+    
+
+    
+
+
+     
+}
+
+
+
+
+
+/* ================================= */
+/* --- Vertical CSS Breakpoints --- */
+/* ================================= */
+
+
+/* m screen (tablets) */
+    @media screen and (min-width: 768px) and (min-height: 700px) {
+        /* --- Intro section --- */
+        .proj-media {
+            width: 20rem;
+        }
+
+        .proj-intro {
+            padding-top: 20vh;
+            width: 28rem;
+        }
+
+        .proj-title {
+            font-size: 1.25rem;
+        }
+
+        .proj-intro p {
+            font-size: 0.95rem;
+        }
+
+        /* --- Background section --- */
+
+        #id_problemspace h3 {
+            margin-bottom: 5vh;
+        }
+        .problem-intro p,
+        #id_theory p {
+            font-size: 1.15rem;
+        }
+
+        #id_selfimgdiv {
+            margin-bottom: 1rem;
+        }
+
+        #id_theory .proto-point {
+            font-size: 1.18rem;
+        }
+
+
+        /* --- Demo section --- */
+
+        #id_demo {
+            padding: 5vh 2rem;
+        }
+
+        #id_demo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5vh
+        }
+        #id_demo p {
+            font-size: 1rem;
+            margin-top: 0.8rem;
+        }
+        
+
+        /* Research section */
+        #id_research h3{
+            margin-bottom: 1vh;
+            font-size: 1.8rem;
+        }
+
+        #id_research p {
+            margin-top: 1.5vh;
+            font-size: 0.95rem;
+        }
+
+        .research-intro .highlight {
+            font-size: 1.2rem;
+        }
+
+        .proto-point {
+            font-size: 1rem;
+        }
+
+        #id_questions p {
+            margin-bottom: 1.1rem;
+        }
+
+        #id_qlist {
+            margin: 1rem 0 2.5rem 0;
+        }
+
+        #id_qlist p {
+            margin-bottom: 1rem;
+        }
+
+        #id_focusgroup ul {
+            margin-top: 1.5rem;
+        }
+
+        #id_focusgroup ul li {
+            margin-top: 1.2rem;
+        }
+
+        
+
+        #id_litreview ul {
+            margin-top: 0.5rem;
+        }
+
+        #id_litreview ul li {
+            font-size: 0.9rem;
+            
+        }
+
+        #id_research #id_litp2,
+        #id_research .affinity-caption {
+            font-size: 0.88rem !important;
+            margin-top: 0.5rem;
+        }
+
+        #id_research ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+        }
+
+        #id_intcontainer {
+            margin-top: 1vh;
+        }
+
+        #id_userfindings p {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+
+
+        /* --- Persuasive Strategies Section --- */
+
+        #id_designstrat h3 {
+            margin-bottom: 1vh;
+            font-size: 1.8rem;
+        }
+
+        #id_designstrat p {
+            font-size: 1rem;
+        }
+
+        #id_designstrat ul li {
+            font-size: 0.95rem;
+        }
+
+        #id_designstrat .social-proof-container,
+        #id_ideation .social-proof-container {
+            margin-top: 1rem;
+        }
+
+        #id_designstrat .social-proof-text {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* --- Ideation Section --- */
+        #id_ideation h3,
+        #id_prototyping h3 {
+            margin-bottom: 1vh;
+            font-size: 1.8rem;
+        }
+
+        #id_ideation p {
+            font-size: 0.98rem;
+        }
+
+        #id_ideation .social-proof-text {
+            font-size: 0.98rem;
+        }
+
+        /* --- Prototyping --- */
+
+        #id_prototyping .subhead {
+            font-size: 1.2rem;
+        }
+
+        #id_prototyping p {
+            font-size: 1.05rem;
+        }
+
+        #id_prototyping p,
+        #id_prototyping ul {
+            margin-top: 0.5rem;
+        }
+
+        #id_mid2container {
+            margin-top: 1rem;
+        }
+
+        #id_lofi ul li,
+        #id_mid2 ul li {
+            font-size: 0.93rem;
+        }
+
+        #id_hicontainer {
+            margin-top: 2rem;
+        }
+        
+    }
+
+    /* Medium heights (laptops) */
+    @media screen and (min-width: 768px) and (min-height: 800px) {
+
+        /* Project Intro section */
+        .proj-intro {
+            padding-top: 25vh;
+        }
+
+        /* -- Background Section -- */
+        #id_selfimgdiv {
+            margin: 2rem 0;
+        }
+        #id_theory .proto-point {
+            font-size: 1.25rem;
+        }
+
+        /* Demo section */
+        #id_demo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5vh;
+        }
+        #id_demo p {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        #id_demo p {
+            font-size: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        #id_demo .proto-point {
+            font-size: 1.25rem;
+        }
+        
+
+        /* Research section */
+
+
+        #id_research h3,
+        #id_designstrat h3,
+        #id_ideation h3,
+        #id_feedback h3{
+            margin-bottom: 1vh;
+            font-size: 1.8rem;
+        }
+
+        #id_research p {
+            margin-top: 1.5vh;
+            font-size: 1.1rem;
+        }
+
+        .research-intro .highlight {
+            font-size: 1.4rem;
+        }
+
+        #id_research .proto-point {
+            font-size: 1.05rem;
+        }
+
+        #id_focusgroup ul li {
+            font-size: 1rem;
+        }
+
+        #id_litreview ul li {
+            font-size: 1rem;
+        }
+
+        #id_litreview #id_litp2 {
+            font-size: 1.05rem !important;
+        }
+
+        #id_userinterview ul li {
+            font-size: 1rem;
+        }
+
+        #id_userfindings p {
+            margin-top: 1rem;
+        }
+
+        /* --- Design Strategies Section --- */
+        #id_designstrat p,
+        #id_designstrat .social-proof-text {
+            font-size: 1.1rem;
+        }
+
+        #id_designstrat .social-proof-text {
+            margin-top: 0;
+        }
+
+        #id_designstrat ul li {
+            font-size: 1rem;
+        }
+
+        #id_ideation .social-proof-text,
+        #id_ideation p {
+            font-size: 1.05rem;
+        }
+
+        /* --- Prototyping --- */
+        #id_prototyping p {
+            font-size: 1.15rem;
+        }
+
+        #id_lofi ul li,
+        #id_mid2 ul li {
+            font-size: 1rem;
+        }
+
+        #id_hicontainer {
+            margin-top: 2rem;
+        }
+
+
+        /* --- Feedback --- */
+        /* #id_feedback h3{
+            font-size:1.8rem;
+            margin-bottom: 1rem;
+        } */
+
+        #id_feedback p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #id_feed {
+            margin: 1rem 0.5rem;
+        }
+        #id_feed p {
+            color: #FF6319;
+        }
+
+        .what-next {
+            margin-top: 2rem;
+        }
+
+        #id_feedback .what-next .proto-point {
+            margin: 1rem;
+            font-size: 1rem;
+            color: #FCCC0A;
+        }
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+    }
+
+    @media screen and (min-width: 768px) and (min-height: 900px) {
+
+        /* Project Intro section */
+        .proj-intro {
+            padding-top: 25vh;
+        }
+
+        /* --- Background section --- */
+
+        .problem-intro p,
+        #id_theory p {
+            font-size: 1.2rem;
+        }
+
+        #id_selfimgdiv {
+            margin: 2.5rem 0;
+        }
+
+        #id_theory .proto-point {
+            font-size: 1.35rem;
+        }
+
+        /* Demo section */
+        #id_demo h3 {
+            margin-bottom: 5vh;
+            font-size: 2rem;
+        }
+
+        #id_demo p {
+            font-size: 1.15rem;
+            margin-top: 1.4rem;
+        }
+        #id_demo .proto-point {
+            font-size: 1.4rem;
+        }
+
+        /* Research section */
+
+        .research-intro {
+            margin-top: 1vh;
+        }
+
+        /* Research section */
+
+        #id_research h3,
+        #id_designstrat h3,
+        #id_ideation h3{
+            margin-bottom: 1vh;
+            font-size: 2rem;
+        }
+
+        #id_research p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .research-intro .highlight {
+            font-size: 1.5rem;
+        }
+
+        #id_research .proto-point {
+            font-size: 1.1rem;
+        }
+
+        #id_litreview #id_litp2 {
+            font-size: 1.1rem !important;
+        }
+
+        /* --- Design Strategy section --- */
+        #id_designstrat ul li {
+            font-size: 1.05rem;
+        }
+
+        #id_designstrat .social-proof-container {
+            margin-top: 2rem;
+        }
+
+
+        /* --- Ideation Section --- */
+
+        #id_ideation p,
+        #id_ideation .social-proof-text {
+            font-size: 1.1rem;
+        }
+
+        /* --- Prototyping section --- */
+
+        #id_prototyping h3 {
+            font-size: 2rem;
+            margin-bottom: 3vh;
+        }
+        #id_prototyping p {
+            margin-top: 1rem;
+        }
+
+        #id_lofi .proto-point {
+            margin: 1.5rem 0;
+            font-size: 1.15rem;
+        }
+
+
+        
+    }
+
+    /* Large heights (desktop) */
+    @media screen and (min-width: 768px) and (min-height: 1000px) {
+        
+    }
+
+    /* xm screen (tablets) */
+    @media screen and (min-width: 880px) and (min-height: 700px) {
+        .proj-intro {
+            width: 35rem;
+        }
+
+        .proj-media {
+            width: 21rem;
+        }
+    }
+
+    
+
+
+
+/* vertical xl screens (laptop) */
+
+@media only screen and (min-width: 992px) and (min-height: 700px) {
+    /* --- Intro section --- */
+    .proj-media{
+        width: 28rem;
+    }
+    
+    /* --- Background section --- */
+
+    #id_problemspace h3 {
+        margin: 3vh 0;
+        font-size: 2rem;
+    }
+    .problem-intro p,
+    #id_theory p {
+        font-size: 1.1rem;
+    }
+
+    #id_selfimgdiv {
+        margin: 2rem 0;
+    }
+
+    #id_theory .proto-point {
+        font-size: 1.15rem;
+    }
+
+    /* --- Demo section --- */
+
+    #id_demo {
+        padding: 5vh 2rem;
+    }
+
+    #id_demo h3 {
+        margin: 3vh 0;
+        font-size: 2rem;
+    }
+    #id_demo p {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+
+    } 
+
+    #id_demo .proto-point {
+        font-size: 1.2rem;
+    }
+
+
+    /* --- Research Section --- */
+
+    #id_research p {
+        font-size: 1.1rem;
+    }
+
+    #id_questions p {
+        margin-bottom: 1.5rem;
+    }
+
+    #id_questions .proto-point {
+        font-size: 1.2rem;
+    }
+
+
+    #id_affinity {
+        padding-top: 0;
+    }
+
+    #id_research .affinity-caption {
+        margin-top: 0;
+        font-size: 0.7rem !important;
+    }
+
+    #id_userinterview ul {
+        margin-top: 0.5rem;
+    }
+
+    #id_intcontainer {
+        margin-top: 1.5rem;
+    }
+
+    #id_affinity .affinity-caption {
+        font-size: 0.8rem !important;
+    }
+
+    #id_focusgroup ul {
+        margin-top: 1.5rem;
+    }
+
+    #id_focusgroup ul li {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #id_litreview ul {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #id_litreview ul li {
+        font-size: 1rem;
+    }
+
+    #id_litreview #id_litp2 {
+        font-size: 1.1rem !important;
+    }
+
+    #id_userfindings p {
+        margin-bottom: 2rem;
+    }
+
+    #id_userfindings .proto-point {
+        font-size: 1.2rem;
+    }
+
+    /* --- Design Strategies section --- */
+
+    #id_designstrat h3 {
+        margin: 3vh 0 0 0;
+        font-size: 2rem;
+    }
+
+    #id_designstrat ul {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #id_designstrat ul li {
+        font-size: 1.08rem;
+    }
+
+    /* --- Prototyping section --- */
+    #id_prototyping h3 {
+        margin: 3vh 0 0 0;
+        font-size: 2rem;
+    }
+
+    #id_prototyping p {
+        margin-top: 1rem;
+    }
+    #id_lofi,
+    #id_midfi,
+    #id_hifi {
+        margin-top: 3vh;
+    }
+
+    #id_lowimg {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #id_mid1container {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (min-width: 992px) and (min-height: 800px) {
+
+    /* --- Background section --- */
+
+    #id_problemspace h3 {
+        margin: 3vh 0;
+        font-size: 2rem;
+    }
+
+    
+    .problem-intro p,
+    #id_theory p {
+        font-size: 1.15rem;
+    }
+
+    #id_selfimgdiv {
+        margin: 3rem 0;
+    }
+
+    #id_theory .proto-point {
+        font-size: 1.2rem;
+    }
+
+    /* --- Demo section --- */
+
+    #id_demo {
+        padding: 5vh 2rem;
+    }
+
+    #id_demo h3 {
+        margin: 3vh 0;
+        font-size: 2rem;
+    }
+    #id_demo p {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+
+    } 
+
+    #id_demo iframe {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    #id_demo .proto-point {
+        font-size: 1.25rem;
+        margin-top: 1.2rem;
+    }
+
+    /* --- Research Section --- */
+
+    
+
+        #id_research p {
+            margin-top: 1.5vh;
+            font-size: 1.1rem;
+        }
+
+        #id_research .research-intro {
+            margin-top: 2rem;
+        }
+
+        .research-intro .highlight {
+            font-size: 1.4rem;
+        }
+
+        #id_research .proto-point {
+            font-size: 1.05rem;
+        }
+
+
+        
+
+    #id_research h3 {
+        margin: 3vh 0 0 0;
+        font-size: 2rem;
+    }
+
+    #id_research #id_questions p {
+        margin-bottom: 2rem !important;
+    }
+
+    #id_focusgroup ul {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #id_focusgroup ul li {
+        font-size: 1.05rem;
+        margin-bottom: 1.1rem;
+    }
+
+
+    #id_focusimg {
+        padding-top: 2rem;
+    }
+
+    #id_affinity {
+        padding-top: 2rem;
+    }
+
+    #id_research .affinity-caption {
+        margin-top: 0;
+        font-size: 0.9rem !important;
+    }
+
+    #id_litreview ul {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #id_litreview ul li {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #id_litreview #id_litp2 {
+        font-size: 1.08rem !important;
+    }
+
+    #id_userinterview ul li {
+        font-size: 1rem;
+    }
+
+    #id_userfindings p {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    #id_userfindings .proto-point {
+        font-size: 1.2rem;
+    }
+
+    
+
+    /* Design Strategies section */
+
+    #id_designstrat h3 {
+        margin: 3vh 0 0 0;
+        font-size: 2rem;
+    }
+
+    #id_designstrat ul {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #id_designstrat ul li {
+        font-size: 1.08rem;
+    }
+
+    #id_designstrat .social-proof-text {
+        margin-top: 1rem;
+    }
+
+    /* --- Ideation Section --- */
+    #id_ideation h3 {
+        margin: 3vh 0 0 0;
+        font-size: 2rem;
+    }
+
+    #id_ideation p {
+        margin-top: 2rem;
+    }
+
+    #id_ideation .social-proof-container {
+        margin-top: 2rem;
+    }
+
+
+    /* --- Prototyping section --- */
+
+    #id_prototyping h3 {
+        margin: 3vh 0 2vh 0;
+        font-size: 2rem;
+    }
+
+    #id_lofi,
+    #id_midfi,
+    #id_hifi {
+        margin-top: 0;
+    }
+
+    #id_hicontainer {
+        margin-top: 4rem;
+    }
+
+    
+}
+
+
+
+@media only screen and (min-width: 1050px) and (min-height: 700px) {
+    #id_projintro {
+        width: calc(105rem + 10vw);
+    }
+    .myrole {
+        width: 40rem;
+    }
+
+    .proj-intro {
+        width: 35rem;
+        padding-right: 4vw;
+        padding-top: 25vh;
+    }
+
+    .proj-media {
+        width: 30rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (min-height: 700px) {
+    #id_projintro {
+        width: calc(110rem + 10vw);
+    }
+    .proj-media {
+        width: 35rem;
+    }
+
+    .proj-intro {
+        padding-right: 6vw;
+    }
+}
+
+
+
+/* phones */
+
+@media only screen and (max-width: 600px) and (min-height: 800px) {
+    /* --- Intro Section --- */
+
+    .proj-media {
+        margin-top: 3vh;
+    }
+
+    .proj-media,
+    .proj-media img {
+        max-height: 25vh;
+    }
+
+    
+    .proj-title {
+        font-size: 1.3rem;
+    }
+
+    .proj-intro {
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .proj-intro p {
+        font-size: 0.99rem;
+        margin-top: 1rem;
+    }
+
+    
+
+    /* --- Background section --- */
+    .problem-intro p {
+        margin-bottom: 1.5rem;
+    }
+
+    #id_selfimgdiv {
+        margin: 5vh 0;
+    }
+
+    #id_theory .proto-point {
+        font-size: 1.2rem;
+    }
+
+    /* --- Demo section --- */
+
+
+    #id_demo h3{
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #id_demo iframe {
+        margin: 1rem auto;
+        max-height: 35vh;
+    }
+
+    #id_demo p {
+        font-size: 1.05rem;
+        margin-top: 0.8rem;
+        width: 19.4375rem;
+    }
+
+    #id_demo .proto-point {
+        font-size: 1.1rem;
+    }
+
+
+    /* --- Research section --- */
+    #id_research h3 {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+
+    #id_research .research-intro {
+        margin-top: 3vh;
+    }
+
+    #id_qlist{
+        margin: 2vh 0 2vh 0;
+    }
+
+    #id_qlist p {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+    }
+
+    #id_questions .proto-point {
+        font-size: 1.15rem;
+    }
+
+    .research-intro .highlight {
+        font-size: 1.2rem;
+    }
+
+    #id_focusgroup ul li {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #id_focuscontainer {
+        margin-top: 15vh;
+    }
+
+    #id_litp2 {
+        margin-top: 1rem;
+    }
+
+    #id_litreview ul li{
+        font-size: 0.9rem;
+    }
+
+    #id_intcontainer {
+        display: none;
+    }
+
+    /* #id_intcontainer {
+        width: 21.4375rem;
+    } */
+
+    #id_affinity {
+        margin-top: 5vh;
+    }
+
+    .affinity-image-full {
+        width: 21.4375rem;
+    }
+
+    #id_userfindings p {
+        font-size: 0.9rem;
+        margin-top: 1.2rem;
+    }
+
+    #id_userfindings .proto-point {
+        font-size: 1rem;
+    }
+
+    #id_research .emphasis {
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+                          linear-gradient(rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5));
+        /* Ensure the highlight is immediately visible */
+        background-size: 100% 100%, 100% 100%;
+        /* Make sure it shows up against the white background */
+        display: inline;
+        padding: 0.1em 0;
+    }
+
+    /* --- Design Strat section --- */
+    #id_designstrat h3,
+    #id_ideation h3{
+        font-size:1.8rem;
+        margin-bottom: 0;
+    }
+
+    #id_designstrat p {
+        font-size: 0.9rem;
+    }
+
+    #id_designstrat ul li {
+        font-size: 0.8rem;
+    }
+
+    #id_designstrat .social-proof-container {
+        margin-top: 1rem;
+    }
+
+    #id_designstrat .social-proof-text {
+        font-size: 0.9rem;
+        margin-top: 0;
+    }
+
+
+    /* --- Ideation section --- */
+
+    #id_ideation p {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    #id_ideation .social-proof-container {
+        margin-top: 0.5rem;
+    }
+    #id_ideation .social-proof-text{
+        width: 15rem;
+        font-size: 0.95rem;
+    }
+    #id_ideation .social-proof-image {
+        width: 5rem;
+        margin-top: 3rem;
+    }
+
+    /* --- Prototyping --- */
+    #id_prototyping h3{
+        font-size:1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .subhead {
+        font-size: 1.2rem;
+    }
+
+    #id_prototyping p {
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+    }
+
+    #id_prototyping .proto-point {
+        margin: 2vh 0;
+        font-size: 1rem;
+    }
+
+    #id_prototyping ul li{
+        font-size: 0.85rem;
+    }
+
+    #id_mid1 p {
+        margin-bottom: 2rem;
+    }
+
+    #id_mid2container {
+        margin-top: 0.5rem;
+    }
+
+    #id_hifi p{
+        margin-bottom: 1.5rem;
+    }
+
+
+    /* --- Feedback --- */
+    #id_feedback h3{
+        font-size:1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #id_feedback p {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    #id_feed {
+        margin: 1rem 0.5rem;
+    }
+    #id_feed p {
+        color: #FF6319;
+    }
+
+    .what-next {
+        margin-top: 2rem;
+    }
+
+    #id_feedback .what-next .proto-point {
+        margin: 1rem;
+        font-size: 1rem;
+        color: #FCCC0A;
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 600px) and (min-height: 843px) {
+    #id_mid2container {
+        margin-top: 1rem;
+    }
+    #id_prototyping ul li{
+        font-size: 0.9rem;
+    }
+
+    #id_hifi p{
+        margin-bottom: 2rem;
+    }
+
+    #id_hicontainer {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-height: 850px) {
+    #id_intcontainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 21.4375rem;
+    }
+
+    #id_prototyping h3 {
+        margin-bottom: 2rem;
+    }
+
+    #id_lowimg {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #id_feedback p {
+        /* margin-top: 0.5rem; */
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-height: 900px) {
+
+    #id_designstrat p {
+        font-size: 1rem;
+    }
+
+    #id_designstrat ul li {
+        font-size: 0.8rem;
+    }
+
+
+    #id_designstrat .social-proof-text {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    /* --- Prototyping --- */
+    .subhead {
+        font-size: 1.3rem;
+    }
+
+    #id_prototyping p {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+    }
+
+    #id_prototyping .proto-point {
+        margin: 2vh 0;
+        font-size: 1rem;
+    }
+
+    #id_prototyping ul li{
+        font-size: 1rem;
+    }
+}

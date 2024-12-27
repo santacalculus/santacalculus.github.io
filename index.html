@@ -3,158 +3,30 @@
 <head>
   <title>Likhitha Chintareddy</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200&display=swap');
-
-    * {
-        --background-color: #FAF9F6;
-        --menu-select-color: #028940;
-        --menu-hover-color: #636363;
-        --curve-default-color: #0C0404;
-    }
-    html{
-        background-color: var(--background-color);
-    }
-    ::selection {
-      background-color: var(--curve-default-color);
-      color: var(--background-color);
-    }
-    ::-moz-selection {
-      background-color: var(--curve-default-color);
-      color: var(--background-color);
-    }
-    sup {
-      font-size: 0.9rem;
-    }
-    .curves-svg {
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-    }
-    .curve-path {
-        fill: none;
-        stroke: var(--curve-default-color);
-        stroke-width: 1.8px;
-        stroke-dasharray: 2000;
-        stroke-dashoffset: 2000; 
-        transform-origin: 20% center; /* Changed origin to left side */
-        opacity: 0;
-        /* visibility: hidden; */
-        will-change: transform;
-        transition: transform 0.1s ease-out;
-        /* transition: transform 0.1s ease-out, opacity 0.1s ease-out; Added transition for smooth color change */
-
-    }
-    /* .animate-curve {
-        visibility: visible;
-        opacity: 1;
-        animation: drawCurve 3s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-    }
-    @keyframes drawCurve {
-        from {
-            stroke-dashoffset: -2000;
-            opacity: 1;
-        }
-        to {
-            stroke-dashoffset: 0;
-            opacity: 1;
-        }
-    } */
-    .text-wrapper {
-        transform-box: fill-box;
-        transform-origin: center;
-    }
-    .path-text {
-        fill: #000;
-        font-family: "Archivo", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 100;
-        font-style: normal;
-        font-variation-settings: "wdth" 90;
-        letter-spacing: -0.05px;
-        dominant-baseline: middle;
-        text-anchor: middle;
-        white-space: pre;
-        pointer-events: auto; 
-    }
-    #id_aboutpath {
-        stroke: var(--menu-select-color);
-    }
-    
-
-    #id_intro {
-        font-family: "neue-haas-grotesk-display", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        font-size: 1.2rem;
-        margin-left: 5vw;
-        margin-top: 5vh;
-        width: 48vw;
-        padding-right: 3vw;
-    }
-
-    #id_embedlink {
-      color: #000000;
-      text-decoration: none;
-    }
-    .embed-link {
-      transition: color 0.3s ease;
-      cursor: pointer;
-      color: #000000;
-      text-decoration: none;
-    }
-    
-    /* ------------- xs (phones) ------------- */
-    @media only screen and (max-width: 600px) {
-      #id_intro {
-        font-size: 1.1rem;
-        margin-top: 8vh;
-      }
-    }
-
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) {
-      #id_intro {
-        font-size: 1.3rem;
-      }
-    }
-
-    /* Large devices (laptops/desktops, 992px and up) */
-    @media only screen and (min-width: 992px) {
-      #id_intro {
-        /* font-size: 1.3vw; */
-        padding-right: 6vw;
-        font-size: 1.4rem;
-      }
-    }
-    @media only screen and (min-width: 1200px) {
-      #id_intro {
-        font-size: 1.45rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 <div class="header">
   <div class="curves-container">
-      <svg class="curves-svg" viewBox="0 -2 100 20" preserveAspectRatio="none">
+      <svg class="curves-svg" viewBox="0 -1 100 10" preserveAspectRatio="none">
           <!-- <path class="curve-path" d="M101 9 L 65 9 C 55 9, 45 1, 35 1 L 8 1 C 6 1, 2 1, -1 1" />  -->
           <!-- Split top curve with gap for text, maintaining parallel pattern -->
           <g class="curve1" data-curve-group="about">
-              <path class="curve-path curve1-path" id="id_aboutpath" d="M-1 4 L 5 4" />
-              <path class="curve-path curve1-path" id="id_aboutpath" d="M27 4 L 35 4 C 45 4, 55 12, 65 12 L 66.5 12" />
-              <path class="curve-path curve1-path" id="id_aboutpath" d="M77.5 12 L 85 12 L 101 12" />
+              <path class="curve-path curve1-path" id="id_aboutpath1" d="M-1 2 L 5.8 2" />
+              <path class="curve-path curve1-path" id="id_aboutpath2" d="M26.3 2 L 35 2 C 45 2, 55 10, 65 10 L 67 10" />
+              <path class="curve-path curve1-path" id="id_aboutpath3" d="M77 10 L 85 10 L 101 10" />
             
             <!-- Text position -->
             
             <g class="text-wrapper">
-                <text class="path-text" x="16" y="4.1" font-size="2.2">LIKHITHA CHINTAREDDY</text>
+                <text class="path-text" x="16" y="2.2" font-size="2.2">LIKHITHA CHINTAREDDY</text>
               </g>
             <g class="text-wrapper">
-                <text class="path-text" x="72" y="12.1" font-size="2">ABOUT ME</text>
+                <text class="path-text" id="id_abouttext" x="72" y="10.2" font-size="2">ABOUT ME</text>
             </g>
           </g>
           
@@ -163,11 +35,11 @@
           <!-- <path class="curve-path" d="M101 15 L 65 15 C 55 15, 45 7, 35 7 L 8 7 C 6 7, 2 7, -1 7" /> -->
           <!-- curve 2 -->
           <g class="curve2" data-curve-group="projects">
-              <path class="curve-path curve2-path" d="M69.2 15 L 65 15 C 55 15, 45 7, 35 7 L -1 7" />
+              <path class="curve-path curve2-path" id="id_projectpath1" d="M70.8 13 L 65 13 C 55 13, 45 5, 35 5 L -1 5" />
               
-              <path class="curve-path curve2-path" d="M101 15 L 91.9 15" />
+              <path class="curve-path curve2-path" id="id_projectpath2" d="M101 13 L 90.2 13" />
               <g class="text-wrapper">
-                <text class="path-text" x="80.5" y="15.1" font-size="2">PROJECTS/RESEARCH</text>
+                <text class="path-text" id="id_projecttext" x="80.5" y="13.2" font-size="2">PROJECTS/RESEARCH</text>
               </g>
           </g>
           
@@ -175,11 +47,11 @@
 
           <!-- curve 3 -->
           <g class="curve3" data-curve-group="photography">
-            <path class="curve-path curve3-path" d="M101 18 L 90.5 18" />
+            <path class="curve-path curve3-path" id="id_photopath2" d="M101 16 L 88.7 16" />
             <g class="text-wrapper">
-                <text class="path-text" x="82.5" y="18.1" font-size="2">PHOTOGRAPHY</text>
+                <text class="path-text" id="id_phototext" x="81.5" y="16.2" font-size="2">PHOTOGRAPHY</text>
             </g>
-            <path class="curve-path curve3-path" d="M74.5 18 L 65 18 C 55 18, 45 10, 35 10 L -1 10" />
+            <path class="curve-path curve3-path" id="id_photopath1" d="M74.5 16 L 65 16 C 55 16, 45 8, 35 8 L -1 8" />
           </g>
           
 
@@ -189,86 +61,97 @@
   </div>
 </div>
 
-<section id="id_intro">
-  <p>I am a User Experience Researcher and Software Engineer.</p>
-  <p>I leverage persuasive design and human-interaction methods to study technologies that are designed to change human behaviors on a societal scale.</p>
-  <p>I am passionate about clean-ish <a href="https://github.com/santacalculus" target="_blank" class="embed-link" id="id_embedlink">code<sup>1</sup></a>, design systems, <a href="https://web.archive.org/web/20241125013704/https://thetartan.org/staff/lchintar" target="_blank" class="embed-link">student journalism<sup>2</sup></a>, and film photography. 
-    I also <a href="https://goodreads.com/santacalculus" target="_blank" id="id_embedlink" class="embed-link">love books<sup>3</sup></a> and am currently reading Psychopolitics by Byung-chul Han.</p>
-  <p>I studied Electrical and Computer Engineering at Carnegie Mellon University.</p>
-  <p>I am always reachable at <span style="font-family: Inconsolata, monospace;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    font-variation-settings:
-      wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on <a href="https://x.com/santacalculus?lang=en" target="_blank" id="id_embedlink" class="embed-link">the app formerly known as Twitter<sup>4</sup>.</a></p>
-</section>
+<div class="main-container">
+    <section id="id_intro">
+        <p>I am a User Experience Researcher and Software Engineer.</p>
+        <p>I leverage persuasive design and human-interaction methods to study technologies that are designed to change human behaviors on a societal scale.</p>
+        <p>I am passionate about clean-ish <a href="https://github.com/santacalculus" target="_blank" class="embed-link" id="id_embedlink">code<sup>1</sup></a>, design systems, <a href="https://web.archive.org/web/20241125013704/https://thetartan.org/staff/lchintar" target="_blank" class="embed-link">student journalism<sup>2</sup></a>, and film photography. 
+          I also <a href="https://goodreads.com/santacalculus" target="_blank" id="id_embedlink" class="embed-link">love books<sup>3</sup></a> and am currently reading <span style="font-style: italic">Master of Go</span> by Yasunari Kawabata.</p>
+        <p>I studied Electrical and Computer Engineering at Carnegie Mellon University.</p>
+        <p>I am always reachable at <span style="font-family: Inconsolata, monospace;
+          font-optical-sizing: auto;
+          font-weight: 200;
+          font-style: normal;
+          font-variation-settings:
+            wdth 100;">lchintar[at]andrew[dot]cmu[dot]com.</span> I am also prolific on <a href="https://x.com/santacalculus?lang=en" target="_blank" id="id_embedlink" class="embed-link">the app formerly known as Twitter<sup>4</sup>.</a></p>
+    </section>
 
-<section id="id_projects">
+    <section id="id_portrait">
+        <img src="mysketch.png" alt="Sketch illustration" />
+        <div id="id_notice">
+          <div style="justify-content: center;">
+              <h2>Hi there! This is a sidescrolling website.</h2>
+              <p style="text-align: left;margin-top: 0.1rem;">Scroll up and down (or) sideways to navigate.</p>
+          </div>
+          
+        </div>
+        
+    </section>
+      
+      <section id="id_projects">
+          <div class="project-row">
+              <div class="project-panel">
+                  <div class="panel-content" id="id_projfilter">
+                      <div class="content-left">
+                          <h3 class="project-title">Filter FaceOff</h3>
+                          <p class="project-description">
+                              Usage of selfie filters in social media often reinforces existing beauty standards. So we designed an Instagram game that actively encourages users to be creative in their online self-expression.
+                          </p>
+                          <div class="project-details">
+                              <p>Role: UX Researcher (Fall 2021)</p>
+                              
+                              <p>
+                                  <span class="skill-label skill-persuasive">PERSUASIVE DESIGN</span>
+                                  <span class="skill-label skill-research">USER RESEARCH</span>
+                                  <span class="skill-label skill-usability">USABILITY TESTING</span>
+                              </p>
+                          </div>
+                      </div>
+                      <div class="content-right">
+                          <img src="pd gif vid.gif" alt="Filter FaceOff Demo" class="project-image">
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="project-row">
+              <div class="project-panel">
+                  <div class="panel-content" id="id_projint">
+                      <div class="content-left">
+                          <h3 class="project-title">HCI Research: Interventions Against Hate Speech</h3>
+                          <p class="project-description">
+                              <span style="font-style: italic">Advisors: Profs. Hana Habib and Geoff Kaufman (Carnegie Mellon Human-Computer Interaction Institute)</span> 
+                              <br>
+                              Can UI interventions that remind users of their personal values before they post improve online civil discourse?
+                          </p>
+                          <div class="project-details">
+                              <p>Role: UX Researcher (2022 - Present)</p>
+                              
+                              <p>
+                                  <span class="skill-label skill-persuasive">UX RESEARCH</span>
+                                  <span class="skill-label">WEB DEVELOPMENT</span>
+                                  <span class="skill-label skill-usability">USABILITY TESTING</span>
+                              </p>
+                          </div>
+                      </div>
+                      <div class="content-right">
+                          <img src="assets/interventions.png" alt="Value Affirmation Interventions - Censored" class="project-image">
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
 
-</section>
+        
+      </section>
+      
+      <section id="id_photography">
+      
+      </section>
+</div>
 
-<section id="id_photography">
-
-</section>
 
 
 <script>
-//   window.addEventListener('load', function() {
-//     const curves = document.querySelectorAll('.curve-path');
-    
-//     // Create a timeline for better control
-//     const tl = gsap.timeline({
-//         defaults: {
-//             ease: "power3.inOut",
-//         }
-//     });
-
-//     // Group curves by their data-curve-group attribute
-//     const curveGroups = {};
-//     curves.forEach(curve => {
-//         const group = curve.closest('[data-curve-group]')?.dataset.curveGroup;
-//         if (group) {
-//             if (!curveGroups[group]) curveGroups[group] = [];
-//             curveGroups[group].push(curve);
-//         }
-//     });
-
-//     // Initialize all curves
-//     curves.forEach(curve => {
-//         const length = curve.getTotalLength();
-//         gsap.set(curve, {
-//             opacity: 1,
-//             strokeDasharray: length,
-//             strokeDashoffset: -length
-//         });
-//     });
-
-//     // Animate each group with slight delays
-//     Object.entries(curveGroups).forEach(([groupName, groupCurves], groupIndex) => {
-//         const groupDelay = groupIndex * 0.15; // Delay between groups
-        
-//         groupCurves.forEach((curve, curveIndex) => {
-//             const length = curve.getTotalLength();
-//             const duration = Math.max(2, length / 300); // Adjusted timing
-            
-//             tl.to(curve, {
-//                 strokeDashoffset: 0,
-//                 duration: duration,
-//                 ease: "power2.inOut",
-//             }, `group${groupIndex}+=${curveIndex * 0.08}`); // Better timeline control
-//         });
-//     });
-
-//     // Text animation
-//     gsap.set('.text-wrapper', { opacity: 0 });
-//     gsap.to('.text-wrapper', {
-//         opacity: 1,
-//         duration: 1,
-//         delay: 0.5,
-//         stagger: 0.1,
-//         ease: "power2.out"
-//     });
-// });
 
   function updateTextScaling() {
     const svg = document.querySelector('.curves-svg');
@@ -319,5 +202,7 @@
   
 </script>
 <script src="main.js"></script>
+<script src="curves.js"></script>
+<script src="projects.js"></script>
 </body>
 </html>

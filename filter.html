@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filter FaceOff - Likhitha Chintareddy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="curves.css">
+    <link rel="stylesheet" href="filter.css">
+    
+    <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
+</head>
+<body>
+    <div class="header" style="margin:0; line-height: 0;">
+        <div class="curves-container">
+            <svg class="curves-svg" viewBox="0 -1 100 2" preserveAspectRatio="none">
+                <g class="curve1" data-curve-group="about">
+                    <path class="projects-path" id="id_filterpath1" style="stroke-width:2px;" d="M-1 0 L 6.8 0" />
+                    <path class="projects-path" id="id_filterpath2" style="stroke-width:2px;" d="M25.5 0 L 65.8 0" />
+                    <path class="projects-path" id="id_filterpath3" style="stroke-width:2px;" d="M80.4 0 L 101 0" />
+                    
+                    <!-- Both text elements need the same wrapper class -->
+                    <g class="text-wrapper">
+                        <text class="path-text" x="16" y="0.3" font-size="2">LIKHITHA CHINTAREDDY</text>
+                    </g>
+                    <g class="text-wrapper">
+                        <text class="path-text" id="id_abouttext" x="73" y="0.3" font-size="2">BACK TO PROJECTS</text>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <section id="id_projintro">
+            <div class="introduction">
+                <div class="proj-media">
+                    <img src="pd gif vid.gif" alt="Filter FaceOff Demo" />
+                </div>
+                <div class="proj-intro">
+                    <h1 class="proj-title">Filter Faceoff: Encouraging Creative Self-Expression Through Playful Filter Usage</h1>
+                    <div id="id_projintrocontext">
+                        <p>In a social media landscape dominated by curated perfection and filters, Instagram users face increasing pressure to maintain an idealized online presence, often at the cost of their mental wellbeing and authentic self-expression.</p>
+                        <p>Designed as a project for the Persuasive Design course at Carnegie Mellon University's Human-Computer Interaction Institute, Filter Faceoff transforms Instagram's selfie filter feature from a tool that promotes current beauty standards into a playful and creative group experience.</p>
+                        <p style="font-style: italic;">Team: Likhitha Chintareddy, Nandini Nair, Mia Hoffman, Nicole Araya, Sree Mahit Munakala, Sidra Manzoor </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="myrole">
+                <p>I was a UX Researcher for this project and collaborated with students in the MHCI program at Carnegie Mellon. 
+                    I contributed to the project's <span class="highlight">literature review</span>, <span class="highlight">user research</span>, <span class="highlight">design strategy</span>, and <span class="highlight">user testing</span>. 
+                    Filter FaceOff was my first deep-dive into understanding <span class="highlight">how psychological theories can inform interaction design</span>.</p>
+            </div>
+            
+        </section>
+
+        <section id="id_problemspace">
+            <h3>Background</h3>
+            <div class="background-content">
+                <div class="problem-intro">
+            
+                        <p>
+                            Selfie filters, though widely used on Instagram, can have deleterious effects on young womens' self-esteem and wellbeing, adversely impacting their
+                            <a href="https://www.technologyreview.com/2021/04/02/1021635/beauty-filters-young-girls-augmented-reality-social-media/" target="_blank" class="embed-link" id="id_embedlink">perception of self and promote body dysmorphia.<sup>1</sup></a> 
+                        </p>
+        
+                        <p>
+                            Within this broader context, we examined users' <span class="emphasis" style="color:black;">motivations for filter usage</span> on social media and how filters shape their concept of self.
+                        </p>
+                        <!-- <div style="display: flex; flex-direction: column; margin-top: 2rem; width: 47vw;">
+                                <img src="assets/questions.jpg" alt="Affinity Diagram" style="width: 100%; height: auto; max-height: 30vh; object-fit: contain; border-radius: 8px;">
+                            </div> -->
+                        
+                    
+                    </div>
+                    <div id="id_theory">
+                        <p><span style="font-weight: 500;">Self-Discrepancy Theory</span> states that individuals compare their "actual" self to internalized standards or the "ideal/ought self".
+                            People who see a larger gap between their actual and ideal selves (i.e. self-discrepancy) tend to compare themselves more to others, harming their self-esteem.                
+                        </p>
+                        <div id="id_selfimgdiv">
+                            <img id="id_selfdiscrepancy" src="Self-Discrepancy_Theory.jpg" alt="Self-Discrepancy Theory Diagram" 
+                                style="width: 100%; height: auto; max-height: 35vh; object-fit: contain; border-radius: 4px;">
+                            <p style="font-family: neue-haas-unica, sans-serif; font-size: 0.9rem; color: #888888; margin-top: 0.5rem; font-style: italic;">
+                                Source: Wikiversity
+                            </p>
+                        </div>
+                        <p>
+                            <a href="https://doi.org/10.1177/1461444820956368" target="_blank" class="embed-link proto-point" id="id_embedlink">&#x2192; Online social comparison and adherence to idealized beauty standards can create and increase self-discrepancy.<sup>2</sup></a>
+                        </p>
+        
+                        
+                    </div>
+            </div>
+            
+        </section>
+        <section id="id_challenge">
+            <h3>The Challenge</h3>
+            <span id="id_challengetext">How might we design a <span class="highlight">persuasive</span> <span class="highlight">prosocial intervention</span> that <i>subverts</i> selfie filters into tools that promote users' creativity, self-esteem, and open self-expression?
+            </span>
+        </section>
+
+        <section id="id_demo">
+            <div id="id_demovid">
+                    <h3>
+                        The Solution
+                    </h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YKs6vXtZ6gQ?si=jLPS684D16uQY6_D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Filter Faceoff is a game that <span style="font-weight: 500; font-style:italic;">implicitly motivates</span> players to express themselves creatively, by leveraging group dynamics between friends (<span class="highlight" style="font-weight: 500;">social proof!!</span>).
+                    </p>
+                    <p>
+                        Players are challenged to respond to funny prompts by taking a selfie using quirky in-game filters. In a limited time, they share the selfie in an Instagram groupchat with other players, who then vote on which selfie was the best response to the prompt. 
+                    </p>
+                    <p>
+                        <span class="proto-point">&#x2192; By helping players actively engage with prompts while freely choosing filters and poses, the game encourages creative and uninhibited expression.</span>                    
+                    </p>
+            </div>
+        </section>
+
+        <section id="id_research">
+            <!-- maybe include research questions here? -->
+            <h3>User Research</h3>
+            <div class="research-content">
+                    
+                <div class="research" id="id_questions">
+                        
+                        <p class="research-intro">
+                                <span class="highlight">Research Questions:</span>
+                                Our research began by exploring the domains of social media addiction, anxiety, and dark patterns before we focused on selfie filters usage on Instagram as our primary case study. 
+                                We wanted to understand this space through the following questions:
+                        </p>
+                        <div id="id_qlist">
+                            <p>
+                                <span class="proto-point">Q1. What are the different considerations that influence users' self-presentation decisions on Instagram?</span>
+                            </p>
+                            <p>
+                                <span class="proto-point">Q2. What systemic factors influence how users engage with and perceive filters?</span>
+                            </p>
+                            <p>
+                                <span class="proto-point">Q3. How does filter usage relate to users' self-esteem and mental wellbeing?</span>
+                            </p>
+                        </div>
+                        
+                        <p class="research-intro">
+                                <span class="highlight">Target User:</span>
+                                Our chosen audience for this project are <span class="emphasis">women aged 18 to 24 who are frequent Instagram users</span>, as they are the most impacted by filter use according to our research. 
+                                This demographic, often in transitional phases of life, provides unique perspectives on filters' potential to experiment with identity presentation.  
+                        </p>
+        
+                </div>
+                        
+                <div class="research" id="id_focusgroup">
+                        <p class="research-intro">
+                            <span class="highlight">Focus Group:</span> We conducted <span style="font-weight: 500">1 focus group session</span> using the 
+                            <a href="https://doi.org/10.1145/3325480.3326570" target="_blank" class="embed-link" id="id_embedlink">
+                            New Metaphors framework<sup>10</sup> 
+                            </a>
+                            to understand users' approach to Instagram and their mindset around the use of features like filters, likes, comments, posts, and stories. Key metaphors that participants selected include:
+                        </p>  
+                        <ul>
+                            <li>
+                                <span style="font-weight: 500; font-style:italic">"Waiting Room Effect" </span> Users experience anxiety between posting and receiving feedback, revealing a <span style="font-weight: 500;">paradoxical engagement loop</span> where negative feelings coexist with increased posting behavior.
+                            </li>
+                            <li>
+                                <span style="font-weight: 500; font-style:italic">"Balancing Act" </span> Instagram posting involves 
+                                <a href="https://thedecisionlab.com/reference-guide/philosophy/system-1-and-system-2-thinking" target="_blank" class="embed-link" id="id_embedlink">System 2 thinking<sup>11</sup></a>
+                                and deliberate choices between authentic and curated content, with
+                                users <span style="font-weight: 500;">carefully considering audience perception</span> rather than posting casually.
+                            </li>
+                            <li>
+                                <span style="font-weight: 500; font-style:italic">"Burned Toast"/"Sun in your Eyes" </span> vs
+                                <span style="font-weight: 500; font-style:italic">"Room Lighting"/"Temporary Covering"</span>
+                                Users make a clear psychological <span style="font-weight: 500;">distinction between filters based on their intended purpose</span> (Insta stories &#x2192; body modification filters = negative; Grid Posts &#x2192; aesthetic filters = positive)
+                            </li>
+                        </ul>
+        
+                </div>
+                <div class="research" id="id_focusimg">
+                    <div id="id_focuscontainer">
+                        <img src="assets/focusfigma.png" alt="Focus Group Figma" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;">
+                        <img src="assets/focusdiagram.jpg" alt="Figma Image" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;">
+                        <p style="font-family: neue-haas-unica, sans-serif; text-align:center; font-size: 0.9rem; color: #222222; margin-top: -1rem; font-style: italic;">
+                            Analysing our focus group notes and finding patterns, insights
+                        </p>
+                    </div>
+                </div>
+                <div class="research" id="id_litreview">
+                    
+                    <p class="research-intro">
+                        <span class="highlight">Literature Review:</span> We examined <span style="font-weight: 500">11 peer-reviewed academic papers</span> published between 2010-2020, on social media behavior and its psychological effects. 
+                        <ul>
+                            <li>
+                                <span style="text-decoration: underline">Self-Presentation:</span> Users <span style="font-weight: 500"> balance between authentic and idealizated self-presentation</span> online, from using filters to buying engagement 
+                                (<a href="https://doi.org/10.1002/9781118771952.ch19" target="_blank" class="embed-link" id="id_embedlink">
+                                    Rosen et al., 2015;<sup>3</sup></a>
+                                <a href="https://doi.org/10.1177/0270467610385893" target="_blank" class="embed-link" id="id_embedlink">Hogan, 2010<sup>4</sup></a>
+                                ). 
+                            </li>
+                            <li>
+                                <span style="text-decoration: underline">Psychological Impact:</span> People with <span style="font-weight: 500">lower self-esteem and higher self-discrepancy</span> tend to use social media more intensively, often leading to <span style="font-weight: 500">increased social comparison</span> and further impact on mental health 
+                                (<a href="https://doi.org/10.1089/cyber.2016.0444" target="_blank" class="embed-link" id="id_embedlink">
+                                    Stapleton et al., 2017<sup>5</sup></a>; 
+                                    <a href="https://doi.org/10.1177/1461444820956368" target="_blank" class="embed-link" id="id_embedlink">
+                                    Kim et al., 2020<sup>6</sup>).</a>
+                            </li>
+                            <li>
+                                <span style="text-decoration: underline">Social Feedback:</span> Audience response through <span style="font-weight: 500">likes and comments significantly shapes user behavior and self-perception</span>
+                                (<a href="https://doi.org/10.1016/j.chb.2015.10.033" target="_blank" class="embed-link" id="id_embedlink">
+                                    Bareket-Bojmel et al., 2016<sup>7</sup></a>; 
+                                    <a href="https://doi.org/10.1016/j.chb.2019.106159" target="_blank" class="embed-link" id="id_embedlink">
+                                    Hong et al., 2020<sup>8</sup>).
+                                </a>
+                            </li>
+                            <li>
+                                <span style="text-decoration: underline">Evolution of Digital Spaces:</span>"Finstas" (fake Instagram accounts) offer users a <span style="font-weight: 500">space for authentic sharing</span> away from pressure for perfection 
+                                (<a href="https://doi.org/10.1145/3313831.3376424" target="_blank" class="embed-link" id="id_embedlink">Xiao et al., 2020<sup>9</sup></a>).
+                            </li>
+                        </ul>
+                    <p id="id_litp2">
+                        After conducting this review, <span class="emphasis">I identified Self-Discrepancy theory as the central framework linking social media usage to self-presentation and psychological wellbeing.</span> 
+                        This guided our understanding and approach of the problem. 
+                    </p>
+                </div>
+                <div class="research" id="id_userinterview">
+                    <p class="research-intro">
+                        <span class="highlight">User Interviews:</span> We conducted <span style="font-weight: 500">5 interviews</span> with women aged 18-24 (our target audience)
+                        on their filter usage and self-presentation.
+                    </p>  
+                    <p class="research-intro">
+                        <span class="highlight">Expert Consults:</span> We sought out <span style="font-weight: 500">3 experts</span> in computational design, human-computer interaction, and technology journalism to better understand the systemic influences and potential opportunities in social media filter usage.
+                    </p>  
+                    <ul>
+                        <li>
+                            <span style="font-weight: 500;">Kyuha (Q) Shim</span>, <i>Associate Professor of Design and Director of Computational Creativity Lab at Carnegie Mellon University</i>
+                        </li>
+                        <li>
+                            <span style="font-weight: 500;">Cori Faklaris</span>, <i>Doctoral student researcher at the Carnegie Mellon University Human-Computer Interaction Institute.</i>
+                        </li>
+                        <li>
+                            <span style="font-weight: 500;">Tate Ryan-Mosley</span>, <i>Data reporter for MIT Technology Review, author of 
+                                <a href="https://www.technologyreview.com/2021/04/02/1021635/beauty-filters-young-girls-augmented-reality-social-media/" class="embed-link" id="id_embedlink" target="_blank">article on impact of beauty filters on young women<sup>12</sup>.</a> 
+                            </i>
+                        </li>
+                    </ul>
+                    <div id="id_intcontainer">
+                            <img src="assets/affinity1.jpg" alt="Affinity Diagram" style="width: 100%; height: auto; max-height: 35vh; object-fit: contain; border-radius: 8px;">
+                        </div>
+                </div>
+                <div id="id_affinity">
+                    <div class="affinity-container">
+                        <div class="affinity-row">
+                            <img src="assets/affinity2.jpg" alt="Affinity Diagram 2" class="affinity-image-half">
+                            <img src="assets/affinity3.jpg" alt="Affinity Diagram 3" class="affinity-image-half">
+                        </div>
+                        <div>
+                            <img src="assets/affinity4.jpg" alt="Affinity Diagram 4" class="affinity-image-full">
+                        </div>
+                        <p class="affinity-caption">
+                            Affinity Diagramming of insights from user interviews and expert consults
+                        </p>
+                    </div>
+                </div>
+            
+                <div id="id_userfindings">
+                    <p class="research-intro">
+                        <span class="highlight">Key findings from User Interviews and Expert Consults:</span> 
+                    </p>  
+                    <p>
+                        <span class="proto-point">&#x2192; Normative Expectations of Various Audiences Cause Users to Self-Censor</span>
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Users:</span> Broader audiences receive more normalized content; trusted circles see authentic expression.
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Experts:</span> Recommend <span class="emphasis">creating spaces</span> where creative exploration trumps conformity, using <span class="emphasis">filters for "visual performance"</span> rather than beauty enhancement.
+                    </p>
+    
+                    <p>
+                        <span class="proto-point">&#x2192; Existing Mental States Amplify Filter Usage Patterns</span>
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Users:</span> Patterns of <span class="emphasis">filter usage vary with self-esteem</span>. Low self-esteem users "fix" perceived flaws. Many report decreased reliance on beauty filters as confidence grows.</span>
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Experts:</span> Confirm <span class="emphasis">filters are neutral tools</span> that amplify existing mental states. Faklaris notes: "whatever your mental state is offline, social media will amplify it."
+                    </p>
+                    <p>
+                        <span class="proto-point">&#x2192; Growing Distance Between Real and Online Self Creates Anxiety Through Self-Discrepancy</span>
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Users:</span> View <span class="emphasis">filtering as natural self-presentation</span> but are anxious about gap between their filtered and real-life appearance. Many report feeling like they're "lying" to their audience.
+                        <br>
+                        <span style="font-weight:500; font-style:italic">Experts:</span> Identify how this discrepancy between real and presented self creates psychological tension. Ryan-Mosley notes, "anxiety emerges from the <span class="emphasis">dissonance between the two selves</span>."
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+        <section id="id_designopp">
+            <h3>
+                Design Opportunity
+            </h3>
+            <p style="margin-top:0;">
+                Creating <span class="highlight">safe spaces for authentic self-expression</span> through creative filter usage, emphasizing reflection and diverse forms of digital self-representation.
+            </p>
+        </section>
+        <section id="id_designstrat">
+            <h3>
+                Persuasive Design Strategies
+            </h3>
+            <p>
+                We wanted to nudge our users to shift their motivations for using selfie filters towards creative self-expression to bolster their self-esteem.
+                We leveraged the <span class="highlight" style="font-weight: 500;">embedded design</span> approach, <span class="emphasis">making use of <i>implicit</i> or concealed techniques</span> to subtly persuade users towards a course of action. 
+                We did not use an explicit intervention as it could trigger psychological reactance if users realize they are being manipulated.
+                The following embedded techniques informed our overall persuasive intervention design strategy:
+            </p>
+            <ul>
+                <li>
+                    <span style="font-weight: 500;">Intermixing: </span> Intended content of a design is mixed with “off-topic” materials to make the on-topic content less conspicuous and therefore more approachable for users.
+                </li>
+                <li>
+                    <span style="font-weight: 500;">Obfuscation through Misdirection: </span> Concealing or stealthily introducing the persuasive content or true purpose of an intervention. 
+                </li>
+            </ul>
+            <div class="social-proof-container">
+                <p class="social-proof-text">
+                    We incorporated group play as a key feature of the game, using the psychological phenomenon of <span class="highlight" style="font-weight: 500;">Social Proof</span>, where people mimic the actions of others to determine what is right or wrong in a given situation.
+                    This creates motivation to use filters as artistic expression, and provides space to be uninhibited.
+                </p>
+                <img src="assets/social.png" alt="Group Play" class="social-proof-image">
+            </div>
+        </section>
+
+        <section id="id_ideation">
+            <h3>
+                Ideation
+            </h3>
+            <div id="id_ideationdiv" style="">
+                <img src="assets/ideation.png" alt="Rapid Ideation" style="width: 100%; height: auto; max-height: 25vh; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p>
+                We rapidly ideated about 15 initial ideas inspired by social psychology and persuasive design theories, and pitched it to the class. 
+                After receiving feedback, we decided on pursuing the idea of the "Bad Selfie Game" where players focus on taking photos to answer prompts without caring about how they look. 
+            </p>
+            <div class="social-proof-container">
+                <p class="social-proof-text">
+                    <span class="highlight" style="font-size:1.15rem;">Competitive Analysis</span>
+                    <br>
+                    <a href="https://www.amazon.com/USAopoly-Selfie-Game-Silly-Expressions/dp/B00K3EYRAM" class="embed-link" id="id_embedlink" target="_blank">Selfie: The Game of Silly Expressions<sup>13</sup></a> was very similar to our envisioned idea.
+                    In this game, individual players take turns creating selfies based on prompts for others to caption. While it successfully gamified the selfie-taking experience, individual spotlight moments could inhibit creativity. 
+                    <br>
+                    <span style="font-weight: 500; font-style:italic; text-decoration:underline;">Solution: </span>Simultaneous group selfie-taking to reduce individual pressure and leverage social proof.
+
+                </p>
+                <img src="assets/companal.jpg" alt="Selfie Game: Competitive Analysis" class="social-proof-image">
+            </div>
+        </section>
+
+        <section id="id_prototyping">
+            <h3>Prototyping</h3>
+            <div class="prototype-content">
+                <div id="id_lofi">
+                    
+                    <span class="highlight subhead">Round 1: Low-Fidelity Prototype on Google Slides</span>
+                    <p>                    
+                        A group of five friends aged 18-24 tested our prototype. 
+                        
+                        The prompts were situations designed to trigger hilarious or outraged reactions. Players, after seeing prompts on Google Slides, respond by taking a selfie using Instagram filters. 
+                        They share photos on an Instagram group chat. A survey was conducted after the testing session.
+                    </p>
+                    <div id="id_low">
+                        <div id="id_lowimg">
+                            <img src="assets/low1.png" alt="Low-Fidelity Prototype" style="width: 100%; height: auto; max-height: 30vh; object-fit: contain; border-radius: 8px;">
+                        </div>
+                    </div>
+                    <div class="proto-point">User testing of lo-fi prototype yielded <u>poor feedback</u> on the game's playability and engagement level</div>
+                    <div>
+                        <ul>
+                            <li>
+                                Players had an averaged group <span class="emphasis">rating of 3.5/10 for how fun the game was</span>.
+                            </li>
+                            <li>
+                                Players complained that filters and groupchat being in Instagram, while prompts were in a <span class="emphasis">third-party app (Google Slides) was complex and distracted from gameplay</span> (“UX was difficult because we couldn’t find filters”).
+                            </li>
+                            <li>
+                                Testing revealed a timing challenge for each round: <span class="emphasis">too much time led to perfectionism, too little prevented filter discovery</span>. Future tests focused on finding the optimal duration.
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+                <div id="id_midfi">
+                    <div id="id_mid1">
+                        <span class="highlight subhead">Round 2: Medium-Fidelity Prototyping to Test Modalities</span>
+                        <p>
+                            We developed two prototypes in parallel: a mid-fidelity Figma prototype for an in-app Instagram game, and a physical card game.
+                            This was to test digital vs physical format efficacy, persuasive elements, filter use, 
+                            and optimal round timing.
+                        </p>
+                        <p>
+                                <span style="font-weight: 500;">Prototype 1: Physical Cards</span><br>
+                                We tested the game on a friend group of 6 people over 5 rounds. Players drew a prompt card from the card deck. 
+                                Then they took a selfie using Instagram filters within a time limit to answer the prompt, and shared their selfie with the in-person group. 
+                                The selfie voted the funniest earned points, with bonus points for posting on Instagram Stories.   
+                            </p>
+                        <div id="id_mid1container">
+                            <div style="flex-shrink: 1; min-width: 0;">
+                                <img src="assets/mid1.jpg" alt="Physical Prompt Cards" style="width: 100%; height: auto; max-height: 25vh; object-fit: contain; border-radius: 8px;">
+                            </div>
+                            <div style="flex-shrink: 1; min-width: 0;">
+                                <img src="assets/mid2.jpg" alt="Medium Fidelity Prototype" style="width: 100%; height: auto; max-height: 25vh; object-fit: contain; border-radius: 8px;">
+                            </div>   
+                        </div>
+                        <p style="font-family: neue-haas-unica, sans-serif; font-size: 0.9rem; color: #222222; margin-top: 0.5rem; text-align: center; font-style: italic;">
+                                Physical prompt cards and selfies from in-person testing session
+                        </p>
+                    </div>
+                    <div id="id_mid2">
+                            <span style="font-weight: 500;">Prototype 2: Instagram In-app </span><br>
+                        <p>
+                            
+                            This iteration was the digital version of Prototype 1, with the filters and gameplay all intended to be embedded into the Instagram mobile app. 
+                            The prototype was designed on Figma and was tested using the "speed dating" technique. 
+                        </p>
+                        <div id="id_mid2container">
+                            <img src="assets/mid3.png" alt="Digital Prototype" style="width: 100%; height: auto; max-height: 25vh; object-fit: contain; border-radius: 8px;">
+                        </div>
+                            <p>
+                                <span style="font-weight: 500;">Observations and Insights from the Two Med-Fi Prototypes:</span><br>
+                                <ul>
+                                    <li><span class="emphasis">Digital version of the game was preferred</span> over a physical version.</li>
+                                    <li>
+                                        Prompts generated laughter and excitement. The game was rated <span class="emphasis">7.2/10 for fun</span> (an increase over last iteration's 3.5!)
+                                    </li>
+                                    <li>
+                                        The <span class="emphasis">voting mechanism developed competitive spirit</span> more than the points system.
+                                    </li>
+                                    <li>
+                                        The <span class="emphasis">additional incentive (bonus points) to post</span> on Instagram was successful &mdash; several players posted their funny/creative selfies on their Stories!!
+                                    </li>
+                                    <li>
+                                        Participants emphasized that <span class="emphasis">group play was essential</span> as they wouldn't enjoy the digital version alone &mdash; social dynamic was key to the game's success. 
+                                    </li>
+                                </ul>
+                            </p>
+                    </div>    
+                </div>
+                <div id="id_hifi">
+                        <span class="highlight subhead">Round 3: High-Fidelity Prototype Implementation</span>
+                    <p>
+                        The final version of our game incorporated insights we gained from previous rounds of user testing.
+                        We renamed our game from "The Bad Selfie Game" to “Filter Faceoff” as it conveyed the competitive nature of the game more effectively and also highlighted filters as the primary game feature.
+                    </p>
+                    <p>
+                        My teammates Mia and Nicole took the lead in the UI design implementation, and utilised Meta's <a href="https://spark.meta.com" class="embed-link" id="id_embedlink" target="_blank">SparkAR tool<sup>14</sup></a> to create filter effects for our multiplayer game.
+                    </p>
+                    <div id="id_hicontainer">
+                            <div style="display: flex; flex-direction: row; gap: 1rem; justify-content: center; overflow: hidden; max-width: 80vw;">
+                                <div style="flex-shrink: 1; min-width: 0;">
+                                    <img src="assets/spark.png" alt="SparkAR Studio Screenshot" style="width: 100%; height: auto; max-height: 30vh; object-fit: contain; border-radius: 8px;">
+                                </div>
+                                <div style="flex-shrink: 1; min-width: 0;">
+                                    <img src="assets/hifi2.png" alt="Response to Game Prompt" style="width: 100%; height: auto; max-height: 30vh; object-fit: contain; border-radius: 8px;">
+                                </div>   
+                            </div>
+                            <p style="font-family: neue-haas-unica, sans-serif; font-size: 0.9rem; color: #222222; margin-top: 0.5rem; text-align: center; font-style: italic;">
+                                Implementing AR filter effects of the game in SparkAR Studio (left). A player responds to game prompt (right).
+                            </p>
+                        </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        <section id="id_feedback">
+            <h3>Feedback</h3>
+            <p>
+                Our final test was with a female friend group aged 21-22 who were frequent Instagram users (our target audience). 
+                They enjoyed playing the game and some were also motivated to post their creative selfies on their real Instagram accounts!
+            </p>
+            
+            <div id="id_feed">
+                <p class="proto-point" style="margin-top: 0.5rem;">"Unironically fun"</p>
+                <p class="proto-point" style="margin-top: 0.5rem;">"Genuinely liked it... usually trying to hype up my friends [this gives me the chance to be hyped]"</p>
+                <p class="proto-point" style="margin-top: 0.5rem;">"Give us the release date!"</p>
+            </div>
+            <!-- <div>
+                <img src="assets/hifi3.png" alt="Final Prototype Testing" style="width: 100%; height: auto; max-height: 20vh; object-fit: contain; border-radius: 8px;">
+                <p style="font-family: neue-haas-unica, sans-serif; font-size: 0.9rem; color: #222222; margin-top: 0.5rem; text-align: center; font-style: italic;">
+                    Final prototype testing session.
+                </p>
+            </div> -->
+            <div class="what-next">
+                    <h3>What's next?</h3>
+                    <p>
+                        The testing so far shows our game is successful as a persuasive intervention aimed at behavioral change. 
+                        
+                    </p>
+                    <p class="proto-point">
+                            But a change in <i>attitude</i> is our goal. 
+                    </p>
+                    <p>
+                        To measure our game's long-term impact, we’ll conduct a months-long study with a friend group of frequent Instagram users, having them play the game weekly. 
+                        We’ll analyze their self-presentation on Instagram and interview them to assess any changes in their motivations for using selfie filters.
+                        I'm also curious about how changing the game’s visual design or verbage may impact the way users play the game and answer the given prompts.
+                    </p>
+            </div>
+            
+        </section>
+        <section id="id_finale">
+
+        </section>
+
+
+    </div>
+    
+
+
+
+
+
+
+
+<script>
+function updateTextScaling() {
+    const svg = document.querySelector('.curves-svg');
+    // Select ALL text wrappers, not just the first one
+    const textWrappers = document.querySelectorAll('.text-wrapper');
+    const baseWidth = 919;
+    
+    if (svg && textWrappers.length > 0) {
+        const currentWidth = svg.getBoundingClientRect().width;
+        let scale;
+        if (currentWidth < 1075) {
+            scale = Math.min(0.85, Math.max(0.9, currentWidth / baseWidth));
+        } else {
+            scale = Math.min(1, Math.max(0.85, baseWidth / currentWidth));
+        }
+        
+        // Apply scale to all text wrappers
+        textWrappers.forEach(wrapper => {
+            wrapper.style.transform = `scale(${scale})`;
+        });
+    }
+}
+
+window.addEventListener('load', updateTextScaling);
+window.addEventListener('resize', updateTextScaling);
+
+
+
+
+// MTA Subway line colors
+const MTA_COLORS = [
+    '#EE352E',  // Red - 1,2,3
+    '#00933C',  // Green - 4,5,6
+    '#B933AD',  // Purple - 7
+    '#0039A6',  // Blue - A,C,E
+    '#FF6319',  // Orange - B,D,F,M
+    '#6CBE45',  // Light Green - G
+    '#996633',  // Brown - J,Z
+    '#FCCC0A',  // Yellow - N,Q,R,W
+];
+
+let colorIndex = 0;  // Keep track of which color to use next
+
+// Function to get next unused color
+function getNextColor() {
+    const color = MTA_COLORS[colorIndex];
+    colorIndex = (colorIndex + 1) % MTA_COLORS.length;  // Loop back to start if we reach the end
+    return color;
+}
+
+// Create intersection observer
+const highlightObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Find the nearest parent container (either .myrole or any section)
+            const container = entry.target.closest('.myrole, section');
+            if (container) {
+                // Reset color index before processing a container's highlights
+                colorIndex = 0;
+                // Get all highlights in this container and assign colors sequentially
+                container.querySelectorAll('.highlight').forEach(span => {
+                    span.style.color = getNextColor();
+                });
+            } else {
+                // If no container found, just color the individual highlight
+                if (entry.target.classList.contains('highlight')) {
+                    entry.target.style.color = getNextColor();
+                }
+            }
+        } else {
+            if (entry.target.classList.contains('highlight')) {
+                entry.target.style.color = 'black';
+            }
+        }
+    });
+}, {
+    threshold: 0.5,
+    rootMargin: '0px'
+});
+
+// Observe both individual highlights and their containers
+document.querySelectorAll('.highlight, .myrole, section').forEach(element => {
+    highlightObserver.observe(element);
+});
+
+</script>
+<script src="filter.js"></script>
+<script src="main.js"></script>
+<script src="projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+                <h4>Persuasive Goal</h4>
+                <p style="margin-top: 0.5rem;">
+                    We want to reduce the negative effects caused by
+                    the discrepancies between
+                    Idealized/Ought Self and Actual Self.
+                </p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
+                    <!-- Background -->
+                    <rect width="900" height="300" fill="#000000"/>
+                    
+                    <!-- Left Box: Current State -->
+                    <g transform="translate(100, 30)">
+                      <rect width="280" height="150" rx="10" fill="none" stroke="#FF3131" stroke-width="2"/>
+                      <text x="140" y="45" text-anchor="middle" fill="#FF3131" font-family="neue-haas-grotesk-display" font-size="20" font-weight="600">IDEALISED SELF</text>
+                      <text x="140" y="85" text-anchor="middle" fill="#FF3131" font-family="neue-haas-unica" font-size="16" font-weight="300">Influenced by
+                            homogenized</text>
+                      <text x="140" y="115" text-anchor="middle" fill="#FF3131" font-family="neue-haas-unica" font-size="16" font-weight="300">beauty norms</text>
+                    </g>
+                  
+                    <!-- Right Box: Desired State -->
+                    <g transform="translate(520, 30)">
+                      <rect width="280" height="150" rx="10" fill="none" stroke="#90EE90" stroke-width="2"/>
+                      <text x="140" y="45" text-anchor="middle" fill="#90EE90" font-family="neue-haas-grotesk-display" font-size="20" font-weight="600">ACTUAL SELF</text>
+                      <text x="140" y="85" text-anchor="middle" fill="#90EE90" font-family="neue-haas-unica" font-size="16" font-weight="300">Self-expressive
+                            plural identities</text>
+                      <text x="140" y="115" text-anchor="middle" fill="#90EE90" font-family="neue-haas-unica" font-size="16" font-weight="300">defined by personal values</text>
+                    </g>
+                  
+                    <!-- Arrow -->
+                    <g transform="translate(380, 105)">
+                      <!-- Arrow Line -->
+                      <line x1="0" y1="0" x2="140" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+                      <!-- Arrow Head -->
+                      <path d="M140 0 L130 -10 L130 10 Z" fill="#FFFFFF"/>
+                      
+                    </g>
+                </svg>
+                <!-- Insert diagram of persuasive goal -->
+
+                <ul>
+                    <li>Reduce effects such as unhappiness,
+                            dejection, lower self-esteem, anxiety</li>
+                    <li>Increase calmness, contentment, and
+                            acceptance</li>
+                </ul>
+
+
+
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-top: 1rem;">
+                            <p style="flex: 1;">
+                                    <span class="highlight proto-point">User Feedback:</span><br>
+                                    Our final testing was with a female friend group aged 21-22 who were frequent Instagram users (our target audience). 
+                        They enjoyed playing the game and some were also motivated to post their creative selfies on their real Instagram accounts!
+                                    <div style="width: 45vw; margin-top: 2rem;">
+                                        <p class="proto-point" style="margin-top: 0.5rem;">"Unironically fun"</p>
+                                        <p class="proto-point" style="margin-top: 0.5rem;">"Genuinely liked it... usually trying to hype up my friends [this gives me the chance to be hyped]"</p>
+                                        <p class="proto-point" style="margin-top: 0.5rem;">"Give us the release date!"</p>
+                                    </div>
+                                </p>
+                            <div style="flex: 1;">
+                                <img src="assets/hifi3.png" alt="Final Prototype Testing" style="width: 100%; height: auto; max-height: 20vh; object-fit: contain; border-radius: 8px;">
+                                <p style="font-family: neue-haas-unica, sans-serif; font-size: 0.9rem; color: #222222; margin-top: 0.5rem; text-align: center; font-style: italic;">
+                                        Final prototype testing session.
+                                    </p>
+                            </div>
+                        </div>

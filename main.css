@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    --background-color: #FAF9F6;
+    --menu-select-color: #028940;
+    --menu-hover-color: #636363;
+    --curve-default-color: #0C0404;
+    --projects-color: #fccc0a;
+}
+html{
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; 
+    /* scroll-behavior: smooth; */
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden; 
+  /* overflow: hidden; */
+}
+p {
+  /* line-height: 120%; */
+  margin-top: 1.5rem;
+}
+::selection {
+  background-color: var(--curve-default-color);
+  color: var(--background-color);
+}
+::-moz-selection {
+  background-color: var(--curve-default-color);
+  color: var(--background-color);
+}
+sup {
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--background-color);
+  padding-bottom: 0;
+}
+.curves-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+.curve-path {
+    fill: none;
+    stroke: var(--curve-default-color);
+    stroke-width: 1.8px;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000; 
+    transform-origin: 20% center; /* Changed origin to left side */
+    opacity: 0;
+    /* visibility: hidden; */
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    /* transition: transform 0.1s ease-out, opacity 0.1s ease-out; Added transition for smooth color change */
+
+}
+.curve2-path {
+cursor: pointer;
+}
+
+.curve2[data-curve-group="projects"] {
+    cursor: pointer;
+}
+.text-wrapper {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.path-text {
+    fill: #000;
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 90;
+    letter-spacing: -0.05px;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    white-space: pre;
+    pointer-events: auto; 
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 13vh; /* Adjust based on your header height */
+  height: 95vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.curve1-path {
+    stroke: var(--menu-select-color);
+}
+
+.projects-path {
+  stroke: var(--projects-color);
+}
+
+#id_intro {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+  /* height: 70vh; */
+  margin-left: 3vw;
+  flex-shrink: 0;
+  width: 100vw;
+  /* padding-right: 3vw; */
+  
+  padding: 10vh 3vw;
+  scroll-snap-align: start;
+}
+
+#id_intro p {
+  width: 60vw;
+}
+
+#id_portrait {
+  flex-shrink: 0;
+  width: 50vw;
+  /* height: 70vh; */
+  display: flex;
+  flex-direction: column; /* Changed to column layout */
+  justify-content: flex-start; /* Align items from the top */
+  align-items: center;
+  margin-left: 3rem;
+  scroll-snap-align: start;
+  padding-top: 10vh;
+  align-items: center; /* Centers horizontally */
+  margin-right: 15vw;
+}
+
+#id_portrait img {
+  max-width: 100%;
+  max-height: 80%; /* Reduced to leave room for text */
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+#id_portrait p {
+  margin-top: 1rem; /* Add space between image and text */
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  
+}
+
+#id_portrait img:hover {
+  opacity: 1;
+}
+
+
+    #id_embedlink {
+      color: #000000;
+      text-decoration: none;
+    }
+    .embed-link {
+      transition: color 0.3s ease;
+      cursor: pointer;
+      color: #000000;
+      text-decoration: none;
+    }
+    
+    /* ------------- xs (phones) ------------- */
+    @media only screen and (max-width: 600px) {
+      #id_intro {
+        font-size: 1rem;
+        padding-top: 5vh;
+      }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    /* @media only screen and (min-width: 768px) {
+      #id_intro {
+        font-size: 1.3rem;
+        margin-top: 8.5vh;
+        width: 55vw;
+      }
+      #id_portrait {
+        margin-left: 50vw;
+        margin-top: 6vh;
+      }
+    } */
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      
+      #id_intro {
+        /* font-size: 1.3vw; */
+        margin-top: 5vh;
+        padding-right: 6vw;
+        font-size: 1.3rem;
+      }
+      #id_portrait {
+        margin-left: 10vw;
+        /* margin-top: 3vh; */
+      }
+    }
+    @media only screen and (min-width: 1200px) {
+      
+      #id_intro {
+        font-size: 1.4rem;
+        margin-top: 15vh;
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      
+    }

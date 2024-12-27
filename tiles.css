@@ -1,0 +1,227 @@
+#id_projects {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    background-color: #FAF9F6;
+    margin-top: 15vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    -webkit-overflow-scrolling: touch;
+  }
+  #id_projects::-webkit-scrollbar {
+    display: none;
+}
+  
+  .subway-wall {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blue-border {
+    /* margin-top: 5vh; */
+    width: 100%;
+    height: 25px;
+    min-width: calc(1050px + 800px + 150px);
+    /* NYC Subway blue is closer to a deep navy */
+    background-color: #00004B;
+    border-bottom: 2.5px solid rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .blue-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent calc(100px - 1px),
+      rgba(255, 255, 255, 0.25) calc(100px - 1px),
+    rgba(255, 255, 255, 0.25) 100px
+    );
+    background-size: 100px 100%;
+  }
+  
+  .tile-grid {
+    flex-grow: 1;
+    width: fit-content; /* Allow content to determine width */
+    min-width: calc(1050px + 800px + 150px); /* Ensure it's at least as wide as viewport */
+    /* width: 100%; */
+    background-color: #FCF8F0;
+    position: relative;
+    padding-right: 150px; /* Add some padding at the end */
+  }
+  
+  .tile-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.11;
+    background-image: 
+      /* Vertical lines with slight variation */
+      repeating-linear-gradient(to right,
+        transparent,
+        transparent calc(100px - 1px),
+        #000 calc(100px - 1px),
+        #000 100px,
+        transparent 100px
+      ),
+      /* Horizontal lines with variation */
+      repeating-linear-gradient(to bottom,
+        transparent,
+        transparent calc(100px - 1px),
+        #000 calc(100px - 1px),
+        #000 100px,
+        transparent 100px
+      ),
+      /* Noise texture for line irregularity */
+      url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
+    background-size: 100px 100px, 100px 100px, 100px 100px;
+    filter: blur(0.3px);
+  }
+
+
+
+
+
+
+  .subway-sign {
+    position: absolute;
+    top: 40px;
+    left: 75px;
+    background-color: black;
+    color: white;
+    padding: 0 0 6px 16px; 
+    z-index: 20;
+    border-top: 2px solid white;
+    position: relative;  /* For containing the absolute line */
+    width: fit-content;  /* This makes the box only as wide as its content */
+    /* min-width: 250px; */
+    max-width: 240px;
+  }
+  /* Add this new class for the horizontal line */
+.horizontal-line {
+    position: absolute;
+    top: 12px;  /* Match the top padding of container */
+    left: 0;    /* Extend from left edge */
+    right: 0; 
+    /* width: 100%; */
+    height: 2px;
+    background-color: white;
+    margin-bottom: 8px; /* Add some space between line and content */
+}
+  
+  .sign-content {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 16px 0 0;
+    gap: 5px; 
+  }
+  
+  .sign-left {
+    padding-right: 5px;
+    margin-left: -8px;
+  }
+  
+  .sign-text {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 600;
+    font-style:normal;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  
+  .sign-route {
+    display: flex;
+  }
+  
+  .train-bullet {
+    width: 50px;
+    height: 50px;
+    background-color: #FCCC0A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 600; /* Increased to match 65 Medium more closely */
+    font-style: normal;
+    font-size: 36px;
+    color: black;
+  }
+  
+  .sign-arrow {
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: -5px;
+  }
+  
+  .sign-arrow svg {
+    width: 60px;
+    height: 60px;
+  }
+
+
+/* panel stuff */
+
+
+.project-panel {
+    position: absolute;
+    top: 175px;
+    left: 175px;  /* 2 tiles from left (2 * 100px) */
+    width: 800px;  /* 8 tiles wide (8 * 100px) */
+    height: 500px;
+    background-color: #FAF9F6;  /* Same as your background color */
+    overflow: hidden;
+    z-index: 10;
+    /* Thin black border with subtle outer glow */
+    border: 2px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 
+      0 0 0 8px black,  /* Inner white frame */
+      0 0 0 10px rgba(0, 0, 0, 0.15); /* Outer subtle black frame */
+  }
+  
+  .panel-content {
+    position: relative;
+    padding: 25px;
+    color: #0C0404;  /* Changed to black text */
+  }
+  
+  .project-title {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-description {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .project-details {
+    font-family: "Inconsolata", monospace;
+    font-weight: 200;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+  }
+
+  #id_panel2 {
+    left: 1050px;  /* First panel (150px + 800px) + one tile space (100px) */
+}
