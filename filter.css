@@ -2799,3 +2799,20 @@ h3 {
         font-size: 1rem;
     }
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    /* Add any retina-specific adjustments if needed */
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px), 
+       only screen and (max-width: 926px) {
+    /* Force consistent text rendering across devices */
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font-size: 16px; /* Set a base font size */
+    }
