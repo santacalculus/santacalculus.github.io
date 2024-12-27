@@ -2820,3 +2820,41 @@ h3 {
         font-size: 16px; /* Set a base font size */
     }
 }
+
+/* Base mobile fixes - add this to your existing CSS */
+@media only screen and (max-width: 600px) {
+    /* Force consistent text sizing */
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font-size: 16px; /* Set base font size */
+    }
+    
+    /* Add this to prevent font scaling */
+    body {
+        font-size: 16px;
+        /* Prevent text inflation */
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    /* Adjust specific text elements */
+    .proj-title {
+        font-size: 1.4rem !important; /* Force override */
+    }
+
+    .proj-intro p {
+        font-size: 1rem !important;
+    }
+}
+
+/* High DPI devices */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font-size: 16px;
+    }
+}
