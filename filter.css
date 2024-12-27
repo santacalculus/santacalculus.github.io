@@ -2800,11 +2800,14 @@ h3 {
     }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
+/* Base mobile styles */
+@media only screen and (max-width: 390px) and (min-height: 844px),
+       only screen and (-webkit-min-device-pixel-ratio: 2),
        only screen and (min-resolution: 192dpi) {
-    /* Add any retina-specific adjustments if needed */
     html {
         -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font-size: 16px;
     }
 }
 
