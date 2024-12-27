@@ -2467,6 +2467,303 @@ h3 {
 
 /* phones */
 
+@media only screen and (max-width: 600px) and (min-height: 500px) {
+    /* --- Intro Section --- */
+    .proj-media {
+        margin-top: 3vh;
+    }
+
+    .proj-media,
+    .proj-media img {
+        max-height: 25vh;
+    }
+
+    .proj-title {
+        font-size: 1.25rem;
+    }
+
+    .proj-intro {
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    .proj-intro p {
+        font-size: 0.85rem;
+        margin-top: 0.8rem;
+    }
+
+    #id_team{
+        font-size: 0.7rem;
+    }
+
+    .myrole {
+        margin-top: 15vh;
+    }
+
+    /* --- Background section --- */
+
+    #id_problemspace h3 {
+        margin-bottom: 1rem;
+    }
+    .problem-intro p,
+    #id_theory p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .problem-intro #id_selfimgdiv {
+        margin:2vh 0;
+    }
+
+    #id_theory #id_selfimgdiv {
+        margin: 0;
+    }
+
+
+    #id_theory .proto-point {
+        font-size: 1.1rem;
+    }
+
+
+    /* --- Demo section --- */
+
+
+    #id_demo h3{
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #id_demo iframe {
+        margin: 1rem auto;
+        max-height: 20vh;
+    }
+
+    #id_demo p {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+        width: 19.4375rem;
+    }
+
+    #id_demo .proto-point {
+        font-size: 1.05rem;
+    }
+
+    /* --- Research section --- */
+    #id_research h3 {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+
+    #id_research .research-intro {
+        margin-top: 2vh;
+    }
+
+    #id_questions p,
+    #id_focusgroup p,
+    #id_litreview p,
+    #id_userinterview p {
+        font-size: 1rem;
+    }
+
+    #id_qlist{
+        margin: 1vh 0 2vh 0;
+    }
+
+    #id_qlist p {
+        margin-top: 0.6rem;
+    }
+
+    #id_questions .proto-point {
+        font-size: 0.95rem;
+    }
+
+    .research-intro .highlight {
+        font-size: 1.1rem;
+    }
+
+    #id_focusgroup ul li {
+        font-size: 0.95rem;
+    }
+
+    #id_focusimg {
+        margin-top: 5vh;
+    }
+
+    #id_litreview ul {
+        margin-top: 0.6rem;
+    }
+
+    #id_litreview ul li {
+        font-size: 0.8rem;
+    }
+
+    #id_litreview #id_litp2 {
+        margin-top: 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    #id_userinterview ul li {
+        font-size: 1rem;
+    }
+
+    #id_intcontainer {
+        display: none;
+    }
+
+    .affinity-image-full {
+        width: 21.4375rem;
+    }
+
+    #id_affinity p {
+        font-size: 0.9rem;
+    }
+
+    #id_userfindings p {
+        font-size: 0.76rem;
+        margin-top: 1rem;
+    }
+
+    #id_userfindings .proto-point {
+        font-size: 0.85rem;
+    }
+
+    #id_research .emphasis {
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+                          linear-gradient(rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5));
+        /* Ensure the highlight is immediately visible */
+        background-size: 100% 100%, 100% 100%;
+        /* Make sure it shows up against the white background */
+        display: inline;
+        padding: 0.1em 0;
+    }
+
+    /* --- Design Strat section --- */
+    #id_designstrat h3,
+    #id_ideation h3{
+        font-size:1.8rem;
+        margin-bottom: 0;
+    }
+
+    #id_designstrat p {
+        font-size: 0.85rem;
+    }
+
+    #id_designstrat ul {
+        margin-top: 0.5rem;
+    }
+
+    #id_designstrat ul li {
+        font-size: 0.8rem;
+    }
+
+    #id_designstrat .social-proof-container {
+        margin-top: 0.5rem;
+    }
+
+    #id_designstrat .social-proof-text {
+        font-size: 0.85rem;
+        margin-top: 0;
+    }
+
+
+    /* --- Ideation section --- */
+
+    #id_ideation p {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    #id_ideation .social-proof-container {
+        margin-top: 0.5rem;
+    }
+    #id_ideation .social-proof-text{
+        width: 15rem;
+        font-size: 0.8rem;
+    }
+    #id_ideation .social-proof-image {
+        width: 5rem;
+        margin-top: 3rem;
+    }
+    
+
+    /* --- Prototyping --- */
+    #id_prototyping h3{
+        font-size:1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .subhead {
+        font-size: 1.1rem;
+    }
+
+    #id_prototyping p {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    #id_prototyping .proto-point {
+        margin: 1vh 0;
+        font-size: 0.9rem;
+    }
+
+    #id_prototyping ul li{
+        font-size: 0.75rem;
+    }
+
+    #id_mid2container {
+        margin-top: 0.5rem;
+    }
+
+    #id_mid2 ul {
+        margin-top: 0.1rem;
+    }
+
+    #id_mid2 ul li {
+        margin-bottom: 0.1rem;
+    }
+
+
+    /* --- Feedback --- */
+
+    #id_feedback {
+        padding: 5vh 4rem;
+        width: 27.4375rem;
+
+    }
+
+    #id_feedback h3,
+    #id_feedback p {
+        width: 22.4375rem;
+    }
+    #id_feedback h3{
+        font-size:1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #id_feedback p {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    #id_feed {
+        margin: 0.5rem 0.5rem;
+    }
+    #id_feed p {
+        color: #FF6319;
+    }
+
+    .what-next {
+        margin-top: 2rem;
+    }
+
+    #id_feedback .what-next .proto-point {
+        margin: 0.8rem;
+        font-size: 1rem;
+        color: #FCCC0A;
+    }
+
+
+}
+
 @media only screen and (max-width: 600px) and (min-height: 800px) {
     /* --- Intro Section --- */
 
@@ -2818,34 +3115,6 @@ h3 {
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
         font-size: 16px; /* Set a base font size */
-    }
-}
-
-/* Base mobile fixes - add this to your existing CSS */
-@media only screen and (max-width: 600px) {
-    /* Force consistent text sizing */
-    html {
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-        font-size: 16px; /* Set base font size */
-    }
-    
-    /* Add this to prevent font scaling */
-    body {
-        font-size: 16px;
-        /* Prevent text inflation */
-        -moz-text-size-adjust: none;
-        -webkit-text-size-adjust: none;
-        text-size-adjust: none;
-    }
-
-    /* Adjust specific text elements */
-    .proj-title {
-        font-size: 1.4rem !important; /* Force override */
-    }
-
-    .proj-intro p {
-        font-size: 1rem !important;
     }
 }
 
