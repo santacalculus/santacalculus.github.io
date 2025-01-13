@@ -53,6 +53,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Get all skill labels within this project panel
+                const labels = entry.target.querySelectorAll('.skill-label');
+                labels.forEach((label, index) => {
+                    // Add delay based on index
+                    setTimeout(() => {
+                        label.classList.add('highlight');
+                    }, index * 100);
+                });
+            } else {
+                // Remove highlight when out of view
+                const labels = entry.target.querySelectorAll('.skill-label');
+                labels.forEach(label => {
+                    label.classList.remove('highlight');
+                });
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '50px'
+    });
+
+    // Observe each project panel
+    document.querySelectorAll('.project-panel').forEach(panel => {
+        observer.observe(panel);
+    });
+});
+
 
 
 // // Replace the existing observer code with this optimized version

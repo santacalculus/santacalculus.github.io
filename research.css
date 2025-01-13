@@ -49,6 +49,7 @@
     width: 80vw;
     font-family: "neue-haas-unica", sans-serif;
     font-weight: 300;
+    font-size: 1.15rem;
     
 }
 
@@ -58,7 +59,8 @@
 
 #id_myrole {
     padding-top: 10vh;
-    color: black;
+    color: white;
+    background-color: black;
 }
 
 #id_myrole p {
@@ -66,6 +68,7 @@
     padding: 0 10vw;
     font-family: "neue-haas-unica", sans-serif;
     font-weight: 300;
+    font-size: 1.05rem;
 }
 
 #id_myrole ul {
