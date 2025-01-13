@@ -623,7 +623,7 @@ h3 {
 }
 
 /* Black for research section only */
-#id_research .embed-link, #id_prototyping .embed-link {
+#id_research .embed-link, #id_prototyping .embed-link, #id_about .embed-link {
     color: #000000;
 }
 

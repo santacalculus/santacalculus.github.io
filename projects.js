@@ -1,43 +1,55 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Select the panel content for the Filter FaceOff project
+    // Handle Filter FaceOff project panel
     const filterPanelContent = document.querySelector('#id_projfilter');
-    
-    if (!filterPanelContent) {
-        console.error('Element with ID #id_projfilter not found!');
-        return;
+    if (filterPanelContent) {
+        const filterPanel = filterPanelContent.closest('.project-panel');
+        if (filterPanel) {
+            // Add click event listener
+            filterPanel.addEventListener('click', function (e) {
+                if (e.target.closest('.skill-label') || e.target.closest('a')) {
+                    return;
+                }
+                window.location.href = 'filter.html';
+            });
+            // Add keyboard accessibility
+            filterPanel.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = 'filter.html';
+                }
+            });
+            // Add accessibility attributes
+            filterPanel.setAttribute('role', 'button');
+            filterPanel.setAttribute('tabindex', '0');
+            filterPanel.setAttribute('aria-label', 'View Filter FaceOff project details');
+        }
     }
 
-    // Find the closest project panel
-    const filterPanel = filterPanelContent.closest('.project-panel');
-
-    if (!filterPanel) {
-        console.error('Filter panel not found!');
-        return;
+    // Handle Research project panel
+    const researchPanelContent = document.querySelector('#id_projint');
+    if (researchPanelContent) {
+        const researchPanel = researchPanelContent.closest('.project-panel');
+        if (researchPanel) {
+            // Add click event listener
+            researchPanel.addEventListener('click', function (e) {
+                if (e.target.closest('.skill-label') || e.target.closest('a')) {
+                    return;
+                }
+                window.location.href = 'research.html';
+            });
+            // Add keyboard accessibility
+            researchPanel.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = 'research.html';
+                }
+            });
+            // Add accessibility attributes
+            researchPanel.setAttribute('role', 'button');
+            researchPanel.setAttribute('tabindex', '0');
+            researchPanel.setAttribute('aria-label', 'View Research project details');
+        }
     }
-
-    // Add click event listener
-    filterPanel.addEventListener('click', function (e) {
-        // Prevent navigation if clicking on skill-label or links
-        if (e.target.closest('.skill-label') || e.target.closest('a')) {
-            return;
-        }
-
-        // Navigate to filter.html
-        window.location.href = 'filter.html';
-    });
-
-    // Add keyboard accessibility
-    filterPanel.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            window.location.href = 'filter.html';
-        }
-    });
-
-    // Add accessibility attributes
-    filterPanel.setAttribute('role', 'button');
-    filterPanel.setAttribute('tabindex', '0');
-    filterPanel.setAttribute('aria-label', 'View Filter FaceOff project details');
 });
 
 

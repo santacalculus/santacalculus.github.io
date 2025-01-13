@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Filter FaceOff - Likhitha Chintareddy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="curves.css">
+    <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="research.css">
+    
+    <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
+</head>
+
+<body>
+    <div class="header" style="margin:0; line-height: 0;">
+        <div class="curves-container">
+            <svg class="curves-svg" viewBox="0 -1 100 2" preserveAspectRatio="none">
+                <g class="curve1" data-curve-group="about">
+                    <path class="projects-path" id="id_filterpath1" style="stroke-width:2px;" d="M-1 0 L 6.8 0" />
+                    <path class="projects-path" id="id_filterpath2" style="stroke-width:2px;" d="M25.5 0 L 65.8 0" />
+                    <path class="projects-path" id="id_filterpath3" style="stroke-width:2px;" d="M80.4 0 L 101 0" />
+                    
+                    <!-- Both text elements need the same wrapper class -->
+                    <g class="text-wrapper">
+                        <text class="path-text" x="16" y="0.3" font-size="2">LIKHITHA CHINTAREDDY</text>
+                    </g>
+                    <g class="text-wrapper">
+                        <text class="path-text" id="id_abouttext" x="73" y="0.3" font-size="2">BACK TO PROJECTS</text>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <section id="id_projintro">
+            <div class="introduction">
+                    <div class="proj-media">
+                        <img src="assets/research1.png" style="border-radius:0;" alt="Filter FaceOff Demo" />
+                    </div>
+                    <div class="proj-intro">
+                        <h1 class="proj-title">HCI Research: Designing UI intervention to prevent hate speech</h1>
+                        <div id="id_projintrocontext">
+                            <p>
+                                This research investigates a novel proactive approach to content moderation, implementing value-affirmation interventions directly into the user experience of online platforms. 
+                            </p>
+                            <p>
+                                While most platforms rely on reactive measures like automated content filtering or user reporting, this work explores how carefully designed UI elements can prime users to reflect on their core values before engaging in potentially inflammatory discussions.
+                            </p>
+                            <p id="id_team" style="font-style: italic;">Team: Likhitha Chintareddy, Hamsini Ravishankar, Prof Hana Habib, Prof Geoff Kaufman </p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section id="id_about">
+            <h3>About the Research</h3>
+            <p>
+                We studied how self-affirmation theory, traditionally used <a href="https://journals.sagepub.com/doi/10.1177/0963721418807705" target="_blank" class="embed-link" id="id_embedlink">in offline contexts to reduce prejudicial speech<sup>1</sup></a>, could be effectively translated into digital interfaces through a controlled study. 
+                We designed and evaluated four distinct intervention designs, each varying in the levels of intrusiveness and conspicuousness to users. 
+            </p>
+            <p>
+                The interventions build on existing research in social psychology and human-computer interaction, and contribute to the growing body of work on embedded design for behavior change.
+            </p>
+            <p class="proto-point">This work is currently under review at an academic conference, please reach out to me to learn more.</p>
+        </section>
+        <section id="id_myrole">
+            
+            <p>
+                I conducted extensive <span class="proto-point" style="color: #EE352E;">literature review</span> across HCI, psychology, and design fields. I collaborated with Prof Habib on <span class="proto-point" style="color: #B933AD;">designing the low-medium fidelity prototypes</span> of the interventions on Adobe XD.
+            </p>
+            <p>
+                I went on to <span class="proto-point" style="color: #00933C;">build a fully functional news forum simulation</span> using Django, JavaScript, and Bootstrap, implementing features like:
+            </p>
+            <ul>
+                <li>
+                    User authentication and profile management system
+                </li>
+                <li>
+                    Custom modal interfaces for intervention delivery
+                </li>
+                <li>
+                    Comment submission and display functionality
+                </li>
+                <li>
+                    Integration with Google Sheets API for data collection
+                </li>
+            </ul>
+            <p>
+                I architected this system to dynamically serve different interventions based on user groups and the values they indicate as caring about.
+            </p>
+            <p>
+                As the primary author, I also <span class="proto-point" style="color: #0039A6;">led the writing</span> of the academic paper. 
+                This work is currently under review at an academic conference - please reach out to me to learn more.
+            </p>
+        </section>
+    </div>
+
+
+
+
+<script>
+    function updateTextScaling() {
+        const svg = document.querySelector('.curves-svg');
+        // Select ALL text wrappers, not just the first one
+        const textWrappers = document.querySelectorAll('.text-wrapper');
+        const baseWidth = 919;
+
+        if (svg && textWrappers.length > 0) {
+        const currentWidth = svg.getBoundingClientRect().width;
+        let scale;
+        if (currentWidth < 1075) {
+            scale = Math.min(0.85, Math.max(0.9, currentWidth / baseWidth));
+        } else {
+            scale = Math.min(1, Math.max(0.85, baseWidth / currentWidth));
+        }
+
+        // Apply scale to all text wrappers
+        textWrappers.forEach(wrapper => {
+            wrapper.style.transform = `scale(${scale})`;
+        });
+        }
+    }
+
+    window.addEventListener('load', updateTextScaling);
+    window.addEventListener('resize', updateTextScaling);
+</script>
+<script src="filter.js"></script>
+<script src="main.js"></script>
+<script src="projects.js"></script>
+</body>
+</html>

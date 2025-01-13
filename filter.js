@@ -84,7 +84,7 @@ const elements = document.querySelectorAll('.embed-link');
 
 // Set initial colors based on section
 elements.forEach(element => {
-    const inResearchSection = element.closest('#id_research, #id_prototyping');
+    const inResearchSection = element.closest('#id_research, #id_prototyping, #id_about');
     element.style.color = inResearchSection ? '#000000' : '#FFFFFF';
 });
 
@@ -98,7 +98,7 @@ elements.forEach(element => {
     });
 
     element.addEventListener('mouseleave', function() {
-        const inResearchSection = element.closest('#id_research, #id_prototyping');
+        const inResearchSection = element.closest('#id_research, #id_prototyping, #id_about');
         element.style.color = inResearchSection ? '#000000' : '#FFFFFF';
     });
 });
