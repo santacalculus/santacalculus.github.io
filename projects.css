@@ -1,5 +1,5 @@
 #id_projects {
-  width: 180rem;
+  width: 50rem;
   margin-right: 5rem;
   min-width: 100vw;
   padding: 3vh 5vw;
@@ -30,7 +30,7 @@
 
   
 
-.project-panel {
+/* .project-panel {
     background-color: #FAF9F6;
     border: 0.1rem solid #333333;
     border-radius: 8px;
@@ -45,13 +45,30 @@
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  } */
+
+  .project-panel {
+    background-color: #FAF9F6;
+    border: 0.1rem solid #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    /* min-width: 800px; */
+    height: fit-content;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
   }
   .main-container::-webkit-scrollbar {
     display: none;
   }
 
   .project-row {
-    width: 75rem;
+    width: 50rem;
     display: flex;
     gap: 2rem;
     height: fit-content; /* Contain the height to its content */
@@ -79,7 +96,7 @@
 
 .content-left {
     flex: 1;
-    min-width: 400px;
+    /* min-width: 400px; */
     max-width: 500px;
 }
 
@@ -170,6 +187,10 @@
     background-size: 0 100%, 100% 100%;
 }
 
+#id_projint .project-image {
+  margin: -2rem 0 -2rem -2rem;
+}
+
 
 
 
@@ -230,7 +251,7 @@
 
   @media screen and (max-width: 830px) {
     #id_projects {
-        width: 75rem;
+        width: 38rem;
         padding: 3vh 3vw;
     }
 
@@ -245,7 +266,7 @@
 
   @media only screen and (min-height: 800px) {
     .project-panel {
-      height: 17rem;
+      height: 16rem;
     }
   }
 
@@ -275,7 +296,7 @@
     }
 
     .project-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
 
     .project-description {
@@ -284,9 +305,13 @@
       margin-bottom: 0.5rem;
     }
 
+    #id_advisors {
+      font-size: 0.8rem;
+    }
+
     .project-details p {
-      margin: 0.5rem 0 1rem 0;
-      font-size: 0.85rem;
+      margin: 0.5rem 0 0.45rem 0;
+      font-size: 0.75rem;
     }
 
     .project-details .skills {
@@ -294,7 +319,12 @@
     }
 
     .project-details .skill-label {
-      font-size: 0.8rem;
+      font-size: 0.55rem;
+      margin-right: 0.2rem;
+    }
+
+    #id_resdesc {
+      font-size: 0.85rem;
     }
   }
 

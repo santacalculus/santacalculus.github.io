@@ -174,12 +174,12 @@ $(document).ready(function () {
 
 
 
-
 $(document).ready(function() {
     const projectPath1 = document.querySelector("#id_projectpath1");
     const projectPath2 = document.querySelector("#id_projectpath2");
     const mainContainer = $('.main-container');
     const projectsSection = $('#id_projects');
+    const introSection = $('#id_intro');
 
     // Create yellow path overlays
     const yellowPath1 = projectPath1.cloneNode();
@@ -190,14 +190,10 @@ $(document).ready(function() {
     yellowPath2.setAttribute('d', "M101 5 L 90.2 5");
     
     // Style yellow paths
-    yellowPath1.style.stroke = "#E2B244";
-    yellowPath2.style.stroke = "#E2B244";
+    yellowPath1.style.stroke = "#FCC00A";
+    yellowPath2.style.stroke = "#FCC00A";
     yellowPath1.style.strokeWidth = getComputedStyle(projectPath1).strokeWidth;
     yellowPath2.style.strokeWidth = getComputedStyle(projectPath2).strokeWidth;
-    
-    // // Make original black paths slightly thinner
-    // projectPath1.style.strokeWidth = "1.6px";
-    // projectPath2.style.strokeWidth = "1.6px";
     
     // Initially hide yellow paths
     yellowPath1.style.opacity = 0;
@@ -219,44 +215,123 @@ $(document).ready(function() {
     projectGroup.insertBefore(yellowPath2, projectPath2);
 
     function updateProgress() {
+        const containerWidth = mainContainer.width();
         const projectsSectionStart = projectsSection.offset().left - mainContainer.offset().left;
-        const totalScrollWidth = mainContainer[0].scrollWidth - mainContainer.width();
-        const scrollableWidthAfterProjects = totalScrollWidth - projectsSectionStart;
-        const currentScroll = mainContainer.scrollLeft() - projectsSectionStart;
+        const scrollPosition = mainContainer.scrollLeft();
         
-        // Calculate base progress
-        let progress = Math.max(0, Math.min(1, currentScroll / scrollableWidthAfterProjects));
-        
-        if (mainContainer.scrollLeft() < projectsSectionStart) {
-            // Reset everything when before projects section
+        // Check if we're in the about section (near the start)
+        if (scrollPosition < 50) {  // Small threshold for about section
             yellowPath1.style.opacity = 0;
             yellowPath2.style.opacity = 0;
             projectPath1.style.opacity = 1;
             projectPath2.style.opacity = 1;
-        } else {
-            // Divide the animation into three phases:
-            // 1. (0-0.2) Black paths fade out
-            // 2. (0.2-0.6) First yellow path fills
-            // 3. (0.6-1.0) Second yellow path fills
-            
-            // Phase 1: Black paths fade out (0-20% of scroll)
-            const fadeOutProgress = Math.min(1, progress * 10); // 5 = 1/0.2
-            projectPath1.style.opacity = Math.max(0, 1 - fadeOutProgress);
-            projectPath2.style.opacity = Math.max(0, 1 - fadeOutProgress);
-            
-            // Phase 2: First yellow path fills (10-60% of scroll)
-            if (progress > 0.1) {
-                yellowPath1.style.opacity = 1;
-                const firstPathProgress = Math.min(1, (progress - 0.1) * 2); // 2 = 1/0.5 for 50% duration
-                yellowPath1.style.strokeDashoffset = -length1 * (1 - easeProgress(firstPathProgress));
-            }
-            
-            // Phase 3: Second yellow path fills (60-100% of scroll)
-            if (progress > 0.6) {
-                yellowPath2.style.opacity = 1;
-                const secondPathProgress = Math.min(1, (progress - 0.6) * 2.5); // 2.5 = 1/0.4
-                yellowPath2.style.strokeDashoffset = -length2 * (1 - easeProgress(secondPathProgress));
-            }
+            return;
+        }
+        
+        // Calculate progress based on how much of the section has entered from the right
+        const progress = Math.max(0, Math.min(1, 
+            (containerWidth - projectsSectionStart) / projectsSection.width()
+        ));
+        
+        // Phase 1: Black paths fade out (0-10% of visibility)
+        const fadeOutProgress = Math.min(1, progress * 10);
+        projectPath1.style.opacity = Math.max(0, 1 - fadeOutProgress);
+        projectPath2.style.opacity = Math.max(0, 1 - fadeOutProgress);
+        
+        // Phase 2: First yellow path fills (10-60% of visibility)
+        if (progress > 0.1) {
+            yellowPath1.style.opacity = 1;
+            const firstPathProgress = Math.min(1, (progress - 0.1) * 2);
+            yellowPath1.style.strokeDashoffset = -length1 * (1 - easeProgress(firstPathProgress));
+        }
+        
+        // Phase 3: Second yellow path fills (60-100% of visibility)
+        if (progress > 0.6) {
+            yellowPath2.style.opacity = 1;
+            const secondPathProgress = Math.min(1, (progress - 0.6) * 2.5);
+            yellowPath2.style.strokeDashoffset = -length2 * (1 - easeProgress(secondPathProgress));
+        }
+    }
+    
+    // Easing function for smoother animation
+    function easeProgress(progress) {
+        return progress < 0.5 
+            ? 4 * progress * progress * progress 
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
+    // Add scroll event listener
+    mainContainer.on('scroll', updateProgress);
+    
+    // Initial update
+    updateProgress();
+});
+
+$(document).ready(function() {
+    const photoPath1 = document.querySelector("#id_photopath1");
+    const photoPath2 = document.querySelector("#id_photopath2");
+    const mainContainer = $('.main-container');
+    const photographySection = $('#id_photography');
+
+    // Create blue path overlays
+    const bluePath1 = photoPath1.cloneNode();
+    const bluePath2 = photoPath2.cloneNode();
+    
+    // Set paths
+    bluePath1.setAttribute('d', "M74.5 8 L 65 8 C 55 8, 45 8, 35 8 L -1 8");
+    bluePath2.setAttribute('d', "M101 8 L 88.7 8");
+    
+    // Style blue paths
+    bluePath1.style.stroke = "#0039A6";
+    bluePath2.style.stroke = "#0039A6";
+    bluePath1.style.strokeWidth = getComputedStyle(photoPath1).strokeWidth;
+    bluePath2.style.strokeWidth = getComputedStyle(photoPath2).strokeWidth;
+    
+    // Initially hide blue paths
+    bluePath1.style.opacity = 0;
+    bluePath2.style.opacity = 0;
+    
+    // Calculate lengths
+    const length1 = bluePath1.getTotalLength();
+    const length2 = bluePath2.getTotalLength();
+    
+    // Set up dash pattern
+    bluePath1.style.strokeDasharray = `${length1} ${length1}`;
+    bluePath2.style.strokeDasharray = `${length2} ${length2}`;
+    bluePath1.style.strokeDashoffset = length1;
+    bluePath2.style.strokeDashoffset = length2;
+    
+    // Ensure proper layering
+    const photoGroup = photoPath1.parentElement;
+    photoGroup.insertBefore(bluePath1, photoPath1);
+    photoGroup.insertBefore(bluePath2, photoPath2);
+
+    function updateProgress() {
+        const containerWidth = mainContainer.width();
+        const photographySectionStart = photographySection.offset().left - mainContainer.offset().left;
+        
+        // Calculate progress based on how much of the section has entered from the right
+        const progress = Math.max(0, Math.min(1, 
+            (containerWidth - photographySectionStart) / photographySection.width()
+        ));
+        
+        // Phase 1: Black paths fade out (0-10% of visibility)
+        const fadeOutProgress = Math.min(1, progress * 10);
+        photoPath1.style.opacity = Math.max(0, 1 - fadeOutProgress);
+        photoPath2.style.opacity = Math.max(0, 1 - fadeOutProgress);
+        
+        // Phase 2: First blue path fills (10-60% of visibility)
+        if (progress > 0.1) {
+            bluePath1.style.opacity = 1;
+            const firstPathProgress = Math.min(1, (progress - 0.1) * 2);
+            bluePath1.style.strokeDashoffset = -length1 * (1 - easeProgress(firstPathProgress));
+        }
+        
+        // Phase 3: Second blue path fills (60-100% of visibility)
+        if (progress > 0.6) {
+            bluePath2.style.opacity = 1;
+            const secondPathProgress = Math.min(1, (progress - 0.6) * 2.5);
+            bluePath2.style.strokeDashoffset = -length2 * (1 - easeProgress(secondPathProgress));
         }
     }
     

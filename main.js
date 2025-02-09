@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHoverEffects(photoGroup, photoPaths, photoText);
 });
 
-// Set up scrolling functionality
+// Set up path-click-navigation functionality
 $(document).ready(function() {
     const projectsGroup = $('.curve2[data-curve-group="projects"]');
     const projectsPaths = projectsGroup.find('.curve2-path');
@@ -169,6 +169,10 @@ $(document).ready(function() {
     const aboutGroup = $('.curve1[data-curve-group="about"]');
     const aboutPaths = aboutGroup.find('.curve1-path');
     const aboutText = aboutGroup.find('.path-text');
+
+    const photoGroup = $('.curve3[data-curve-group="photography"]');
+    const photoPaths = photoGroup.find('.curve3-path');
+    const photoText = photoGroup.find('.path-text');
     
     const mainContainer = $('.main-container');
 
@@ -198,6 +202,12 @@ $(document).ready(function() {
         });
     }
 
+    function scrollToPhotography(e) {
+        e.preventDefault();
+        const photographySection = $('#id_photography');
+        smoothScrollTo(photographySection);
+    }
+
     projectsGroup.on('click', scrollToProjects);
     projectsPaths.on('click', scrollToProjects);
     projectsText.on('click', scrollToProjects);
@@ -205,6 +215,10 @@ $(document).ready(function() {
     aboutGroup.on('click', scrollToAbout);
     aboutPaths.on('click', scrollToAbout);
     aboutText.on('click', scrollToAbout);
+
+    photoGroup.on('click', scrollToPhotography);
+    photoPaths.on('click', scrollToPhotography);
+    photoText.on('click', scrollToPhotography);
     
     projectsGroup.css('cursor', 'pointer');
     projectsPaths.css('cursor', 'pointer');
@@ -213,6 +227,10 @@ $(document).ready(function() {
     aboutGroup.css('cursor', 'pointer');
     aboutPaths.css('cursor', 'pointer');
     aboutText.css('cursor', 'pointer');
+
+    photoGroup.css('cursor', 'pointer');
+    photoPaths.css('cursor', 'pointer');
+    photoText.css('cursor', 'pointer');
     
     aboutGroup.find('.path-text').each(function() {
         if ($(this).text() === 'LIKHITHA CHINTAREDDY') {
