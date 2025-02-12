@@ -1,5 +1,5 @@
 #id_projects {
-  width: 50rem;
+  width: 120rem;
   margin-right: 5rem;
   min-width: 100vw;
   padding: 3vh 5vw;
@@ -68,7 +68,7 @@
   }
 
   .project-row {
-    width: 50rem;
+    width: 120rem;
     display: flex;
     gap: 2rem;
     height: fit-content; /* Contain the height to its content */
@@ -251,7 +251,7 @@
 
   @media screen and (max-width: 830px) {
     #id_projects {
-        width: 38rem;
+        width: 105rem;
         padding: 3vh 3vw;
     }
 

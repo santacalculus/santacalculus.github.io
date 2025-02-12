@@ -1,0 +1,408 @@
+#id_dataviz {
+    width: 992px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#id_dataviz h3 {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.map-container {
+    width: 56rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1.5rem 0 1.5rem;
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+.map-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#controls {
+    /* margin-bottom: 1rem; */
+    /* background: white; */
+    padding: 0.5rem;
+    /* border-radius: 5px; */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+#controls select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 11.8rem;
+}
+
+.state {
+    stroke: #fff;
+    stroke-width: 1px;
+    transition: fill 0.2s;
+}
+
+.state:hover {
+    fill-opacity: 0.8;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background: white;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.chart-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.bar {
+    fill: steelblue;
+    transition: fill 0.2s;
+}
+
+.bar:hover {
+    fill: #a1d99b;
+}
+
+.axis-label {
+    font-size: 12px;
+    fill: #666;
+}
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.insufficient-data {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.legend-item text,
+#controls select {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.tooltip strong {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.tooltip {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#id_findings p,
+#id_dataviz p {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
+    font-size: 1.15rem;
+}
+
+.chart-title h3 {
+    margin-top: 0.5rem;
+}
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+    #id_myrole,
+    #id_findings {
+        width: 37.5rem;
+    }
+    #id_findings {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    #id_myrole h5 {
+        width: 29.5rem;
+        font-family: "neue-haas-grotesk-display", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        word-spacing: 3px;
+        margin-top: 20vh;
+        padding: 0 4rem;
+    }
+
+    #id_myrole p {
+        width: 37.5rem;
+        padding: 0 4rem;
+        font-size: 0.95rem;
+    }
+
+    #id_findings h3 {
+        margin-top: 3rem;
+        padding-left: 5rem;
+    }
+
+    #id_findings p {
+        width: 37.5rem;
+        padding: 0 5rem;
+    }
+
+
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+    .proj-title {
+        font-size: 1.5rem !important;
+    }
+
+    #id_projintrocontext p {
+        font-size: 1.1rem;
+    }
+
+
+    #id_dataviz,
+    #id_myrole,
+    #id_findings {
+        width: 48rem;
+    }
+
+    #id_dataviz,
+    #id_findings {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .map-container {
+        margin-top: 1rem;
+        width: 38rem;
+        padding: 1rem 2rem;
+    }
+
+    #id_myrole h5 {
+        width: 48rem;
+        font-family: "neue-haas-grotesk-display", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        word-spacing: 3px;
+        margin-top: 20vh;
+        padding: 0 4rem;
+    }
+
+    #id_myrole p {
+        width: 48rem;
+        padding: 0 4rem;
+        font-size: 0.95rem;
+    }
+
+    #id_findings h3 {
+        margin-top: 3rem;
+        padding-left: 5rem;
+    }
+
+    #id_findings p {
+        width: 48rem;
+        padding: 0 5rem;
+    }
+
+    #controls {
+        margin-bottom: 0.5rem; /* Reduced margin to bring map up */
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+        min-height: 450px; /* Increased minimum height */
+    }
+
+    /* Adjust legend positioning for this specific breakpoint */
+    .legend {
+        bottom: 20px;
+        left: 40px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .legend-item {
+        margin-bottom: 6px; /* Slightly reduced spacing */
+    }
+
+    .legend-item text {
+        font-size: 0.7rem; /* Made text even smaller */
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #id_dataviz,
+    #id_myrole {
+        width: 62rem;
+    }
+
+    #id_dataviz {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .map-container {
+        margin-top: 1rem;
+        width: 52rem;
+    }
+
+    #id_myrole h5 {
+        width: 62rem;
+        
+        
+        margin-top: 20vh;
+        padding: 0 4rem;
+    }
+
+    #id_myrole p {
+        width: 62rem;
+        padding: 0 4rem;
+        font-size: 0.95rem;
+    }
+
+    #map {
+        margin: 0;
+        padding: 0;
+        line-height: 0; /* This removes any inherited line-height spacing */
+    }
+    
+    #controls {
+        margin-bottom: 0; /* Remove bottom margin from controls */
+    }
+    
+    #controls select {
+        display: block; /* Makes the select element respect margins better */
+        margin-bottom: 0.5rem; /* Add small margin below dropdown if needed */
+    }
+    
+    .map-container {
+        /* ... existing styles ... */
+        padding-top: 0; /* Ensure no extra padding at top */
+    }
+
+    #id_findings {
+        width: 62rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-top: 3rem;
+    }
+
+    #id_findings p {
+        width: 52rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #id_dataviz,
+    #id_findings,
+    #id_myrole {
+        width: 80rem;
+    }
+
+    #id_findings p {
+        width: 70rem;
+    }
+
+    #id_myrole p,
+    #id_myrole h5 {
+        width: 80rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .map-container {
+        width: 70rem;
+        margin: 0.5rem auto;
+        padding: 0.5rem 1.5rem 0 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden; /* Add this line */
+        max-height: calc(100vh - 200px); /* Add this line */
+    }
+    
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-height: 700px) {
+
+    .proj-media img {
+        max-height: 35vh;
+    }
+    #id_projintrocontext {
+        margin-top: 2rem;
+        font-size: 1.1rem;
+    }
+
+}

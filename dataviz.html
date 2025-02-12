@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Government Spending Attitudes by State (1990-2000)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <style>
+        /* Existing styles */
+        body { 
+            font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; 
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .state {
+            stroke: #fff;
+            stroke-width: 1px;
+            transition: fill 0.2s;
+        }
+        .state:hover {
+            fill-opacity: 0.8;
+            cursor: pointer;
+        }
+        .tooltip {
+            position: absolute;
+            background: white;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 14px;
+            z-index: 1000;
+        }
+        #controls {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        select {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .chart-container {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+        }
+        /* New styles for close button */
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+            color: #666;
+            transition: color 0.2s;
+        }
+        .close-button:hover {
+            color: #333;
+        }
+        .bar {
+            fill: steelblue;
+            transition: fill 0.2s;
+        }
+        .bar:hover {
+            fill: #a1d99b;
+        }
+        .axis-label {
+            font-size: 12px;
+            fill: #666;
+        }
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .insufficient-data {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Government Spending Attitudes by State (1990-2000)</h1>
+        <div id="controls">
+            <select id="dataSelect">
+                <option value="mean_spending">Mean Spending Support</option>
+                <option value="n_responses">Number of Responses</option>
+            </select>
+        </div>
+        <div id="map"></div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3 id="chart-title">Income Percentile Distribution</h3>
+                <button class="close-button" onclick="closeChart()">×</button>
+            </div>
+            <div id="bar-chart"></div>
+        </div>
+        <div class="tooltip"></div>
+    </div>
+
+    <script>
+        const width = 960;
+        const height = 600;
+        const chartWidth = 380;
+        const chartHeight = 300;
+        
+        const svg = d3.select("#map")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+        
+        const chartSvg = d3.select("#bar-chart")
+            .append("svg")
+            .attr("width", chartWidth)
+            .attr("height", chartHeight);
+        
+        const projection = d3.geoAlbersUsa()
+            .scale(1200)
+            .translate([width / 2, height / 2]);
+        
+        const path = d3.geoPath().projection(projection);
+        
+        // Modified color scale to better match the states
+        const spendingColorScale = d3.scaleSequential()
+            .domain([1, 7])
+            .interpolator(d3.interpolateRdYlBu)
+            .clamp(true);
+
+        function closeChart() {
+            d3.select(".chart-container").style("display", "none");
+        }
+
+        function createBarChart(data, state) {
+            console.log("Creating bar chart for:", state);
+            console.log("Data:", data.properties);
+
+            // Check for sufficient data
+            if (!data.properties.n_responses || data.properties.n_responses < 30) {
+                d3.select(".chart-container")
+                    .style("display", "block")
+                    .html(`
+                        <div class="chart-header">
+                            <h3>Data for ${state}</h3>
+                            <button class="close-button" onclick="closeChart()">×</button>
+                        </div>
+                        <div class="insufficient-data">
+                            <p>Insufficient data available to generate chart.</p>
+                            <p class="note">This state has fewer than 30 survey responses needed for reliable analysis.</p>
+                        </div>
+                    `);
+                return;
+            }
+
+            const margin = {top: 20, right: 20, bottom: 60, left: 40};
+            const innerWidth = chartWidth - margin.left - margin.right;
+            const innerHeight = chartHeight - margin.top - margin.bottom;
+
+            // Clear previous chart
+            chartSvg.selectAll("*").remove();
+
+            // Extract income spending data
+            const incomeData = [
+                {percentile: "0-16", value: data.properties.mean_spending_0_16_spending},
+                {percentile: "17-33", value: data.properties.mean_spending_17_33_spending},
+                {percentile: "34-67", value: data.properties.mean_spending_34_67_spending},
+                {percentile: "68-95", value: data.properties.mean_spending_68_95_spending},
+                {percentile: "96-100", value: data.properties.mean_spending_96_100_spending}
+            ];
+
+            console.log("Income data:", incomeData);
+
+            const g = chartSvg.append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleBand()
+                .domain(incomeData.map(d => d.percentile))
+                .range([0, innerWidth])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([1, 7])
+                .range([innerHeight, 0]);
+
+            // Add axes
+            g.append("g")
+                .attr("transform", `translate(0,${innerHeight})`)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "rotate(-45)")
+                .style("text-anchor", "end");
+
+            g.append("g")
+                .call(d3.axisLeft(y));
+
+            // Add bars with data check
+            g.selectAll(".bar")
+                .data(incomeData)
+                .enter()
+                .append("rect")
+                .attr("class", "bar")
+                .attr("x", d => x(d.percentile))
+                .attr("width", x.bandwidth())
+                .attr("y", d => {
+                    return d.value ? y(Math.max(1, d.value)) : y(1);
+                })
+                .attr("height", d => {
+                    return d.value ? innerHeight - y(Math.max(1, d.value)) : 0;
+                })
+                .append("title")
+                .text(d => `Value: ${d.value ? d.value.toFixed(2) : 'No data'}`);
+
+            // Add labels
+            g.append("text")
+                .attr("class", "axis-label")
+                .attr("x", innerWidth / 2)
+                .attr("y", innerHeight + margin.bottom - 10)
+                .style("text-anchor", "middle")
+                .text("Income Percentile");
+
+            g.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -innerHeight / 2)
+                .attr("y", -30)
+                .style("text-anchor", "middle")
+                .text("Government Spending Support (1-7)");
+
+            // Show the container
+            d3.select(".chart-container")
+                .style("display", "block");
+        }
+
+        function createLegend() {
+            // Modified legend data to match the actual scale
+            const legendData = [
+                {value: 7, label: "Strong Support (7)"},
+                {value: 5.5, label: "High Support (5-6)"},
+                {value: 4, label: "Moderate Support (4)"},
+                {value: 2.5, label: "Low Support (2-3)"},
+                {value: 1, label: "Minimal Support (1)"},
+                {value: null, label: "Insufficient Data"}
+            ];
+
+            const legend = svg.append("g")
+                .attr("class", "legend")
+                .attr("transform", `translate(20, ${height - 180})`);
+
+            const legendItems = legend.selectAll(".legend-item")
+                .data(legendData)
+                .enter()
+                .append("g")
+                .attr("class", "legend-item")
+                .attr("transform", (d, i) => `translate(0, ${i * 25})`);
+
+            legendItems.append("rect")
+                .attr("width", 20)
+                .attr("height", 20)
+                .attr("fill", d => d.value ? spendingColorScale(d.value) : "#ddd");
+
+            legendItems.append("text")
+                .attr("x", 30)
+                .attr("y", 15)
+                .text(d => d.label);
+        }
+
+        function clicked(event, d) {
+            console.log("State clicked:", d.properties.NAME);
+            createBarChart(d, d.properties.NAME);
+        }
+
+        function showTooltip(event, d) {
+            const metric = d3.select("#dataSelect").property("value");
+            const value = d.properties[metric];
+            
+            d3.select(".tooltip")
+                .style("opacity", 1)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 10) + "px")
+                .html(`
+                    <strong>${d.properties.NAME}</strong><br/>
+                    ${metric.replace(/_/g, ' ').toUpperCase()}: ${value ? value.toFixed(2) : 'N/A'}<br/>
+                    Responses: ${d.properties.n_responses || 0}
+                `);
+        }
+
+        function hideTooltip() {
+            d3.select(".tooltip").style("opacity", 0);
+        }
+
+        Promise.all([
+            d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json"),
+            d3.json("dataviz/states_spending.geojson")
+        ]).then(function([us, spendingData]) {
+            console.log("Loaded spending data:", spendingData);
+            
+            const states = topojson.feature(us, us.objects.states);
+            
+            svg.selectAll(".state")
+                .data(spendingData.features)
+                .join("path")
+                .attr("class", "state")
+                .attr("d", path)
+                .attr("fill", d => {
+                    const value = d.properties.mean_spending;
+                    return value && d.properties.n_responses >= 30 ? spendingColorScale(value) : "#ddd";
+                })
+                .on("click", clicked)
+                .on("mouseover", showTooltip)
+                .on("mouseout", hideTooltip);
+
+            createLegend();
+        }).catch(function(error) {
+            console.error("Error loading the data:", error);
+        });
+
+        // Add event listener for dropdown changes
+        d3.select("#dataSelect").on("change", function() {
+            const metric = this.value;
+            svg.selectAll(".state")
+                .attr("fill", d => {
+                    const value = d.properties[metric];
+                    if (metric === "mean_spending") {
+                        return value && d.properties.n_responses >= 30 ? spendingColorScale(value) : "#ddd";
+                    } else {
+                        return value ? d3.interpolateBlues(value/1000) : "#ddd";
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>UChicago Data and Policy Scholar - Likhitha Chintareddy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="curves.css">
+    <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="research.css">
+    <link rel="stylesheet" href="dataviz.css">
+
+    <link rel="stylesheet" href="https://use.typekit.net/atm1jdi.css">
+</head>
+
+<body>
+    <div class="header" style="margin:0; line-height: 0;">
+        <div class="curves-container">
+            <svg class="curves-svg" viewBox="0 -1 100 2" preserveAspectRatio="none">
+                <g class="curve1" data-curve-group="about">
+                    <path class="projects-path" id="id_filterpath1" style="stroke-width:2px;" d="M-1 0 L 6.8 0" />
+                    <path class="projects-path" id="id_filterpath2" style="stroke-width:2px;" d="M25.5 0 L 65.8 0" />
+                    <path class="projects-path" id="id_filterpath3" style="stroke-width:2px;" d="M80.4 0 L 101 0" />
+                    
+                    <!-- Both text elements need the same wrapper class -->
+                    <g class="text-wrapper">
+                        <text class="path-text" x="16" y="0.3" font-size="2">LIKHITHA CHINTAREDDY</text>
+                    </g>
+                    <g class="text-wrapper">
+                        <text class="path-text" id="id_abouttext" x="73" y="0.3" font-size="2">BACK TO PROJECTS</text>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <section id="id_projintro">
+            <div class="introduction">
+                    <div class="proj-media">
+                        <img src="dataviz/dataviz.gif" style="border-radius:0;" alt="Data Viz Demo" />
+                    </div>
+                    <div class="proj-intro">
+                        <h1 class="proj-title">Visualizing the Influence of Income on Government Spending Attitudes</h1>
+                        <div id="id_projintrocontext">
+                            <p>
+                                I explored how individual income and county-level income metrics influence attitudes towards government spending on social services in the United States.
+                                This interactive data visualisation project is a continuation of my capstone research note for the Data and Policy Summer Scholar Program at 
+                                University of Chicago's Harris School of Public Policy in July 2024.
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section id="id_about">
+            <h3>About</h3>
+            <p>
+                    Income is a fundamental socioeconomic factor that shapes
+                    individuals’ life experiences and opportunities. A <a href="https://isps.yale.edu/research/publications/isps06-006" target="_blank" class="embed-link" id="id_embedlink">study 
+                    examining how exogenous changes in income affect political attitudes, particularly views
+                    on redistribution and government spending<sup>1</sup></a>, found that self-interest influences policy preferences most
+                    strongly when the personal financial implications are clear.
+            </p>
+            <p>
+                    Due to rising <a href="https://www.brookings.edu/articles/rising-inequality-a-major-issue-of-our-time/" target="_blank" class="embed-link" id="id_embedlink">income inequality<sup>2</sup></a>, 
+                    the systematic influence of income on people’s views on social programs has major
+                    implications for politics and policymaking, as there could be a sharp divergence of policy
+                    preferences between the rich and the poor. This could exacerbate political polarization and
+                    make it harder to reach compromises on government spending. 
+            </p>
+            <p>       
+                    Therefore, for my capstone project in UChicago's Data and Policy Summer Scholar program, I wanted to understand the relationship between income
+                    characteristics and attitudes towards government spending on social services.
+            </p>
+            <p>
+                    The research note and codebase are available <a href="https://github.com/santacalculus/uchicago-data-and-policy-scholar" target="_blank" class="embed-link" id="id_embedlink">here<sup>3</sup></a>. 
+            </p>
+            
+        </section>
+        <section id="id_dataviz">
+            <h3>State-level Visualisation of Attitudes towards Government Spending on Social Services</h3>
+            <p>
+                Click a state to see its income percentile distribution of government spending support.
+            </p>
+            <div class="map-container">
+                <div id="controls">
+                    <select id="dataSelect">
+                        <option value="mean_spending">Mean Spending Support</option>
+                        <option value="n_responses">Number of Responses</option>
+                    </select>
+                </div>
+                <div id="map"></div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 id="chart-title" style="margin-top: 0.5rem;">Income Percentile Distribution</h3>
+                        <button class="close-button" onclick="closeChart()">×</button>
+                    </div>
+                    <div id="bar-chart"></div>
+                </div>
+                <div class="tooltip"></div>
+            </div>
+        </section>
+        <section id="id_myrole">
+            
+            <h5>
+                    I merged data from the
+                    <span class="highlight">American National Election Studies</span> survey 
+                    and county-level economic indicators from <span class="highlight">Chetty
+                    et al. (2014)</span>, and used a fixed effects model to control for 
+                    unobserved heterogeneity across states and years&ast;. I processed the results using R's dplyr and sf 
+                    packages to generate GeoJSON files, which I then used to create interactive visualizations with D3.js.    
+            </h5>
+            <p>
+                &ast; The data spans from years 1990-2000, and states with fewer than 30 responses 
+                are shown in gray due to insufficient data for reliable statistical analysis.
+            </p>
+        </section>
+        <section id="id_findings">
+            <h3>Findings</h3>
+            <p>
+                There is a clear negative relationship between one’s income
+                level and support for government spending on social services.
+                Higher income individuals are less supportive of social spending, likely because they expect
+                to benefit less directly from such programs. This self-interested attitude is apparent across
+                the income distribution and social class hierarchy.
+            </p>
+            <p>
+                However, our model has limited explanatory power as other political, social, and demographic variables not captured here 
+                also shape views on the
+                social safety net. Further research could examine a wider range of contextual factors
+                and individual characteristics to develop a more complete model of the complex dynamics
+                influencing these attitudes.
+            </p>
+            
+        </section>
+    </div>
+
+
+
+
+<script>
+    function updateTextScaling() {
+        const svg = document.querySelector('.curves-svg');
+        // Select ALL text wrappers, not just the first one
+        const textWrappers = document.querySelectorAll('.text-wrapper');
+        const baseWidth = 919;
+
+        if (svg && textWrappers.length > 0) {
+        const currentWidth = svg.getBoundingClientRect().width;
+        let scale;
+        if (currentWidth < 1075) {
+            scale = Math.min(0.85, Math.max(0.9, currentWidth / baseWidth));
+        } else {
+            scale = Math.min(1, Math.max(0.85, baseWidth / currentWidth));
+        }
+
+        // Apply scale to all text wrappers
+        textWrappers.forEach(wrapper => {
+            wrapper.style.transform = `scale(${scale})`;
+        });
+        }
+    }
+
+    window.addEventListener('load', updateTextScaling);
+    window.addEventListener('resize', updateTextScaling);
+
+
+
+    // MTA Subway line colors
+const MTA_COLORS = [
+    '#EE352E',  // Red - 1,2,3
+    '#00933C',  // Green - 4,5,6
+    '#B933AD',  // Purple - 7
+    '#0039A6',  // Blue - A,C,E
+    '#FF6319',  // Orange - B,D,F,M
+    '#6CBE45',  // Light Green - G
+    '#996633',  // Brown - J,Z
+    '#FCCC0A',  // Yellow - N,Q,R,W
+];
+
+let colorIndex = 0;  // Keep track of which color to use next
+
+// Function to get next color
+function getNextColor() {
+    const color = MTA_COLORS[colorIndex];
+    colorIndex = (colorIndex + 1) % MTA_COLORS.length;
+    return color;
+}
+
+// Create intersection observer
+const highlightObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const container = entry.target.closest('.myrole, section');
+            if (container) {
+                colorIndex = 0;
+                container.querySelectorAll('.highlight').forEach(span => {
+                    span.style.color = getNextColor();
+                });
+            } else {
+                if (entry.target.classList.contains('highlight')) {
+                    entry.target.style.color = getNextColor();
+                }
+            }
+        } else {
+            if (entry.target.classList.contains('highlight')) {
+                entry.target.style.color = 'black';
+            }
+        }
+    });
+}, {
+    threshold: 0.5,
+    rootMargin: '0px'
+});
+
+// Observe highlights and containers
+document.querySelectorAll('.highlight, .myrole, section').forEach(element => {
+    highlightObserver.observe(element);
+});
+</script>
+<script src="filter.js"></script>
+<script src="main.js"></script>
+<script src="projects.js"></script>
+<script src="dataviz.js"></script>
+</body>
+</html>

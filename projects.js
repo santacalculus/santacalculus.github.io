@@ -50,6 +50,31 @@ document.addEventListener('DOMContentLoaded', function () {
             researchPanel.setAttribute('aria-label', 'View Research project details');
         }
     }
+
+    const datavizPanelContent = document.querySelector('#id_projdataviz');
+    if (datavizPanelContent) {
+        const datavizPanel = datavizPanelContent.closest('.project-panel');
+        if (datavizPanel) {
+            // Add click event listener
+            datavizPanel.addEventListener('click', function (e) {
+                if (e.target.closest('.skill-label') || e.target.closest('a')) {
+                    return;
+                }
+                window.location.href = 'datapolicyscholar.html';
+            });
+            // Add keyboard accessibility
+            researchPanel.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = 'datapolicyscholar.html';
+                }
+            });
+            // Add accessibility attributes
+            researchPanel.setAttribute('role', 'button');
+            researchPanel.setAttribute('tabindex', '0');
+            researchPanel.setAttribute('aria-label', 'View Research project details');
+        }
+    }
 });
 
 
