@@ -111,6 +111,8 @@
 }
 
 .axis-label {
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 300;
     font-size: 12px;
     fill: #666;
 }
