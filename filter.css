@@ -1404,25 +1404,29 @@ h3 {
 
 /* xxl screen */
 @media only screen and (min-width: 1280px) {
+    .introduction {
+        width: 100vw;
+    }
     #id_selfdiscrepancy {
         max-height: 25vh;
     }
 
     /* --- Intro Section --- */
-    #id_problemintro {
-        width: 160rem; /* 200vw */
+
+    #id_projintro {
+        width: 160vw; /* 200vw */
     }
 
     .proj-media {
-        width: 36rem; /* 45vw */
+        width: 40vw; /* 45vw */
     }
 
     .proj-intro {
-        width: 44rem;
+        width: 60vw;
     }
 
     .myrole {
-        width: 50rem;
+        width: 60vw;
     }
 
     /* --- Background Section --- */
@@ -2517,7 +2521,7 @@ h3 {
 
 @media only screen and (min-width: 1200px) and (min-height: 700px) {
     #id_projintro {
-        width: calc(110rem + 10vw);
+        width: 160vw;
     }
     .proj-media {
         width: 35rem;
